@@ -1,0 +1,47 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <!-- Info -->
+  <RSID_Undefined>Undefined</RSID_Undefined>
+  <RSID_MaxHP>Max hitpoints: {0}</RSID_MaxHP>
+  <RSID_MaxAffordance>Max affordance: {0}</RSID_MaxAffordance>
+  <RSID_Cover>Cover: {0}</RSID_Cover>
+  <RSID_Beauty>Beauty: {0}</RSID_Beauty>
+  <RSID_Joy>Joy gainfactor: {0}</RSID_Joy>
+  <RSID_Comfort>Comfort: {0}</RSID_Comfort>
+  <RSID_BedRestEffectiveness>Bedrest: {0}</RSID_BedRestEffectiveness>
+  <RSID_ImmunityGainSpeedFactor>Immunity gainspeed: {0}</RSID_ImmunityGainSpeedFactor>
+  <RSID_SurgerySuccessChanceFactor>Surgery chance: {0}</RSID_SurgerySuccessChanceFactor>
+  <RSID_MedicalTendQuality>Tend quality: {0}</RSID_MedicalTendQuality>
+  <RSID_PowerUser>Poweruse: {0}W</RSID_PowerUser>
+  <RSID_PowerProducer>Max PowerGen: {0}W</RSID_PowerProducer>
+  <RSID_AffordanceRequirement>Affordance: {0}</RSID_AffordanceRequirement>
+  <RSID_DPM>Damage/min: {0}</RSID_DPM>
+  <!-- Settings -->
+  <RSID_ShowHP.Label>Show max HP</RSID_ShowHP.Label>
+  <RSID_ShowHP.Tooltip>Shows the maximum hitpoints for structures such as walls, fences, doors and sandbags</RSID_ShowHP.Tooltip>
+  <RSID_ShowAffordance.Label>Show affordance given</RSID_ShowAffordance.Label>
+  <RSID_ShowAffordance.Tooltip>Shows the maximum highest terrain affordance given by floors and bridges</RSID_ShowAffordance.Tooltip>
+  <RSID_ShowAffordanceRequirement.Label>Show affordance needed</RSID_ShowAffordanceRequirement.Label>
+  <RSID_ShowAffordanceRequirement.Tooltip>Shows the minimum terrain affordance needed by buildings</RSID_ShowAffordanceRequirement.Tooltip>
+  <RSID_ShowCover.Label>Show cover given</RSID_ShowCover.Label>
+  <RSID_ShowCover.Tooltip>Shows the cover given by structures such as fences and sandbags</RSID_ShowCover.Tooltip>
+  <RSID_ShowBeauty.Label>Show beauty given</RSID_ShowBeauty.Label>
+  <RSID_ShowBeauty.Tooltip>Shows the beauty given by any building, both positive and negative values are shown</RSID_ShowBeauty.Tooltip>
+  <RSID_ShowJoy.Label>Show joy gain factor</RSID_ShowJoy.Label>
+  <RSID_ShowJoy.Tooltip>Shows any defined joy-gain factor of a building</RSID_ShowJoy.Tooltip>
+  <RSID_ShowComfort.Label>Show comfort given</RSID_ShowComfort.Label>
+  <RSID_ShowComfort.Tooltip>Shows any comfort given by a building</RSID_ShowComfort.Tooltip>
+  <RSID_ShowBedRest.Label>Show bedrest effectivness</RSID_ShowBedRest.Label>
+  <RSID_ShowBedRest.Tooltip>Shows the bedrest effectivness for any bed</RSID_ShowBedRest.Tooltip>
+  <RSID_ShowImmunityGainSpeed.Label>Show immunity gain speed</RSID_ShowImmunityGainSpeed.Label>
+  <RSID_ShowImmunityGainSpeed.Tooltip>Shows the immunity gain speed for any bed that defaults as a hospital bed, if defined</RSID_ShowImmunityGainSpeed.Tooltip>
+  <RSID_ShowSurgerySuccessChance.Label>Show surgery success chance</RSID_ShowSurgerySuccessChance.Label>
+  <RSID_ShowSurgerySuccessChance.Tooltip>Shows the surgery success chance for any bed that defaults as a hospital bed, if defined</RSID_ShowSurgerySuccessChance.Tooltip>
+  <RSID_ShowMedicalTendQuality.Label>Show medical tend quality</RSID_ShowMedicalTendQuality.Label>
+  <RSID_ShowMedicalTendQuality.Tooltip>Shows the medical tend quality for any bed that defaults as a hospital bed, if defined</RSID_ShowMedicalTendQuality.Tooltip>
+  <RSID_ShowPowerConsumer.Label>Show power consumption</RSID_ShowPowerConsumer.Label>
+  <RSID_ShowPowerConsumer.Tooltip>Will show the maximum power-consumption of any building that consumes power</RSID_ShowPowerConsumer.Tooltip>
+  <RSID_ShowPowerProducer.Label>Show power production</RSID_ShowPowerProducer.Label>
+  <RSID_ShowPowerProducer.Tooltip>Will show the maximum power-production of any building that produces power</RSID_ShowPowerProducer.Tooltip>
+  <RSID_CurrentVersion.Label>Installed mod-version: {0}</RSID_CurrentVersion.Label>
+</LanguageData>
