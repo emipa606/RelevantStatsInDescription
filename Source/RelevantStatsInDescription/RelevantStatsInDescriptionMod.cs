@@ -104,6 +104,20 @@ internal class RelevantStatsInDescriptionMod : Mod
         listing_Standard.CheckboxLabeled("RSID_ShowPowerProducer.Label".Translate(),
             ref RelevantStatsInDescriptionSettings.ShowPowerProducer,
             "RSID_ShowPowerProducer.Tooltip".Translate());
+        listing_Standard.CheckboxLabeled("RSID_ShowWorkToBuild.Label".Translate(),
+            ref RelevantStatsInDescriptionSettings.ShowWorkToBuild,
+            "RSID_ShowWorkToBuild.Tooltip".Translate());
+        if (RelevantStatsInDescriptionSettings.ShowWorkToBuild)
+        {
+            listing_Standard.CheckboxLabeled("RSID_RelativeWork.Label".Translate(),
+                ref RelevantStatsInDescriptionSettings.RelativeWork,
+                "RSID_RelativeWork.Tooltip".Translate());
+        }
+        else
+        {
+            RelevantStatsInDescriptionSettings.RelativeWork = false;
+        }
+
         if (currentVersion != null)
         {
             listing_Standard.Gap();

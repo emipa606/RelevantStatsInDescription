@@ -2,6 +2,9 @@
 <LanguageData>
   <!-- Info -->
   <RSID_Undefined>Undefined</RSID_Undefined>
+  <RSID_Small>Small</RSID_Small>
+  <RSID_Medium>Medium</RSID_Medium>
+  <RSID_Large>Large</RSID_Large>
   <RSID_MaxHP>Max hitpoints: {0}</RSID_MaxHP>
   <RSID_MaxAffordance>Max affordance: {0}</RSID_MaxAffordance>
   <RSID_Cover>Cover: {0}</RSID_Cover>
@@ -16,6 +19,8 @@
   <RSID_PowerProducer>Max PowerGen: {0}W</RSID_PowerProducer>
   <RSID_AffordanceRequirement>Affordance: {0}</RSID_AffordanceRequirement>
   <RSID_DPM>Damage/min: {0}</RSID_DPM>
+  <RSID_WorkExact>Work to build: {0}</RSID_WorkExact>
+  <RSID_WorkRelative>Workamount: {0}</RSID_WorkRelative>
   <!-- Settings -->
   <RSID_ShowHP.Label>Show max HP</RSID_ShowHP.Label>
   <RSID_ShowHP.Tooltip>Shows the maximum hitpoints for structures such as walls, fences, doors and sandbags</RSID_ShowHP.Tooltip>
@@ -43,5 +48,9 @@
   <RSID_ShowPowerConsumer.Tooltip>Will show the maximum power-consumption of any building that consumes power</RSID_ShowPowerConsumer.Tooltip>
   <RSID_ShowPowerProducer.Label>Show power production</RSID_ShowPowerProducer.Label>
   <RSID_ShowPowerProducer.Tooltip>Will show the maximum power-production of any building that produces power</RSID_ShowPowerProducer.Tooltip>
+  <RSID_ShowWorkToBuild.Label>Show work amount</RSID_ShowWorkToBuild.Label>
+  <RSID_ShowWorkToBuild.Tooltip>Will show the amount of work required for completing the building</RSID_ShowWorkToBuild.Tooltip>
+  <RSID_RelativeWork.Label>Show relative work-amount</RSID_RelativeWork.Label>
+  <RSID_RelativeWork.Tooltip>Will show the workamount as small/medium/large to get more of a general idea of the amount of work</RSID_RelativeWork.Tooltip>
   <RSID_CurrentVersion.Label>Installed mod-version: {0}</RSID_CurrentVersion.Label>
 </LanguageData>

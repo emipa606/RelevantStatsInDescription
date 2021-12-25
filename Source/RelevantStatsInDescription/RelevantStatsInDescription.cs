@@ -60,7 +60,37 @@ public class RelevantStatsInDescription
                 {
                     arrayToAdd.Add("RSID_MaxAffordance".Translate("RSID_Undefined".Translate()));
                 }
+            }
 
+            if (RelevantStatsInDescriptionMod.instance.RelevantStatsInDescriptionSettings.ShowWorkToBuild)
+            {
+                var workToBuild = floorDef.GetStatValueAbstract(StatDefOf.WorkToBuild);
+                if (workToBuild != 0)
+                {
+                    if (RelevantStatsInDescriptionMod.instance.RelevantStatsInDescriptionSettings.RelativeWork)
+                    {
+                        switch (workToBuild)
+                        {
+                            case < 1000:
+                                arrayToAdd.Add("RSID_WorkRelative".Translate("RSID_Small".Translate()));
+                                break;
+                            case < 5000:
+                                arrayToAdd.Add("RSID_WorkRelative".Translate("RSID_Medium".Translate()));
+                                break;
+                            default:
+                                arrayToAdd.Add("RSID_WorkRelative".Translate("RSID_Large".Translate()));
+                                break;
+                        }
+                    }
+                    else
+                    {
+                        arrayToAdd.Add("RSID_WorkExact".Translate(workToBuild));
+                    }
+                }
+            }
+
+            if (arrayToAdd.Any())
+            {
                 arrayToAdd.Add(" - - - \n");
                 cachedDescriptions[descriptionKey] = string.Join("\n", arrayToAdd);
             }
@@ -226,6 +256,34 @@ public class RelevantStatsInDescription
             buildableThing.terrainAffordanceNeeded != TerrainAffordanceDefOf.Light)
         {
             arrayToAdd.Add("RSID_AffordanceRequirement".Translate(buildableThing.terrainAffordanceNeeded.LabelCap));
+        }
+
+        // Work to build
+        if (RelevantStatsInDescriptionMod.instance.RelevantStatsInDescriptionSettings.ShowWorkToBuild)
+        {
+            var workToBuild = thing.GetStatValue(StatDefOf.WorkToBuild);
+            if (workToBuild != 0)
+            {
+                if (RelevantStatsInDescriptionMod.instance.RelevantStatsInDescriptionSettings.RelativeWork)
+                {
+                    switch (workToBuild)
+                    {
+                        case < 1000:
+                            arrayToAdd.Add("RSID_WorkRelative".Translate("RSID_Small".Translate()));
+                            break;
+                        case < 5000:
+                            arrayToAdd.Add("RSID_WorkRelative".Translate("RSID_Medium".Translate()));
+                            break;
+                        default:
+                            arrayToAdd.Add("RSID_WorkRelative".Translate("RSID_Large".Translate()));
+                            break;
+                    }
+                }
+                else
+                {
+                    arrayToAdd.Add("RSID_WorkExact".Translate(workToBuild));
+                }
+            }
         }
 
         if (arrayToAdd.Any())

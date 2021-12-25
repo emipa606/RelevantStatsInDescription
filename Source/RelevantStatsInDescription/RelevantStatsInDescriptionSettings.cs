@@ -7,6 +7,7 @@ namespace RelevantStatsInDescription;
 /// </summary>
 internal class RelevantStatsInDescriptionSettings : ModSettings
 {
+    public bool RelativeWork;
     public bool ShowAffordance = true;
     public bool ShowAffordanceRequirement = true;
     public bool ShowBeauty = true;
@@ -20,6 +21,7 @@ internal class RelevantStatsInDescriptionSettings : ModSettings
     public bool ShowPowerConsumer = true;
     public bool ShowPowerProducer = true;
     public bool ShowSurgerySuccessChance = true;
+    public bool ShowWorkToBuild = true;
 
     /// <summary>
     ///     Saving and loading the values
@@ -40,5 +42,7 @@ internal class RelevantStatsInDescriptionSettings : ModSettings
         Scribe_Values.Look(ref ShowMedicalTendQuality, "ShowMedicalTendQuality", true);
         Scribe_Values.Look(ref ShowPowerConsumer, "ShowPowerConsumer", true);
         Scribe_Values.Look(ref ShowPowerProducer, "ShowPowerProducer", true);
+        Scribe_Values.Look(ref ShowWorkToBuild, "ShowWorkToBuild", true);
+        Scribe_Values.Look(ref RelativeWork, "RelativeWork");
     }
 }
