@@ -1,5 +1,8 @@
 # Changelog for RelevantStatsInDescription
 
+1.0.2.0 - Added cleanliness and included floors in beauty-display
+
+
 1.0.1.0 - Added work-amount and relative work-amount. Removed faulty 1.2 tag
 
 

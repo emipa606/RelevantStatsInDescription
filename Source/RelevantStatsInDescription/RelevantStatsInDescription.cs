@@ -35,6 +35,7 @@ public class RelevantStatsInDescription
 
         if (def is TerrainDef floorDef)
         {
+            // Affordances
             if (RelevantStatsInDescriptionMod.instance.RelevantStatsInDescriptionSettings.ShowAffordance)
             {
                 if (floorDef.affordances?.Any() == true)
@@ -62,6 +63,27 @@ public class RelevantStatsInDescription
                 }
             }
 
+            // Beauty
+            if (RelevantStatsInDescriptionMod.instance.RelevantStatsInDescriptionSettings.ShowBeauty)
+            {
+                var beauty = floorDef.GetStatValueAbstract(StatDefOf.Beauty);
+                if (beauty != 0)
+                {
+                    arrayToAdd.Add("RSID_Beauty".Translate(beauty));
+                }
+            }
+
+            // Cleanliness
+            if (RelevantStatsInDescriptionMod.instance.RelevantStatsInDescriptionSettings.ShowCleanliness)
+            {
+                var cleanliness = floorDef.GetStatValueAbstract(StatDefOf.Cleanliness);
+                if (cleanliness != 0)
+                {
+                    arrayToAdd.Add("RSID_Cleanliness".Translate(cleanliness.ToString("N1")));
+                }
+            }
+
+            // Work to build
             if (RelevantStatsInDescriptionMod.instance.RelevantStatsInDescriptionSettings.ShowWorkToBuild)
             {
                 var workToBuild = floorDef.GetStatValueAbstract(StatDefOf.WorkToBuild);
@@ -236,6 +258,16 @@ public class RelevantStatsInDescription
             if (beauty != 0)
             {
                 arrayToAdd.Add("RSID_Beauty".Translate(beauty));
+            }
+        }
+
+        // Cleanliness
+        if (RelevantStatsInDescriptionMod.instance.RelevantStatsInDescriptionSettings.ShowCleanliness)
+        {
+            var cleanliness = thing.GetStatValue(StatDefOf.Cleanliness);
+            if (cleanliness != 0)
+            {
+                arrayToAdd.Add("RSID_Cleanliness".Translate(cleanliness.ToString("N1")));
             }
         }
 

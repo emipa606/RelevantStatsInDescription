@@ -12,6 +12,7 @@ internal class RelevantStatsInDescriptionSettings : ModSettings
     public bool ShowAffordanceRequirement = true;
     public bool ShowBeauty = true;
     public bool ShowBedRest = true;
+    public bool ShowCleanliness = true;
     public bool ShowComfort = true;
     public bool ShowCover = true;
     public bool ShowHP = true;
@@ -34,6 +35,7 @@ internal class RelevantStatsInDescriptionSettings : ModSettings
         Scribe_Values.Look(ref ShowAffordanceRequirement, "ShowAffordanceRequirement", true);
         Scribe_Values.Look(ref ShowCover, "ShowCover", true);
         Scribe_Values.Look(ref ShowBeauty, "ShowBeauty", true);
+        Scribe_Values.Look(ref ShowCleanliness, "ShowCleanliness", true);
         Scribe_Values.Look(ref ShowJoy, "ShowJoy", true);
         Scribe_Values.Look(ref ShowComfort, "ShowComfort", true);
         Scribe_Values.Look(ref ShowBedRest, "ShowBedRest", true);

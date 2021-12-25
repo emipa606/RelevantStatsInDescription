@@ -9,6 +9,7 @@
   <RSID_MaxAffordance>Max affordance: {0}</RSID_MaxAffordance>
   <RSID_Cover>Cover: {0}</RSID_Cover>
   <RSID_Beauty>Beauty: {0}</RSID_Beauty>
+  <RSID_Cleanliness>Cleanliness: {0}</RSID_Cleanliness>
   <RSID_Joy>Joy gainfactor: {0}</RSID_Joy>
   <RSID_Comfort>Comfort: {0}</RSID_Comfort>
   <RSID_BedRestEffectiveness>Bedrest: {0}</RSID_BedRestEffectiveness>
@@ -32,6 +33,8 @@
   <RSID_ShowCover.Tooltip>Shows the cover given by structures such as fences and sandbags</RSID_ShowCover.Tooltip>
   <RSID_ShowBeauty.Label>Show beauty given</RSID_ShowBeauty.Label>
   <RSID_ShowBeauty.Tooltip>Shows the beauty given by any building, both positive and negative values are shown</RSID_ShowBeauty.Tooltip>
+  <RSID_ShowCleanliness.Label>Show cleanliness given</RSID_ShowCleanliness.Label>
+  <RSID_ShowCleanliness.Tooltip>Shows the cleanliness given if defined</RSID_ShowCleanliness.Tooltip>
   <RSID_ShowJoy.Label>Show joy gain factor</RSID_ShowJoy.Label>
   <RSID_ShowJoy.Tooltip>Shows any defined joy-gain factor of a building</RSID_ShowJoy.Tooltip>
   <RSID_ShowComfort.Label>Show comfort given</RSID_ShowComfort.Label>
