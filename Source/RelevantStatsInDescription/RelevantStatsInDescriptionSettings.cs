@@ -21,7 +21,9 @@ internal class RelevantStatsInDescriptionSettings : ModSettings
     public bool ShowMedicalTendQuality = true;
     public bool ShowPowerConsumer = true;
     public bool ShowPowerProducer = true;
+    public bool ShowRimefeller = true;
     public bool ShowSurgerySuccessChance = true;
+    public bool ShowVFEGas = true;
     public bool ShowWorkToBuild = true;
 
     /// <summary>
@@ -44,6 +46,8 @@ internal class RelevantStatsInDescriptionSettings : ModSettings
         Scribe_Values.Look(ref ShowMedicalTendQuality, "ShowMedicalTendQuality", true);
         Scribe_Values.Look(ref ShowPowerConsumer, "ShowPowerConsumer", true);
         Scribe_Values.Look(ref ShowPowerProducer, "ShowPowerProducer", true);
+        Scribe_Values.Look(ref ShowVFEGas, "ShowVFEGas", true);
+        Scribe_Values.Look(ref ShowRimefeller, "ShowRimefeller", true);
         Scribe_Values.Look(ref ShowWorkToBuild, "ShowWorkToBuild", true);
         Scribe_Values.Look(ref RelativeWork, "RelativeWork");
     }

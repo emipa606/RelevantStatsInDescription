@@ -107,6 +107,22 @@ internal class RelevantStatsInDescriptionMod : Mod
         listing_Standard.CheckboxLabeled("RSID_ShowPowerProducer.Label".Translate(),
             ref RelevantStatsInDescriptionSettings.ShowPowerProducer,
             "RSID_ShowPowerProducer.Tooltip".Translate());
+        if (RelevantStatsInDescription.VFEPowerLoaded && (RelevantStatsInDescriptionSettings.ShowPowerConsumer ||
+                                                          RelevantStatsInDescriptionSettings.ShowPowerProducer))
+        {
+            listing_Standard.CheckboxLabeled("RSID_ShowVFEGas.Label".Translate(),
+                ref RelevantStatsInDescriptionSettings.ShowVFEGas,
+                "RSID_ShowVFEGas.Tooltip".Translate());
+        }
+
+        if (RelevantStatsInDescription.RimefellerLoaded && (RelevantStatsInDescriptionSettings.ShowPowerConsumer ||
+                                                            RelevantStatsInDescriptionSettings.ShowPowerProducer))
+        {
+            listing_Standard.CheckboxLabeled("RSID_ShowRimefeller.Label".Translate(),
+                ref RelevantStatsInDescriptionSettings.ShowRimefeller,
+                "RSID_ShowRimefeller.Tooltip".Translate());
+        }
+
         listing_Standard.CheckboxLabeled("RSID_ShowWorkToBuild.Label".Translate(),
             ref RelevantStatsInDescriptionSettings.ShowWorkToBuild,
             "RSID_ShowWorkToBuild.Tooltip".Translate());

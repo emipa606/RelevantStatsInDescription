@@ -1,5 +1,8 @@
 # Changelog for RelevantStatsInDescription
 
+1.0.3.0 - Added support for Helixien gas from VFE Power and Chemfuel from Rimefeller
+
+
 1.0.2.0 - Added cleanliness and included floors in beauty-display
 
 

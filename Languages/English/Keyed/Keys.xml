@@ -18,6 +18,9 @@
   <RSID_MedicalTendQuality>Tend quality: {0}</RSID_MedicalTendQuality>
   <RSID_PowerUser>Poweruse: {0}W</RSID_PowerUser>
   <RSID_PowerProducer>Max PowerGen: {0}W</RSID_PowerProducer>
+  <RSID_ChemfuelUser>Chemfuel use: {0}/d</RSID_ChemfuelUser>
+  <RSID_GasUser>Gas use: {0} m3/d</RSID_GasUser>
+  <RSID_GasProducer>Max GasGen: {0} m3/d</RSID_GasProducer>
   <RSID_AffordanceRequirement>Affordance: {0}</RSID_AffordanceRequirement>
   <RSID_DPM>Damage/min: {0}</RSID_DPM>
   <RSID_WorkExact>Work to build: {0}</RSID_WorkExact>
@@ -51,9 +54,13 @@
   <RSID_ShowPowerConsumer.Tooltip>Will show the maximum power-consumption of any building that consumes power</RSID_ShowPowerConsumer.Tooltip>
   <RSID_ShowPowerProducer.Label>Show power production</RSID_ShowPowerProducer.Label>
   <RSID_ShowPowerProducer.Tooltip>Will show the maximum power-production of any building that produces power</RSID_ShowPowerProducer.Tooltip>
+  <RSID_ShowVFEGas.Label>    Also Gas production/consumption</RSID_ShowVFEGas.Label>
+  <RSID_ShowVFEGas.Tooltip>Will show the production/consumption of gas of buildings in Vanilla Furniture Expanded - Power. Depends on the power-settings above</RSID_ShowVFEGas.Tooltip>
+  <RSID_ShowRimefeller.Label>    Also Chemfuel use</RSID_ShowRimefeller.Label>
+  <RSID_ShowRimefeller.Tooltip>Will show the chemfuel use of powerplants in Rimefeller. Depends on the power-settings above</RSID_ShowRimefeller.Tooltip>
   <RSID_ShowWorkToBuild.Label>Show work amount</RSID_ShowWorkToBuild.Label>
   <RSID_ShowWorkToBuild.Tooltip>Will show the amount of work required for completing the building</RSID_ShowWorkToBuild.Tooltip>
-  <RSID_RelativeWork.Label>Show relative work-amount</RSID_RelativeWork.Label>
+  <RSID_RelativeWork.Label>    Show relative work-amount</RSID_RelativeWork.Label>
   <RSID_RelativeWork.Tooltip>Will show the workamount as small/medium/large to get more of a general idea of the amount of work</RSID_RelativeWork.Tooltip>
   <RSID_CurrentVersion.Label>Installed mod-version: {0}</RSID_CurrentVersion.Label>
 </LanguageData>

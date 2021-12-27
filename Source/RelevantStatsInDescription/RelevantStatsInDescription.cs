@@ -11,8 +11,13 @@ public class RelevantStatsInDescription
 {
     private static Dictionary<string, string> cachedDescriptions;
 
+    public static readonly bool VFEPowerLoaded;
+    public static readonly bool RimefellerLoaded;
+
     static RelevantStatsInDescription()
     {
+        VFEPowerLoaded = ModLister.GetActiveModWithIdentifier("VanillaExpanded.VFEPower") != null;
+        RimefellerLoaded = ModLister.GetActiveModWithIdentifier("Dubwise.Rimefeller") != null;
         cachedDescriptions = new Dictionary<string, string>();
         var harmony = new Harmony("Mlie.RelevantStatsInDescription");
         harmony.PatchAll(Assembly.GetExecutingAssembly());
@@ -248,6 +253,63 @@ public class RelevantStatsInDescription
                 consumption < 0)
             {
                 arrayToAdd.Add("RSID_PowerProducer".Translate((consumption * -1).ToString()));
+            }
+        }
+
+        // Chemfueluse
+        if (RimefellerLoaded)
+        {
+            var chemfuelConsumtion = 0f;
+            foreach (var compProperty in buildableThing.comps)
+            {
+                if (compProperty == null ||
+                    compProperty.GetType().FullName?.EndsWith("Rimefeller.CompProperties_PowerPlant") == false)
+                {
+                    continue;
+                }
+
+                chemfuelConsumtion = (float)AccessTools.Field(AccessTools.TypeByName(compProperty.GetType().FullName),
+                        "FuelRate")
+                    .GetValue(compProperty);
+            }
+
+            if (RelevantStatsInDescriptionMod.instance.RelevantStatsInDescriptionSettings.ShowRimefeller &&
+                chemfuelConsumtion != 0)
+            {
+                arrayToAdd.Add("RSID_ChemfuelUser".Translate(chemfuelConsumtion.ToString()));
+            }
+        }
+
+        // Gasuse
+        if (VFEPowerLoaded && RelevantStatsInDescriptionMod.instance.RelevantStatsInDescriptionSettings.ShowVFEGas)
+        {
+            var gasConsumption = 0f;
+            foreach (var compProperty in buildableThing.comps)
+            {
+                if (compProperty == null ||
+                    compProperty.GetType().FullName?.EndsWith("GasNetwork.CompProperties_GasTrader") == false)
+                {
+                    continue;
+                }
+
+                gasConsumption = (float)AccessTools.Field(AccessTools.TypeByName(compProperty.GetType().FullName),
+                        "gasConsumption")
+                    .GetValue(compProperty);
+            }
+
+            if (gasConsumption != 0)
+            {
+                if (RelevantStatsInDescriptionMod.instance.RelevantStatsInDescriptionSettings.ShowPowerConsumer &&
+                    gasConsumption > 0)
+                {
+                    arrayToAdd.Add("RSID_GasUser".Translate(gasConsumption.ToString()));
+                }
+
+                if (RelevantStatsInDescriptionMod.instance.RelevantStatsInDescriptionSettings.ShowPowerProducer &&
+                    gasConsumption < 0)
+                {
+                    arrayToAdd.Add("RSID_GasProducer".Translate((gasConsumption * -1).ToString()));
+                }
             }
         }
 
