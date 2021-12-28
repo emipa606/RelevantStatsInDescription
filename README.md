@@ -9,6 +9,14 @@ This can make it easier to select the best wall for your defence or the right po
 Each stat can be turned off in the settings if they are not needed.
 Can be added/removed from existing save.
 
+Supported mods
+
+
+- https://steamcommunity.com/workshop/filedetails/?id=2062943477]Vanilla Furniture Expanded - Power: Shows Helixien Gas use/production
+- https://steamcommunity.com/workshop/filedetails/?id=1321849735]Rimefeller: Shows Chemfuel use
+
+
+
 If you have suggestion of stats that would be usable to show for certain buildings, leave a comment here or on the Discord server linked below.
 
 Idea by: Legion

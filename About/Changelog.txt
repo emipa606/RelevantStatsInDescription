@@ -1,5 +1,8 @@
 # Changelog for RelevantStatsInDescription
 
+1.0.4.0 - Updated VersionFromManifest-file to not get the 'loading is already in progress' error with some mods
+
+
 1.0.3.0 - Added support for Helixien gas from VFE Power and Chemfuel from Rimefeller
 
 
