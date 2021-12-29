@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Reflection;
 using HarmonyLib;
 using RimWorld;
@@ -43,13 +44,9 @@ public class RelevantStatsInDescription
             // Affordances
             if (RelevantStatsInDescriptionMod.instance.RelevantStatsInDescriptionSettings.ShowAffordance)
             {
-                if (floorDef.affordances?.Any() == true)
+                if (floorDef.affordances?.Any() == true && !floorDef.affordances.Contains(TerrainAffordanceDefOf.Heavy))
                 {
-                    if (floorDef.affordances.Contains(TerrainAffordanceDefOf.Heavy))
-                    {
-                        arrayToAdd.Add("RSID_MaxAffordance".Translate(TerrainAffordanceDefOf.Heavy.LabelCap));
-                    }
-                    else if (floorDef.affordances.Contains(TerrainAffordanceDefOf.Medium))
+                    if (floorDef.affordances.Contains(TerrainAffordanceDefOf.Medium))
                     {
                         arrayToAdd.Add("RSID_MaxAffordance".Translate(TerrainAffordanceDefOf.Medium.LabelCap));
                     }
@@ -62,9 +59,16 @@ public class RelevantStatsInDescription
                         arrayToAdd.Add("RSID_MaxAffordance".Translate("RSID_Undefined".Translate()));
                     }
                 }
-                else
+            }
+
+            // Affordance requirement
+            if (RelevantStatsInDescriptionMod.instance.RelevantStatsInDescriptionSettings.ShowAffordanceRequirement)
+            {
+                var affordanceNeeded = floorDef.GetTerrainAffordanceNeed(stuff);
+                if (affordanceNeeded != null &&
+                    affordanceNeeded != TerrainAffordanceDefOf.Light)
                 {
-                    arrayToAdd.Add("RSID_MaxAffordance".Translate("RSID_Undefined".Translate()));
+                    arrayToAdd.Add("RSID_AffordanceRequirement".Translate(affordanceNeeded.LabelCap));
                 }
             }
 
@@ -111,7 +115,7 @@ public class RelevantStatsInDescription
                     }
                     else
                     {
-                        arrayToAdd.Add("RSID_WorkExact".Translate(workToBuild));
+                        arrayToAdd.Add("RSID_WorkExact".Translate(Math.Ceiling(workToBuild / 60)));
                     }
                 }
             }
@@ -345,17 +349,20 @@ public class RelevantStatsInDescription
         }
 
         // Affordance requirement
-        if (RelevantStatsInDescriptionMod.instance.RelevantStatsInDescriptionSettings.ShowAffordanceRequirement &&
-            buildableThing.terrainAffordanceNeeded != null &&
-            buildableThing.terrainAffordanceNeeded != TerrainAffordanceDefOf.Light)
+        if (RelevantStatsInDescriptionMod.instance.RelevantStatsInDescriptionSettings.ShowAffordanceRequirement)
         {
-            arrayToAdd.Add("RSID_AffordanceRequirement".Translate(buildableThing.terrainAffordanceNeeded.LabelCap));
+            var affordanceNeeded = buildableThing.GetTerrainAffordanceNeed(stuff);
+            if (affordanceNeeded != null &&
+                affordanceNeeded != TerrainAffordanceDefOf.Light)
+            {
+                arrayToAdd.Add("RSID_AffordanceRequirement".Translate(affordanceNeeded.LabelCap));
+            }
         }
 
         // Work to build
         if (RelevantStatsInDescriptionMod.instance.RelevantStatsInDescriptionSettings.ShowWorkToBuild)
         {
-            var workToBuild = thing.GetStatValue(StatDefOf.WorkToBuild);
+            var workToBuild = buildableThing.GetStatValueAbstract(StatDefOf.WorkToBuild, stuff);
             if (workToBuild != 0)
             {
                 if (RelevantStatsInDescriptionMod.instance.RelevantStatsInDescriptionSettings.RelativeWork)
@@ -375,7 +382,8 @@ public class RelevantStatsInDescription
                 }
                 else
                 {
-                    arrayToAdd.Add("RSID_WorkExact".Translate(workToBuild));
+                    arrayToAdd.Add(
+                        "RSID_WorkExact".Translate(Math.Ceiling(workToBuild / 60)));
                 }
             }
         }
