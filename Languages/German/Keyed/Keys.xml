@@ -1,0 +1,66 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <!-- Info -->
+  <RSID_Undefined>Unbestimmt</RSID_Undefined>
+  <RSID_Small>Klein</RSID_Small>
+  <RSID_Medium>Mittel</RSID_Medium>
+  <RSID_Large>Groß</RSID_Large>
+  <RSID_MaxHP>Max. Trefferpunkte: {0}</RSID_MaxHP>
+  <RSID_MaxAffordance>Affordance: {0}</RSID_MaxAffordance>
+  <RSID_Cover>Deckung: {0}</RSID_Cover>
+  <RSID_Beauty>Schönheit: {0}</RSID_Beauty>
+  <RSID_Cleanliness>Sauberkeit: {0}</RSID_Cleanliness>
+  <RSID_Joy>Freude Gewinnfaktor: {0}</RSID_Joy>
+  <RSID_Comfort>Komfort: {0}</RSID_Comfort>
+  <RSID_BedRestEffectiveness>Bettruhe: {0}</RSID_BedRestEffectiveness>
+  <RSID_ImmunityGainSpeedFactor>Geschwindigkeit für Immunität: {0}</RSID_ImmunityGainSpeedFactor>
+  <RSID_SurgerySuccessChanceFactor>Erfolgschance für Operation: {0}</RSID_SurgerySuccessChanceFactor>
+  <RSID_MedicalTendQuality>Zelt Qualität: {0}</RSID_MedicalTendQuality>
+  <RSID_PowerUser>Stromverbrauch: {0}W</RSID_PowerUser>
+  <RSID_PowerProducer>Max. Stromerzeugung: {0}W</RSID_PowerProducer>
+  <RSID_ChemfuelUser>Verbrauch Chemietreibstoffe: {0}/d</RSID_ChemfuelUser>
+  <RSID_GasUser>Gasverbrauch: {0} m3/d</RSID_GasUser>
+  <RSID_GasProducer>Max. Gaserzeugung: {0} m3/d</RSID_GasProducer>
+  <RSID_AffordanceRequirement>Affordance: {0}</RSID_AffordanceRequirement>
+  <RSID_DPM>Schaden/min: {0}</RSID_DPM>
+  <RSID_WorkExact>Arbeit zum Aufbau: {0}</RSID_WorkExact>
+  <RSID_WorkRelative>Arbeitsauslatung: {0}</RSID_WorkRelative>
+  <!-- Settings -->
+  <RSID_ShowHP.Label>Max. HP anzeigen</RSID_ShowHP.Label>
+  <RSID_ShowHP.Tooltip>Zeigt die maximalen Trefferpunkte für Strukturen wie Mauern, Zäune, Türen und Sandsäcke an.</RSID_ShowHP.Tooltip>
+  <RSID_ShowAffordance.Label>Show affordance given</RSID_ShowAffordance.Label>
+  <RSID_ShowAffordance.Tooltip>Shows the maximum highest terrain affordance given by floors and bridges</RSID_ShowAffordance.Tooltip>
+  <RSID_ShowAffordanceRequirement.Label>Show affordance needed</RSID_ShowAffordanceRequirement.Label>
+  <RSID_ShowAffordanceRequirement.Tooltip>Shows the minimum terrain affordance needed by buildings</RSID_ShowAffordanceRequirement.Tooltip>
+  <RSID_ShowCover.Label>Deckung anzeigen</RSID_ShowCover.Label>
+  <RSID_ShowCover.Tooltip>Zeigt den Deckungsgrad durch Strukturen wie Zäune und Sandsäcke</RSID_ShowCover.Tooltip>
+  <RSID_ShowBeauty.Label>Schönheit anzeigen</RSID_ShowBeauty.Label>
+  <RSID_ShowBeauty.Tooltip>Zeigt die Schönheit, die ein Gebäude ausstrahlt, sowohl positive als auch negative Werte werden angezeigt.</RSID_ShowBeauty.Tooltip>
+  <RSID_ShowCleanliness.Label>Sauberkeit anzeigen</RSID_ShowCleanliness.Label>
+  <RSID_ShowCleanliness.Tooltip>Zeigt die gegebene Sauberkeit an, falls definiert</RSID_ShowCleanliness.Tooltip>
+  <RSID_ShowJoy.Label>Freudengewinnfaktor anzeigen</RSID_ShowJoy.Label>
+  <RSID_ShowJoy.Tooltip>Zeigt einen beliebig definierten Freudenfaktor eines Gebäudes</RSID_ShowJoy.Tooltip>
+  <RSID_ShowComfort.Label>Komfort anzeigen</RSID_ShowComfort.Label>
+  <RSID_ShowComfort.Tooltip>Zeigt jeglichen Komfort, den ein Gebäude bietet</RSID_ShowComfort.Tooltip>
+  <RSID_ShowBedRest.Label>Effektivität der Bettruhe anzeigen</RSID_ShowBedRest.Label>
+  <RSID_ShowBedRest.Tooltip>Zeigt die Effektivität der Bettruhe für jedes Bett an</RSID_ShowBedRest.Tooltip>
+  <RSID_ShowImmunityGainSpeed.Label>Zeige Geschwindigkeit zur Immunität</RSID_ShowImmunityGainSpeed.Label>
+  <RSID_ShowImmunityGainSpeed.Tooltip>Zeigt die Geschwindigkeit des Immunitätsgewinns für jedes Bett an, das standardmäßig als Krankenhausbett definiert ist, falls definiert</RSID_ShowImmunityGainSpeed.Tooltip>
+  <RSID_ShowSurgerySuccessChance.Label>Erfolgschancen der Operation anzeigen</RSID_ShowSurgerySuccessChance.Label>
+  <RSID_ShowSurgerySuccessChance.Tooltip>Zeigt die Erfolgschance einer Operation für jedes Bett an, das standardmäßig als Krankenhausbett definiert ist, falls definiert</RSID_ShowSurgerySuccessChance.Tooltip>
+  <RSID_ShowMedicalTendQuality.Label>Medizinische Qualität anzeigen</RSID_ShowMedicalTendQuality.Label>
+  <RSID_ShowMedicalTendQuality.Tooltip>Zeigt die medizinische Behandlungsqualität für jedes Bett an, das standardmäßig als Krankenhausbett definiert ist, sofern dies der Fall ist.</RSID_ShowMedicalTendQuality.Tooltip>
+  <RSID_ShowPowerConsumer.Label>Stromverbrauch anzeigen</RSID_ShowPowerConsumer.Label>
+  <RSID_ShowPowerConsumer.Tooltip>Zeigt den maximalen Stromverbrauch eines jeden Gebäudes an, das Strom verbraucht</RSID_ShowPowerConsumer.Tooltip>
+  <RSID_ShowPowerProducer.Label>Stromerzeugung anzeigen</RSID_ShowPowerProducer.Label>
+  <RSID_ShowPowerProducer.Tooltip>Zeigt die maximale Stromproduktion eines jeden Gebäudes an, das Strom produziert</RSID_ShowPowerProducer.Tooltip>
+  <RSID_ShowVFEGas.Label>    Gaserzeugung/-verbrauch</RSID_ShowVFEGas.Label>
+  <RSID_ShowVFEGas.Tooltip>Zeigt die Produktion/den Verbrauch von Gas der Gebäude in Vanilla Furniture Expanded - Power. Hängt von den obigen Energie-Einstellungen ab</RSID_ShowVFEGas.Tooltip>
+  <RSID_ShowRimefeller.Label>    Chemtreibstoff verbrauch</RSID_ShowRimefeller.Label>
+  <RSID_ShowRimefeller.Tooltip>Zeigt die Verwendung von Chemietreibstoff für Triebwerke in Rimefeller. Abhängig von den obigen Energie-Einstellungen</RSID_ShowRimefeller.Tooltip>
+  <RSID_ShowWorkToBuild.Label>Arbeitsauslatung</RSID_ShowWorkToBuild.Label>
+  <RSID_ShowWorkToBuild.Tooltip>Zeigt den Arbeitsaufwand für die Fertigstellung des Gebäudes</RSID_ShowWorkToBuild.Tooltip>
+  <RSID_RelativeWork.Label>    Relativen Arbeitsaufwand anzeigen</RSID_RelativeWork.Label>
+  <RSID_RelativeWork.Tooltip>Zeigt den Arbeitsaufwand als klein/mittel/groß an, um einen besseren Überblick über den Arbeitsaufwand zu erhalten.</RSID_RelativeWork.Tooltip>
+  <RSID_CurrentVersion.Label>Installierte Mod-Version: {0}</RSID_CurrentVersion.Label>
+</LanguageData>
