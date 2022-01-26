@@ -338,13 +338,24 @@ public class RelevantStatsInDescription
         }
 
         // Joy
-        if (RelevantStatsInDescriptionMod.instance.RelevantStatsInDescriptionSettings.ShowJoy &&
-            buildableThing.StatBaseDefined(StatDefOf.JoyGainFactor))
+        if (buildableThing.StatBaseDefined(StatDefOf.JoyGainFactor))
         {
-            var joy = thing.GetStatValue(StatDefOf.JoyGainFactor);
-            if (joy != 0)
+            if (RelevantStatsInDescriptionMod.instance.RelevantStatsInDescriptionSettings.ShowJoy)
             {
-                arrayToAdd.Add("RSID_Joy".Translate(joy.ToStringPercent()));
+                var joy = thing.GetStatValue(StatDefOf.JoyGainFactor);
+                if (joy != 0)
+                {
+                    arrayToAdd.Add("RSID_Joy".Translate(joy.ToStringPercent()));
+                }
+            }
+
+            if (RelevantStatsInDescriptionMod.instance.RelevantStatsInDescriptionSettings.ShowJoyKind)
+            {
+                var joyKind = buildableThing.building?.joyKind;
+                if (joyKind != null)
+                {
+                    arrayToAdd.Add("RSID_JoyKind".Translate(joyKind.LabelCap));
+                }
             }
         }
 

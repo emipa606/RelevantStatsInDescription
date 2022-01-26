@@ -11,6 +11,7 @@
   <RSID_Beauty>Beauty: {0}</RSID_Beauty>
   <RSID_Cleanliness>Cleanliness: {0}</RSID_Cleanliness>
   <RSID_Joy>Joy gainfactor: {0}</RSID_Joy>
+  <RSID_JoyKind>Joy kind: {0}</RSID_JoyKind>
   <RSID_Comfort>Comfort: {0}</RSID_Comfort>
   <RSID_BedRestEffectiveness>Bedrest: {0}</RSID_BedRestEffectiveness>
   <RSID_ImmunityGainSpeedFactor>Immunity gainspeed: {0}</RSID_ImmunityGainSpeedFactor>
@@ -40,6 +41,8 @@
   <RSID_ShowCleanliness.Tooltip>Shows the cleanliness given if defined</RSID_ShowCleanliness.Tooltip>
   <RSID_ShowJoy.Label>Show joy gain factor</RSID_ShowJoy.Label>
   <RSID_ShowJoy.Tooltip>Shows any defined joy-gain factor of a building</RSID_ShowJoy.Tooltip>
+  <RSID_ShowJoyKind.Label>Show joy kind</RSID_ShowJoyKind.Label>
+  <RSID_ShowJoyKind.Tooltip>Shows the joy-kind for any joy-gain for buildings</RSID_ShowJoyKind.Tooltip>
   <RSID_ShowComfort.Label>Show comfort given</RSID_ShowComfort.Label>
   <RSID_ShowComfort.Tooltip>Shows any comfort given by a building</RSID_ShowComfort.Tooltip>
   <RSID_ShowBedRest.Label>Show bedrest effectivness</RSID_ShowBedRest.Label>

@@ -18,6 +18,7 @@ internal class RelevantStatsInDescriptionSettings : ModSettings
     public bool ShowHP = true;
     public bool ShowImmunityGainSpeed = true;
     public bool ShowJoy = true;
+    public bool ShowJoyKind = true;
     public bool ShowMedicalTendQuality = true;
     public bool ShowPowerConsumer = true;
     public bool ShowPowerProducer = true;
@@ -39,6 +40,7 @@ internal class RelevantStatsInDescriptionSettings : ModSettings
         Scribe_Values.Look(ref ShowBeauty, "ShowBeauty", true);
         Scribe_Values.Look(ref ShowCleanliness, "ShowCleanliness", true);
         Scribe_Values.Look(ref ShowJoy, "ShowJoy", true);
+        Scribe_Values.Look(ref ShowJoyKind, "ShowJoyKind", true);
         Scribe_Values.Look(ref ShowComfort, "ShowComfort", true);
         Scribe_Values.Look(ref ShowBedRest, "ShowBedRest", true);
         Scribe_Values.Look(ref ShowImmunityGainSpeed, "ShowImmunityGainSpeed", true);

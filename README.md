@@ -19,6 +19,8 @@ Supported mods
 
 If you have suggestion of stats that would be usable to show for certain buildings, leave a comment here or on the Discord server linked below.
 
+- German translation added, thanks Dimos!
+
 Idea by: Legion
 	
 ![Image](https://i.imgur.com/O0IIlYj.png)

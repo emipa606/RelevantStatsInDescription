@@ -86,6 +86,9 @@ internal class RelevantStatsInDescriptionMod : Mod
         listing_Standard.CheckboxLabeled("RSID_ShowJoy.Label".Translate(),
             ref RelevantStatsInDescriptionSettings.ShowJoy,
             "RSID_ShowJoy.Tooltip".Translate());
+        listing_Standard.CheckboxLabeled("RSID_ShowJoyKind.Label".Translate(),
+            ref RelevantStatsInDescriptionSettings.ShowJoyKind,
+            "RSID_ShowJoyKind.Tooltip".Translate());
         listing_Standard.CheckboxLabeled("RSID_ShowComfort.Label".Translate(),
             ref RelevantStatsInDescriptionSettings.ShowComfort,
             "RSID_ShowComfort.Tooltip".Translate());
