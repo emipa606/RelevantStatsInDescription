@@ -9,6 +9,7 @@
   <RSID_MaxAffordance>Max affordance: {0}</RSID_MaxAffordance>
   <RSID_Cover>Cover: {0}</RSID_Cover>
   <RSID_Beauty>Beauty: {0}</RSID_Beauty>
+  <RSID_Wealth>Wealth: {0}</RSID_Wealth>
   <RSID_Cleanliness>Cleanliness: {0}</RSID_Cleanliness>
   <RSID_Joy>Joy gainfactor: {0}</RSID_Joy>
   <RSID_JoyKind>Joy kind: {0}</RSID_JoyKind>
@@ -37,6 +38,8 @@
   <RSID_ShowCover.Tooltip>Shows the cover given by structures such as fences and sandbags</RSID_ShowCover.Tooltip>
   <RSID_ShowBeauty.Label>Show beauty given</RSID_ShowBeauty.Label>
   <RSID_ShowBeauty.Tooltip>Shows the beauty given by any building, both positive and negative values are shown</RSID_ShowBeauty.Tooltip>
+  <RSID_ShowWealth.Label>Show wealth given</RSID_ShowWealth.Label>
+  <RSID_ShowWealth.Tooltip>Shows the colony wealth given by any building</RSID_ShowWealth.Tooltip>
   <RSID_ShowCleanliness.Label>Show cleanliness given</RSID_ShowCleanliness.Label>
   <RSID_ShowCleanliness.Tooltip>Shows the cleanliness given if defined</RSID_ShowCleanliness.Tooltip>
   <RSID_ShowJoy.Label>Show joy gain factor</RSID_ShowJoy.Label>

@@ -82,6 +82,16 @@ public class RelevantStatsInDescription
                 }
             }
 
+            // Wealth
+            if (RelevantStatsInDescriptionMod.instance.RelevantStatsInDescriptionSettings.ShowWealth)
+            {
+                var wealth = floorDef.GetStatValueAbstract(StatDefOf.MarketValue);
+                if (wealth != 0)
+                {
+                    arrayToAdd.Add("RSID_Wealth".Translate(wealth));
+                }
+            }
+
             // Cleanliness
             if (RelevantStatsInDescriptionMod.instance.RelevantStatsInDescriptionSettings.ShowCleanliness)
             {
@@ -324,6 +334,16 @@ public class RelevantStatsInDescription
             if (beauty != 0)
             {
                 arrayToAdd.Add("RSID_Beauty".Translate(beauty));
+            }
+        }
+
+        // Wealth
+        if (RelevantStatsInDescriptionMod.instance.RelevantStatsInDescriptionSettings.ShowWealth)
+        {
+            var wealth = thing.GetStatValue(StatDefOf.MarketValueIgnoreHp);
+            if (wealth != 0)
+            {
+                arrayToAdd.Add("RSID_Wealth".Translate(wealth));
             }
         }
 

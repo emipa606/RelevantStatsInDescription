@@ -25,6 +25,7 @@ internal class RelevantStatsInDescriptionSettings : ModSettings
     public bool ShowRimefeller = true;
     public bool ShowSurgerySuccessChance = true;
     public bool ShowVFEGas = true;
+    public bool ShowWealth = true;
     public bool ShowWorkToBuild = true;
 
     /// <summary>
@@ -38,6 +39,7 @@ internal class RelevantStatsInDescriptionSettings : ModSettings
         Scribe_Values.Look(ref ShowAffordanceRequirement, "ShowAffordanceRequirement", true);
         Scribe_Values.Look(ref ShowCover, "ShowCover", true);
         Scribe_Values.Look(ref ShowBeauty, "ShowBeauty", true);
+        Scribe_Values.Look(ref ShowWealth, "ShowWealth", true);
         Scribe_Values.Look(ref ShowCleanliness, "ShowCleanliness", true);
         Scribe_Values.Look(ref ShowJoy, "ShowJoy", true);
         Scribe_Values.Look(ref ShowJoyKind, "ShowJoyKind", true);
