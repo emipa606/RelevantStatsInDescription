@@ -1,5 +1,8 @@
 # Changelog for RelevantStatsInDescription
 
+1.3.4 - Added support for 1.2, made wealth display a bit nicer
+
+
 1.3.3 - Added wealth
 
 

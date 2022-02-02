@@ -88,7 +88,7 @@ public class RelevantStatsInDescription
                 var wealth = floorDef.GetStatValueAbstract(StatDefOf.MarketValue);
                 if (wealth != 0)
                 {
-                    arrayToAdd.Add("RSID_Wealth".Translate(wealth));
+                    arrayToAdd.Add("RSID_Wealth".Translate(wealth.ToString("N1")));
                 }
             }
 
@@ -343,7 +343,7 @@ public class RelevantStatsInDescription
             var wealth = thing.GetStatValue(StatDefOf.MarketValueIgnoreHp);
             if (wealth != 0)
             {
-                arrayToAdd.Add("RSID_Wealth".Translate(wealth));
+                arrayToAdd.Add("RSID_Wealth".Translate(wealth.ToString("N1")));
             }
         }
 
