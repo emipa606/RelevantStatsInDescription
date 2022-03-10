@@ -27,6 +27,7 @@
   <RSID_DPM>Damage/min: {0}</RSID_DPM>
   <RSID_WorkExact>Work to build: {0}</RSID_WorkExact>
   <RSID_WorkRelative>Workamount: {0}</RSID_WorkRelative>
+  <RSID_TechLevel>Tech level: {0}</RSID_TechLevel>
   <!-- Settings -->
   <RSID_ShowHP.Label>Show max HP</RSID_ShowHP.Label>
   <RSID_ShowHP.Tooltip>Shows the maximum hitpoints for structures such as walls, fences, doors and sandbags</RSID_ShowHP.Tooltip>
@@ -42,6 +43,8 @@
   <RSID_ShowWealth.Tooltip>Shows the colony wealth given by any building</RSID_ShowWealth.Tooltip>
   <RSID_ShowCleanliness.Label>Show cleanliness given</RSID_ShowCleanliness.Label>
   <RSID_ShowCleanliness.Tooltip>Shows the cleanliness given if defined</RSID_ShowCleanliness.Tooltip>
+  <RSID_ShowTechLevel.Label>Show tech level</RSID_ShowTechLevel.Label>
+  <RSID_ShowTechLevel.Tooltip>Shows the tech level of the building if any</RSID_ShowTechLevel.Tooltip>
   <RSID_ShowJoy.Label>Show joy gain factor</RSID_ShowJoy.Label>
   <RSID_ShowJoy.Tooltip>Shows any defined joy-gain factor of a building</RSID_ShowJoy.Tooltip>
   <RSID_ShowJoyKind.Label>Show joy kind</RSID_ShowJoyKind.Label>

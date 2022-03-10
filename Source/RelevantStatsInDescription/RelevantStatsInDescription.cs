@@ -102,6 +102,27 @@ public class RelevantStatsInDescription
                 }
             }
 
+            // TechLevel
+            if (RelevantStatsInDescriptionMod.instance.RelevantStatsInDescriptionSettings.ShowTechLevel)
+            {
+                if (floorDef.researchPrerequisites?.Any() == true)
+                {
+                    var techLevel = (int)TechLevel.Undefined;
+                    foreach (var researchProjectDef in floorDef.researchPrerequisites)
+                    {
+                        if ((int)researchProjectDef.techLevel > techLevel)
+                        {
+                            techLevel = (int)researchProjectDef.techLevel;
+                        }
+                    }
+
+                    if (techLevel > 0)
+                    {
+                        arrayToAdd.Add("RSID_TechLevel".Translate(((TechLevel)techLevel).ToString()));
+                    }
+                }
+            }
+
             // Work to build
             if (RelevantStatsInDescriptionMod.instance.RelevantStatsInDescriptionSettings.ShowWorkToBuild)
             {
@@ -354,6 +375,27 @@ public class RelevantStatsInDescription
             if (cleanliness != 0)
             {
                 arrayToAdd.Add("RSID_Cleanliness".Translate(cleanliness.ToString("N1")));
+            }
+        }
+
+        // TechLevel
+        if (RelevantStatsInDescriptionMod.instance.RelevantStatsInDescriptionSettings.ShowTechLevel)
+        {
+            if (buildableThing.researchPrerequisites?.Any() == true)
+            {
+                var techLevel = (int)TechLevel.Undefined;
+                foreach (var researchProjectDef in buildableThing.researchPrerequisites)
+                {
+                    if ((int)researchProjectDef.techLevel > techLevel)
+                    {
+                        techLevel = (int)researchProjectDef.techLevel;
+                    }
+                }
+
+                if (techLevel > 0)
+                {
+                    arrayToAdd.Add("RSID_TechLevel".Translate(((TechLevel)techLevel).ToString()));
+                }
             }
         }
 

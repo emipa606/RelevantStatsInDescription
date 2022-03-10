@@ -86,6 +86,9 @@ internal class RelevantStatsInDescriptionMod : Mod
         listing_Standard.CheckboxLabeled("RSID_ShowCleanliness.Label".Translate(),
             ref RelevantStatsInDescriptionSettings.ShowCleanliness,
             "RSID_ShowCleanliness.Tooltip".Translate());
+        listing_Standard.CheckboxLabeled("RSID_ShowTechLevel.Label".Translate(),
+            ref RelevantStatsInDescriptionSettings.ShowTechLevel,
+            "RSID_ShowTechLevel.Tooltip".Translate());
         listing_Standard.CheckboxLabeled("RSID_ShowJoy.Label".Translate(),
             ref RelevantStatsInDescriptionSettings.ShowJoy,
             "RSID_ShowJoy.Tooltip".Translate());
