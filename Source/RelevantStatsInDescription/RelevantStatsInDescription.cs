@@ -223,7 +223,7 @@ public class RelevantStatsInDescription
                         thing.GetStatValue(StatDefOf.BedRestEffectiveness).ToStringPercent()));
             }
 
-            if (buildableThing.building.bed_defaultMedical)
+            if (buildableThing.building.bed_defaultMedical || !buildableThing.building.bed_humanlike)
             {
                 if (RelevantStatsInDescriptionMod.instance.RelevantStatsInDescriptionSettings.ShowMedicalTendQuality &&
                     buildableThing.StatBaseDefined(StatDefOf.MedicalTendQuality))
@@ -355,6 +355,17 @@ public class RelevantStatsInDescription
             if (beauty != 0)
             {
                 arrayToAdd.Add("RSID_Beauty".Translate(beauty));
+            }
+        }
+
+        // Mass
+        if (RelevantStatsInDescriptionMod.instance.RelevantStatsInDescriptionSettings.ShowMass &&
+            buildableThing.Minifiable)
+        {
+            var mass = thing.GetStatValue(StatDefOf.Mass);
+            if (mass != 0)
+            {
+                arrayToAdd.Add("RSID_Mass".Translate(mass.ToStringMass()));
             }
         }
 

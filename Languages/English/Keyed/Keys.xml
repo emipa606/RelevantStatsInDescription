@@ -9,6 +9,7 @@
   <RSID_MaxAffordance>Max affordance: {0}</RSID_MaxAffordance>
   <RSID_Cover>Cover: {0}</RSID_Cover>
   <RSID_Beauty>Beauty: {0}</RSID_Beauty>
+  <RSID_Mass>Mass: {0}</RSID_Mass>
   <RSID_Wealth>Wealth: {0}</RSID_Wealth>
   <RSID_Cleanliness>Cleanliness: {0}</RSID_Cleanliness>
   <RSID_Joy>Joy gainfactor: {0}</RSID_Joy>
@@ -39,6 +40,8 @@
   <RSID_ShowCover.Tooltip>Shows the cover given by structures such as fences and sandbags</RSID_ShowCover.Tooltip>
   <RSID_ShowBeauty.Label>Show beauty given</RSID_ShowBeauty.Label>
   <RSID_ShowBeauty.Tooltip>Shows the beauty given by any building, both positive and negative values are shown</RSID_ShowBeauty.Tooltip>
+  <RSID_ShowMass.Label>Show mass</RSID_ShowMass.Label>
+  <RSID_ShowMass.Tooltip>Shows the mass of any building that is minifiable</RSID_ShowMass.Tooltip>
   <RSID_ShowWealth.Label>Show wealth given</RSID_ShowWealth.Label>
   <RSID_ShowWealth.Tooltip>Shows the colony wealth given by any building</RSID_ShowWealth.Tooltip>
   <RSID_ShowCleanliness.Label>Show cleanliness given</RSID_ShowCleanliness.Label>
@@ -54,11 +57,11 @@
   <RSID_ShowBedRest.Label>Show bedrest effectivness</RSID_ShowBedRest.Label>
   <RSID_ShowBedRest.Tooltip>Shows the bedrest effectivness for any bed</RSID_ShowBedRest.Tooltip>
   <RSID_ShowImmunityGainSpeed.Label>Show immunity gain speed</RSID_ShowImmunityGainSpeed.Label>
-  <RSID_ShowImmunityGainSpeed.Tooltip>Shows the immunity gain speed for any bed that defaults as a hospital bed, if defined</RSID_ShowImmunityGainSpeed.Tooltip>
+  <RSID_ShowImmunityGainSpeed.Tooltip>Shows the immunity gain speed for any bed that defaults as a hospital bed, if defined, or animal bed</RSID_ShowImmunityGainSpeed.Tooltip>
   <RSID_ShowSurgerySuccessChance.Label>Show surgery success chance</RSID_ShowSurgerySuccessChance.Label>
-  <RSID_ShowSurgerySuccessChance.Tooltip>Shows the surgery success chance for any bed that defaults as a hospital bed, if defined</RSID_ShowSurgerySuccessChance.Tooltip>
+  <RSID_ShowSurgerySuccessChance.Tooltip>Shows the surgery success chance for any bed that defaults as a hospital bed, if defined, or animal bed</RSID_ShowSurgerySuccessChance.Tooltip>
   <RSID_ShowMedicalTendQuality.Label>Show medical tend quality</RSID_ShowMedicalTendQuality.Label>
-  <RSID_ShowMedicalTendQuality.Tooltip>Shows the medical tend quality for any bed that defaults as a hospital bed, if defined</RSID_ShowMedicalTendQuality.Tooltip>
+  <RSID_ShowMedicalTendQuality.Tooltip>Shows the medical tend quality for any bed that defaults as a hospital bed, if defined, or animal bed</RSID_ShowMedicalTendQuality.Tooltip>
   <RSID_ShowPowerConsumer.Label>Show power consumption</RSID_ShowPowerConsumer.Label>
   <RSID_ShowPowerConsumer.Tooltip>Will show the maximum power-consumption of any building that consumes power</RSID_ShowPowerConsumer.Tooltip>
   <RSID_ShowPowerProducer.Label>Show power production</RSID_ShowPowerProducer.Label>

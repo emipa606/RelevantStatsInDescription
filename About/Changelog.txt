@@ -1,5 +1,8 @@
 # Changelog for RelevantStatsInDescription
 
+1.3.6 - Added medical stats for animal-beds and mass-stats for any minifiable building
+
+
 1.3.5 - Added showing of tech-level
 
 
