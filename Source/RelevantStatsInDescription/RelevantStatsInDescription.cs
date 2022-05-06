@@ -362,7 +362,10 @@ public class RelevantStatsInDescription
         if (RelevantStatsInDescriptionMod.instance.RelevantStatsInDescriptionSettings.ShowMass &&
             buildableThing.Minifiable)
         {
-            var mass = thing.GetStatValue(StatDefOf.Mass);
+            var mass = buildableThing.comps?.Any(properties => properties.compClass.Name == "CompWaterStorage") == true
+                ? buildableThing.GetStatValueAbstract(StatDefOf.Mass)
+                : thing.GetStatValue(StatDefOf.Mass);
+
             if (mass != 0)
             {
                 arrayToAdd.Add("RSID_Mass".Translate(mass.ToStringMass()));
