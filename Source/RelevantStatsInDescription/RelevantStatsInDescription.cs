@@ -199,6 +199,14 @@ public class RelevantStatsInDescription
                 arrayToAdd.Add("RSID_Cover".Translate(buildableThing.fillPercent.ToStringPercent()));
             }
         }
+        else
+        {
+            if (RelevantStatsInDescriptionMod.instance.RelevantStatsInDescriptionSettings.ShowHPForAll &&
+                buildableThing.MadeFromStuff)
+            {
+                arrayToAdd.Add("RSID_MaxHP".Translate(thing.MaxHitPoints));
+            }
+        }
 
         // Comfort
         if (RelevantStatsInDescriptionMod.instance.RelevantStatsInDescriptionSettings.ShowComfort)

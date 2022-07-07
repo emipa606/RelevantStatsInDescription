@@ -30,8 +30,10 @@
   <RSID_WorkRelative>Workamount: {0}</RSID_WorkRelative>
   <RSID_TechLevel>Tech level: {0}</RSID_TechLevel>
   <!-- Settings -->
-  <RSID_ShowHP.Label>Show max HP</RSID_ShowHP.Label>
+  <RSID_ShowHP.Label>Show max HP for linkable structures and doors</RSID_ShowHP.Label>
   <RSID_ShowHP.Tooltip>Shows the maximum hitpoints for structures such as walls, fences, doors and sandbags</RSID_ShowHP.Tooltip>
+  <RSID_ShowHPForAll.Label>    Show for all stuffable</RSID_ShowHPForAll.Label>
+  <RSID_ShowHPForAll.Tooltip>Shows maximum hitpoints for all stuffable buildings</RSID_ShowHPForAll.Tooltip>
   <RSID_ShowAffordance.Label>Show affordance given</RSID_ShowAffordance.Label>
   <RSID_ShowAffordance.Tooltip>Shows the maximum highest terrain affordance given by floors and bridges</RSID_ShowAffordance.Tooltip>
   <RSID_ShowAffordanceRequirement.Label>Show affordance needed</RSID_ShowAffordanceRequirement.Label>

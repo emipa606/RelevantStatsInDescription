@@ -1,5 +1,8 @@
 # Changelog for RelevantStatsInDescription
 
+1.3.8 - Added setting to show max hp for all stuffable structures, not just linkable and doors.
+
+
 1.3.7 - Fix for dubs water-storages that has a dynamic mass based on the amount of water inside
 
 

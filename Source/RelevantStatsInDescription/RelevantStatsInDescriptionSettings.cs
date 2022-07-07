@@ -16,6 +16,7 @@ internal class RelevantStatsInDescriptionSettings : ModSettings
     public bool ShowComfort = true;
     public bool ShowCover = true;
     public bool ShowHP = true;
+    public bool ShowHPForAll;
     public bool ShowImmunityGainSpeed = true;
     public bool ShowJoy = true;
     public bool ShowJoyKind = true;
@@ -37,6 +38,7 @@ internal class RelevantStatsInDescriptionSettings : ModSettings
     {
         base.ExposeData();
         Scribe_Values.Look(ref ShowHP, "ShowHP", true);
+        Scribe_Values.Look(ref ShowHPForAll, "ShowHPForAll");
         Scribe_Values.Look(ref ShowAffordance, "ShowAffordance", true);
         Scribe_Values.Look(ref ShowAffordanceRequirement, "ShowAffordanceRequirement", true);
         Scribe_Values.Look(ref ShowCover, "ShowCover", true);

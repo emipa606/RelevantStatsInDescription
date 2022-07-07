@@ -69,6 +69,17 @@ internal class RelevantStatsInDescriptionMod : Mod
         listing_Standard.Gap();
         listing_Standard.CheckboxLabeled("RSID_ShowHP.Label".Translate(), ref RelevantStatsInDescriptionSettings.ShowHP,
             "RSID_ShowHP.Tooltip".Translate());
+        if (RelevantStatsInDescriptionSettings.ShowHP)
+        {
+            listing_Standard.CheckboxLabeled("RSID_ShowHPForAll.Label".Translate(),
+                ref RelevantStatsInDescriptionSettings.ShowHPForAll,
+                "RSID_ShowHPForAll.Tooltip".Translate());
+        }
+        else
+        {
+            RelevantStatsInDescriptionSettings.ShowHPForAll = false;
+        }
+
         listing_Standard.CheckboxLabeled("RSID_ShowAffordance.Label".Translate(),
             ref RelevantStatsInDescriptionSettings.ShowAffordance, "RSID_ShowAffordance.Tooltip".Translate());
         listing_Standard.CheckboxLabeled("RSID_ShowAffordanceRequirement.Label".Translate(),
