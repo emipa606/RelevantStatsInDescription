@@ -25,6 +25,7 @@ internal class RelevantStatsInDescriptionSettings : ModSettings
     public bool ShowPowerConsumer = true;
     public bool ShowPowerProducer = true;
     public bool ShowRimefeller = true;
+    public bool ShowStorageSpace = true;
     public bool ShowSurgerySuccessChance = true;
     public bool ShowTechLevel;
     public bool ShowVFEGas = true;
@@ -60,5 +61,6 @@ internal class RelevantStatsInDescriptionSettings : ModSettings
         Scribe_Values.Look(ref ShowWorkToBuild, "ShowWorkToBuild", true);
         Scribe_Values.Look(ref RelativeWork, "RelativeWork");
         Scribe_Values.Look(ref ShowTechLevel, "ShowTechLevel");
+        Scribe_Values.Look(ref ShowStorageSpace, "ShowStorageSpace", true);
     }
 }

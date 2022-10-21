@@ -29,6 +29,7 @@
   <RSID_WorkExact>Work to build: {0}</RSID_WorkExact>
   <RSID_WorkRelative>Workamount: {0}</RSID_WorkRelative>
   <RSID_TechLevel>Tech level: {0}</RSID_TechLevel>
+  <RSID_StorageSpace>Max stacks stored: {0}</RSID_StorageSpace>
   <!-- Settings -->
   <RSID_ShowHP.Label>Show max HP for linkable structures and doors</RSID_ShowHP.Label>
   <RSID_ShowHP.Tooltip>Shows the maximum hitpoints for structures such as walls, fences, doors and sandbags</RSID_ShowHP.Tooltip>
@@ -58,6 +59,8 @@
   <RSID_ShowComfort.Tooltip>Shows any comfort given by a building</RSID_ShowComfort.Tooltip>
   <RSID_ShowBedRest.Label>Show bedrest effectivness</RSID_ShowBedRest.Label>
   <RSID_ShowBedRest.Tooltip>Shows the bedrest effectivness for any bed</RSID_ShowBedRest.Tooltip>
+  <RSID_ShowStorageSpace.Label>Show max storage space</RSID_ShowStorageSpace.Label>
+  <RSID_ShowStorageSpace.Tooltip>Shows the amount of possible stacks to store</RSID_ShowStorageSpace.Tooltip>
   <RSID_ShowImmunityGainSpeed.Label>Show immunity gain speed</RSID_ShowImmunityGainSpeed.Label>
   <RSID_ShowImmunityGainSpeed.Tooltip>Shows the immunity gain speed for any bed that defaults as a hospital bed, if defined, or animal bed</RSID_ShowImmunityGainSpeed.Tooltip>
   <RSID_ShowSurgerySuccessChance.Label>Show surgery success chance</RSID_ShowSurgerySuccessChance.Label>

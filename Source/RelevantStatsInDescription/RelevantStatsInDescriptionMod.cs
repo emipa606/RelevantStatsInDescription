@@ -130,6 +130,9 @@ internal class RelevantStatsInDescriptionMod : Mod
         listing_Standard.CheckboxLabeled("RSID_ShowPowerProducer.Label".Translate(),
             ref RelevantStatsInDescriptionSettings.ShowPowerProducer,
             "RSID_ShowPowerProducer.Tooltip".Translate());
+        listing_Standard.CheckboxLabeled("RSID_ShowStorageSpace.Label".Translate(),
+            ref RelevantStatsInDescriptionSettings.ShowStorageSpace,
+            "RSID_ShowStorageSpace.Tooltip".Translate());
         if (RelevantStatsInDescription.VFEPowerLoaded && (RelevantStatsInDescriptionSettings.ShowPowerConsumer ||
                                                           RelevantStatsInDescriptionSettings.ShowPowerProducer))
         {

@@ -1,5 +1,9 @@
 # Changelog for RelevantStatsInDescription
 
+1.4.1 - Mod updated for 1.4 and passed autotests.
+Used DeepL to update translations for ChineseSimplified, French, German, Russian
+
+
 1.3.8 - Added setting to show max hp for all stuffable structures, not just linkable and doors.
 
 

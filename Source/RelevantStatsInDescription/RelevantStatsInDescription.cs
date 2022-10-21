@@ -14,11 +14,13 @@ public class RelevantStatsInDescription
 
     public static readonly bool VFEPowerLoaded;
     public static readonly bool RimefellerLoaded;
+    public static readonly bool LWMLoaded;
 
     static RelevantStatsInDescription()
     {
         VFEPowerLoaded = ModLister.GetActiveModWithIdentifier("VanillaExpanded.VFEPower") != null;
         RimefellerLoaded = ModLister.GetActiveModWithIdentifier("Dubwise.Rimefeller") != null;
+        LWMLoaded = ModLister.GetActiveModWithIdentifier("LWM.DeepStorage") != null;
         cachedDescriptions = new Dictionary<string, string>();
         var harmony = new Harmony("Mlie.RelevantStatsInDescription");
         harmony.PatchAll(Assembly.GetExecutingAssembly());
@@ -283,7 +285,7 @@ public class RelevantStatsInDescription
         //}
 
         // Poweruse
-        var consumption = buildableThing.GetCompProperties<CompProperties_Power>()?.basePowerConsumption;
+        var consumption = buildableThing.GetCompProperties<CompProperties_Power>()?.PowerConsumption;
         if (consumption != null)
         {
             if (RelevantStatsInDescriptionMod.instance.RelevantStatsInDescriptionSettings.ShowPowerConsumer &&
@@ -440,6 +442,17 @@ public class RelevantStatsInDescription
                 {
                     arrayToAdd.Add("RSID_JoyKind".Translate(joyKind.LabelCap));
                 }
+            }
+        }
+
+        // Storage
+        if (RelevantStatsInDescriptionMod.instance.RelevantStatsInDescriptionSettings.ShowStorageSpace)
+        {
+            if (buildableThing.building.fixedStorageSettings != null)
+            {
+                var maxItems = buildableThing.building.maxItemsInCell;
+                var cells = buildableThing.size.x * buildableThing.size.z;
+                arrayToAdd.Add("RSID_StorageSpace".Translate(maxItems * cells));
             }
         }
 
