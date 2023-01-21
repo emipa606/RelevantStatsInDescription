@@ -80,4 +80,7 @@
   <RSID_RelativeWork.Label>显示相对工程量</RSID_RelativeWork.Label>
   <RSID_RelativeWork.Tooltip>将显示工作量为小/中/大，以获得更多关于工作量的总体概念。</RSID_RelativeWork.Tooltip>
   <RSID_CurrentVersion.Label>已安装的mod-version。{0}</RSID_CurrentVersion.Label>
+  <RSID_Size>大小：{0}</RSID_Size>
+  <RSID_ShowSize.Label>显示尺寸</RSID_ShowSize.Label>
+  <RSID_ShowSize.Tooltip>显示建筑物放置时的尺寸</RSID_ShowSize.Tooltip>
 </LanguageData>

@@ -97,6 +97,9 @@ internal class RelevantStatsInDescriptionMod : Mod
         listing_Standard.CheckboxLabeled("RSID_ShowMass.Label".Translate(),
             ref RelevantStatsInDescriptionSettings.ShowMass,
             "RSID_ShowMass.Tooltip".Translate());
+        listing_Standard.CheckboxLabeled("RSID_ShowSize.Label".Translate(),
+            ref RelevantStatsInDescriptionSettings.ShowSize,
+            "RSID_ShowSize.Tooltip".Translate());
         listing_Standard.CheckboxLabeled("RSID_ShowCleanliness.Label".Translate(),
             ref RelevantStatsInDescriptionSettings.ShowCleanliness,
             "RSID_ShowCleanliness.Tooltip".Translate());

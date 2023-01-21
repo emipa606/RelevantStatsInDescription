@@ -90,7 +90,7 @@ public class RelevantStatsInDescription
                 var wealth = floorDef.GetStatValueAbstract(StatDefOf.MarketValue);
                 if (wealth != 0)
                 {
-                    arrayToAdd.Add("RSID_Wealth".Translate(wealth.ToString("N1")));
+                    arrayToAdd.Add("RSID_Wealth".Translate(wealth.ToStringMoney()));
                 }
             }
 
@@ -260,30 +260,6 @@ public class RelevantStatsInDescription
             }
         }
 
-        //// Turrets
-        //if (buildableThing.building?.turretGunDef != null)
-        //{
-        //    var turretGunDef = buildableThing.building.turretGunDef;
-        //    var verb = turretGunDef.Verbs?.First();
-        //    if (verb != null)
-        //    {
-        //        var damage = verb.defaultProjectile?.projectile?.GetDamageAmount(turretGunDef, stuff);
-        //        if (damage > 0)
-        //        {
-        //            var cooldownTime = buildableThing.building.turretBurstCooldownTime +
-        //                               buildableThing.building.turretBurstWarmupTime;
-        //            if (verb.burstShotCount > 1)
-        //            {
-        //                cooldownTime += verb.burstShotCount * verb.ticksBetweenBurstShots;
-        //                damage *= verb.burstShotCount;
-        //            }
-
-        //            var dpm = damage / cooldownTime * 42;
-        //            arrayToAdd.Add("RSID_DPM".Translate(dpm.ToString()));
-        //        }
-        //    }
-        //}
-
         // Poweruse
         var consumption = buildableThing.GetCompProperties<CompProperties_Power>()?.PowerConsumption;
         if (consumption != null)
@@ -382,13 +358,19 @@ public class RelevantStatsInDescription
             }
         }
 
+        // Size
+        if (RelevantStatsInDescriptionMod.instance.RelevantStatsInDescriptionSettings.ShowSize)
+        {
+            arrayToAdd.Add("RSID_Size".Translate(def.Size.ToStringCross()));
+        }
+
         // Wealth
         if (RelevantStatsInDescriptionMod.instance.RelevantStatsInDescriptionSettings.ShowWealth)
         {
             var wealth = thing.GetStatValue(StatDefOf.MarketValueIgnoreHp);
             if (wealth != 0)
             {
-                arrayToAdd.Add("RSID_Wealth".Translate(wealth.ToString("N1")));
+                arrayToAdd.Add("RSID_Wealth".Translate(wealth.ToStringMoney()));
             }
         }
 

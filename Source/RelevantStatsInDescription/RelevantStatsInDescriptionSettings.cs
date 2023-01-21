@@ -25,6 +25,7 @@ internal class RelevantStatsInDescriptionSettings : ModSettings
     public bool ShowPowerConsumer = true;
     public bool ShowPowerProducer = true;
     public bool ShowRimefeller = true;
+    public bool ShowSize = true;
     public bool ShowStorageSpace = true;
     public bool ShowSurgerySuccessChance = true;
     public bool ShowTechLevel;
@@ -45,6 +46,7 @@ internal class RelevantStatsInDescriptionSettings : ModSettings
         Scribe_Values.Look(ref ShowCover, "ShowCover", true);
         Scribe_Values.Look(ref ShowBeauty, "ShowBeauty", true);
         Scribe_Values.Look(ref ShowMass, "ShowMass", true);
+        Scribe_Values.Look(ref ShowSize, "ShowSize", true);
         Scribe_Values.Look(ref ShowWealth, "ShowWealth", true);
         Scribe_Values.Look(ref ShowCleanliness, "ShowCleanliness", true);
         Scribe_Values.Look(ref ShowJoy, "ShowJoy", true);

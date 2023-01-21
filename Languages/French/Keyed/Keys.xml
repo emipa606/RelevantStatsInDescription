@@ -80,4 +80,7 @@
   <RSID_RelativeWork.Label>Afficher le montant relatif des travaux</RSID_RelativeWork.Label>
   <RSID_RelativeWork.Tooltip>La quantité de travail sera affichée comme petite/moyenne/grande pour avoir une idée plus générale de la quantité de travail.</RSID_RelativeWork.Tooltip>
   <RSID_CurrentVersion.Label>Version installée du module : {0}</RSID_CurrentVersion.Label>
+  <RSID_Size>Taille : {0}</RSID_Size>
+  <RSID_ShowSize.Label>Taille du spectacle</RSID_ShowSize.Label>
+  <RSID_ShowSize.Tooltip>Indique la taille du bâtiment lorsqu'il est placé</RSID_ShowSize.Tooltip>
 </LanguageData>

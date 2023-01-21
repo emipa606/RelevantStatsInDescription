@@ -81,4 +81,7 @@
   <RSID_ShowJoyKind.Tooltip>Zeigt die Freude-Art für jeden Freude-Gewinn für Gebäude</RSID_ShowJoyKind.Tooltip>
   <RSID_ShowStorageSpace.Label>Maximalen Speicherplatz anzeigen</RSID_ShowStorageSpace.Label>
   <RSID_ShowStorageSpace.Tooltip>Zeigt die Anzahl der möglichen zu speichernden Stapel an</RSID_ShowStorageSpace.Tooltip>
+  <RSID_Size>Größe: {0}</RSID_Size>
+  <RSID_ShowSize.Label>Größe anzeigen</RSID_ShowSize.Label>
+  <RSID_ShowSize.Tooltip>Zeigt die Größe des Gebäudes an, wenn es platziert wird</RSID_ShowSize.Tooltip>
 </LanguageData>

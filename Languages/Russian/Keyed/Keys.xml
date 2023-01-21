@@ -80,4 +80,7 @@
   <RSID_RelativeWork.Label>Показать относительный объем работ</RSID_RelativeWork.Label>
   <RSID_RelativeWork.Tooltip>Будет показывать объем работы как малый/средний/большой, чтобы получить более общее представление об объеме работы</RSID_RelativeWork.Tooltip>
   <RSID_CurrentVersion.Label>Установленная версия мода: {0}</RSID_CurrentVersion.Label>
+  <RSID_Size>Размер: {0}</RSID_Size>
+  <RSID_ShowSize.Label>Показать размер</RSID_ShowSize.Label>
+  <RSID_ShowSize.Tooltip>Показывает размер здания при размещении</RSID_ShowSize.Tooltip>
 </LanguageData>

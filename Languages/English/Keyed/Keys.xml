@@ -10,6 +10,7 @@
   <RSID_Cover>Cover: {0}</RSID_Cover>
   <RSID_Beauty>Beauty: {0}</RSID_Beauty>
   <RSID_Mass>Mass: {0}</RSID_Mass>
+  <RSID_Size>Size: {0}</RSID_Size>
   <RSID_Wealth>Wealth: {0}</RSID_Wealth>
   <RSID_Cleanliness>Cleanliness: {0}</RSID_Cleanliness>
   <RSID_Joy>Joy gainfactor: {0}</RSID_Joy>
@@ -45,6 +46,8 @@
   <RSID_ShowBeauty.Tooltip>Shows the beauty given by any building, both positive and negative values are shown</RSID_ShowBeauty.Tooltip>
   <RSID_ShowMass.Label>Show mass</RSID_ShowMass.Label>
   <RSID_ShowMass.Tooltip>Shows the mass of any building that is minifiable</RSID_ShowMass.Tooltip>
+  <RSID_ShowSize.Label>Show size</RSID_ShowSize.Label>
+  <RSID_ShowSize.Tooltip>Shows the size of the building when placed</RSID_ShowSize.Tooltip>
   <RSID_ShowWealth.Label>Show wealth given</RSID_ShowWealth.Label>
   <RSID_ShowWealth.Tooltip>Shows the colony wealth given by any building</RSID_ShowWealth.Tooltip>
   <RSID_ShowCleanliness.Label>Show cleanliness given</RSID_ShowCleanliness.Label>
