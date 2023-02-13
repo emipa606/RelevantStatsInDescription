@@ -31,12 +31,28 @@ public class RelevantStatsInDescription
         cachedDescriptions = new Dictionary<string, string>();
     }
 
+    public static float GetExtraHeight(Designator designator)
+    {
+        if (designator is not Designator_Build designatorBuild)
+        {
+            return 0;
+        }
+
+        var descriptionKey = $"{designatorBuild.entDef.defName}|{designatorBuild.stuffDef?.defName}";
+        if (!cachedDescriptions.TryGetValue(descriptionKey, out var description))
+        {
+            return 0;
+        }
+
+        return description.Split('\n').Length - designatorBuild.entDef.description.Split('\n').Length;
+    }
+
     public static string GetUpdatedDescription(BuildableDef def, ThingDef stuff)
     {
         var descriptionKey = $"{def.defName}|{stuff?.defName}";
-        if (cachedDescriptions.ContainsKey(descriptionKey))
+        if (cachedDescriptions.TryGetValue(descriptionKey, out var description))
         {
-            return cachedDescriptions[descriptionKey] + def.description;
+            return description + def.description;
         }
 
         var arrayToAdd = new List<string>();

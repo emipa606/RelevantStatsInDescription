@@ -1,5 +1,8 @@
 # Changelog for RelevantStatsInDescription
 
+1.4.3 - Info-box height will now expand depending on how many extra rows of information that is added by the mod
+
+
 1.4.2 - Added size-info.
 Used DeepL to update translations for ChineseSimplified, French, German, Russian
 
