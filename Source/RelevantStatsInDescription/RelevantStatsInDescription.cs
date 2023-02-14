@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Reflection;
 using HarmonyLib;
 using RimWorld;
@@ -31,20 +32,10 @@ public class RelevantStatsInDescription
         cachedDescriptions = new Dictionary<string, string>();
     }
 
-    public static float GetExtraHeight(Designator designator)
+    public static float GetExtraHeight()
     {
-        if (designator is not Designator_Build designatorBuild)
-        {
-            return 0;
-        }
-
-        var descriptionKey = $"{designatorBuild.entDef.defName}|{designatorBuild.stuffDef?.defName}";
-        if (!cachedDescriptions.TryGetValue(descriptionKey, out var description))
-        {
-            return 0;
-        }
-
-        return description.Split('\n').Length - designatorBuild.entDef.description.Split('\n').Length;
+        return (typeof(RelevantStatsInDescriptionSettings).GetFields().Count(info =>
+            (bool)info.GetValue(RelevantStatsInDescriptionMod.instance.RelevantStatsInDescriptionSettings)) * 5f) + 10f;
     }
 
     public static string GetUpdatedDescription(BuildableDef def, ThingDef stuff)
@@ -171,7 +162,11 @@ public class RelevantStatsInDescription
 
             if (arrayToAdd.Any())
             {
-                arrayToAdd.Add(" - - - \n");
+                if (!string.IsNullOrEmpty(def.description))
+                {
+                    arrayToAdd.Add(" - - - \n");
+                }
+
                 cachedDescriptions[descriptionKey] = string.Join("\n", arrayToAdd);
             }
             else

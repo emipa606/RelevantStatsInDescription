@@ -10,13 +10,13 @@ public static class ArchitectCategoryTab_DoInfoBox
 {
     public static void Prefix(ref Rect infoRect, Designator designator)
     {
-        var extraRows = RelevantStatsInDescription.GetExtraHeight(designator);
-        if (extraRows == 0)
+        var extraHeight = RelevantStatsInDescription.GetExtraHeight();
+        if (extraHeight == 0)
         {
             return;
         }
 
-        infoRect.height += extraRows * 25f;
-        infoRect.y -= extraRows * 25f;
+        infoRect.height += extraHeight;
+        infoRect.y -= extraHeight;
     }
 }
