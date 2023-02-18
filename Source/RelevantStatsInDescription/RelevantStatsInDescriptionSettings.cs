@@ -8,6 +8,7 @@ namespace RelevantStatsInDescription;
 internal class RelevantStatsInDescriptionSettings : ModSettings
 {
     public bool RelativeWork;
+    public bool RemoveRotateWidget = true;
     public bool ShowAffordance = true;
     public bool ShowAffordanceRequirement = true;
     public bool ShowBeauty = true;
@@ -64,5 +65,6 @@ internal class RelevantStatsInDescriptionSettings : ModSettings
         Scribe_Values.Look(ref RelativeWork, "RelativeWork");
         Scribe_Values.Look(ref ShowTechLevel, "ShowTechLevel");
         Scribe_Values.Look(ref ShowStorageSpace, "ShowStorageSpace", true);
+        Scribe_Values.Look(ref RemoveRotateWidget, "RemoveRotateWidget", true);
     }
 }

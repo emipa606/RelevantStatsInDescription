@@ -1,5 +1,9 @@
 # Changelog for RelevantStatsInDescription
 
+1.4.5 - Fixed the rotate-infobox location and also added an option to remove it..
+Used DeepL to update translations for ChineseSimplified, French, German, Russian
+
+
 1.4.4 - Fixed the infobox scaling and the issue with buildings without descriptions
 
 

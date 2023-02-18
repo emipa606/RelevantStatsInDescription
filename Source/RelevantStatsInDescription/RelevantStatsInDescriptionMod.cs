@@ -14,10 +14,7 @@ internal class RelevantStatsInDescriptionMod : Mod
 
     private static string currentVersion;
 
-    /// <summary>
-    ///     The private relevantStatsInDescriptionSettings
-    /// </summary>
-    private RelevantStatsInDescriptionSettings relevantStatsInDescriptionSettings;
+    private Vector2 scrollPosition;
 
     /// <summary>
     ///     Constructor
@@ -26,27 +23,14 @@ internal class RelevantStatsInDescriptionMod : Mod
     public RelevantStatsInDescriptionMod(ModContentPack content) : base(content)
     {
         instance = this;
-        currentVersion =
-            VersionFromManifest.GetVersionFromModMetaData(
-                ModLister.GetActiveModWithIdentifier("Mlie.RelevantStatsInDescription"));
+        RelevantStatsInDescriptionSettings = GetSettings<RelevantStatsInDescriptionSettings>();
+        currentVersion = VersionFromManifest.GetVersionFromModMetaData(content.ModMetaData);
     }
 
     /// <summary>
     ///     The instance-relevantStatsInDescriptionSettings for the mod
     /// </summary>
-    internal RelevantStatsInDescriptionSettings RelevantStatsInDescriptionSettings
-    {
-        get
-        {
-            if (relevantStatsInDescriptionSettings == null)
-            {
-                relevantStatsInDescriptionSettings = GetSettings<RelevantStatsInDescriptionSettings>();
-            }
-
-            return relevantStatsInDescriptionSettings;
-        }
-        set => relevantStatsInDescriptionSettings = value;
-    }
+    internal RelevantStatsInDescriptionSettings RelevantStatsInDescriptionSettings { get; }
 
     /// <summary>
     ///     The title for the mod-relevantStatsInDescriptionSettings
@@ -64,8 +48,14 @@ internal class RelevantStatsInDescriptionMod : Mod
     /// <param name="rect"></param>
     public override void DoSettingsWindowContents(Rect rect)
     {
+        var viewRect = new Rect(rect)
+        {
+            width = rect.width * 0.97f,
+            height = (typeof(RelevantStatsInDescriptionSettings).GetFields().Length * 25f) + 10f
+        };
+        Widgets.BeginScrollView(rect, ref scrollPosition, viewRect);
         var listing_Standard = new Listing_Standard();
-        listing_Standard.Begin(rect);
+        listing_Standard.Begin(viewRect);
         listing_Standard.Gap();
         listing_Standard.CheckboxLabeled("RSID_ShowHP.Label".Translate(), ref RelevantStatsInDescriptionSettings.ShowHP,
             "RSID_ShowHP.Tooltip".Translate());
@@ -166,6 +156,10 @@ internal class RelevantStatsInDescriptionMod : Mod
             RelevantStatsInDescriptionSettings.RelativeWork = false;
         }
 
+        listing_Standard.CheckboxLabeled("RSID_RemoveRotateWidget.Label".Translate(),
+            ref RelevantStatsInDescriptionSettings.RemoveRotateWidget,
+            "RSID_RemoveRotateWidget.Tooltip".Translate());
+
         if (currentVersion != null)
         {
             listing_Standard.Gap();
@@ -175,6 +169,7 @@ internal class RelevantStatsInDescriptionMod : Mod
         }
 
         listing_Standard.End();
+        Widgets.EndScrollView();
     }
 
     public override void WriteSettings()

@@ -83,4 +83,6 @@
   <RSID_Size>Размер: {0}</RSID_Size>
   <RSID_ShowSize.Label>Показать размер</RSID_ShowSize.Label>
   <RSID_ShowSize.Tooltip>Показывает размер здания при размещении</RSID_ShowSize.Tooltip>
+  <RSID_RemoveRotateWidget.Label>Удалить окно информации о повороте</RSID_RemoveRotateWidget.Label>
+  <RSID_RemoveRotateWidget.Tooltip>Убирает окно информации о повороте над меню архитектора, если вы думаете, что уже запомнили его.</RSID_RemoveRotateWidget.Tooltip>
 </LanguageData>

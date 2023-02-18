@@ -84,4 +84,6 @@
   <RSID_Size>Größe: {0}</RSID_Size>
   <RSID_ShowSize.Label>Größe anzeigen</RSID_ShowSize.Label>
   <RSID_ShowSize.Tooltip>Zeigt die Größe des Gebäudes an, wenn es platziert wird</RSID_ShowSize.Tooltip>
+  <RSID_RemoveRotateWidget.Label>Entfernen Sie das Rotations-Informationsfenster</RSID_RemoveRotateWidget.Label>
+  <RSID_RemoveRotateWidget.Tooltip>Entfernt das Rotationsinformationsfenster über dem Architektenmenü, falls Sie denken, dass Sie es inzwischen auswendig gelernt haben.</RSID_RemoveRotateWidget.Tooltip>
 </LanguageData>

@@ -83,4 +83,6 @@
   <RSID_Size>Taille : {0}</RSID_Size>
   <RSID_ShowSize.Label>Taille du spectacle</RSID_ShowSize.Label>
   <RSID_ShowSize.Tooltip>Indique la taille du bâtiment lorsqu'il est placé</RSID_ShowSize.Tooltip>
+  <RSID_RemoveRotateWidget.Label>Suppression de la fenêtre rotate-info</RSID_RemoveRotateWidget.Label>
+  <RSID_RemoveRotateWidget.Tooltip>Supprime la fenêtre d'information sur la rotation au-dessus du menu de l'architecte, si vous pensez l'avoir mémorisée.</RSID_RemoveRotateWidget.Tooltip>
 </LanguageData>

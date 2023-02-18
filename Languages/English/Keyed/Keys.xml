@@ -82,5 +82,7 @@
   <RSID_ShowWorkToBuild.Tooltip>Will show the amount of work required for completing the building</RSID_ShowWorkToBuild.Tooltip>
   <RSID_RelativeWork.Label>    Show relative work-amount</RSID_RelativeWork.Label>
   <RSID_RelativeWork.Tooltip>Will show the workamount as small/medium/large to get more of a general idea of the amount of work</RSID_RelativeWork.Tooltip>
+  <RSID_RemoveRotateWidget.Label>Remove the rotate-info window</RSID_RemoveRotateWidget.Label>
+  <RSID_RemoveRotateWidget.Tooltip>Will remove the rotate-info window above the architect menu, if you think that you have it memorized by now.</RSID_RemoveRotateWidget.Tooltip>
   <RSID_CurrentVersion.Label>Installed mod-version: {0}</RSID_CurrentVersion.Label>
 </LanguageData>
