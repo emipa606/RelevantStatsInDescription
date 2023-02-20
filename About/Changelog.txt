@@ -1,5 +1,8 @@
 # Changelog for RelevantStatsInDescription
 
+1.4.6 - Fixed tend-quality not showing
+
+
 1.4.5 - Fixed the rotate-infobox location and also added an option to remove it..
 Used DeepL to update translations for ChineseSimplified, French, German, Russian
 

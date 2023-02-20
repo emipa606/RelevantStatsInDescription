@@ -19,7 +19,7 @@
   <RSID_BedRestEffectiveness>Bedrest: {0}</RSID_BedRestEffectiveness>
   <RSID_ImmunityGainSpeedFactor>Immunity gainspeed: {0}</RSID_ImmunityGainSpeedFactor>
   <RSID_SurgerySuccessChanceFactor>Surgery chance: {0}</RSID_SurgerySuccessChanceFactor>
-  <RSID_MedicalTendQuality>Tend quality: {0}</RSID_MedicalTendQuality>
+  <RSID_MedicalTendQuality>Tend quality offset: {0}</RSID_MedicalTendQuality>
   <RSID_PowerUser>Poweruse: {0}W</RSID_PowerUser>
   <RSID_PowerProducer>Max PowerGen: {0}W</RSID_PowerProducer>
   <RSID_ChemfuelUser>Chemfuel use: {0}/d</RSID_ChemfuelUser>

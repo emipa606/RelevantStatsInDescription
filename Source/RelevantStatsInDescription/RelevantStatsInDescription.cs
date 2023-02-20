@@ -247,10 +247,10 @@ public class RelevantStatsInDescription
             if (buildableThing.building.bed_defaultMedical || !buildableThing.building.bed_humanlike)
             {
                 if (RelevantStatsInDescriptionMod.instance.RelevantStatsInDescriptionSettings.ShowMedicalTendQuality &&
-                    buildableThing.StatBaseDefined(StatDefOf.MedicalTendQuality))
+                    buildableThing.StatBaseDefined(StatDefOf.MedicalTendQualityOffset))
                 {
                     arrayToAdd.Add("RSID_MedicalTendQuality".Translate(
-                        thing.GetStatValue(StatDefOf.MedicalTendQuality).ToStringPercent()));
+                        thing.GetStatValue(StatDefOf.MedicalTendQualityOffset).ToStringPercent()));
                 }
 
                 if (RelevantStatsInDescriptionMod.instance.RelevantStatsInDescriptionSettings.ShowImmunityGainSpeed &&
