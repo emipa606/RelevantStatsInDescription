@@ -31,6 +31,7 @@
   <RSID_WorkRelative>Workamount: {0}</RSID_WorkRelative>
   <RSID_TechLevel>Tech level: {0}</RSID_TechLevel>
   <RSID_StorageSpace>Max stacks stored: {0}</RSID_StorageSpace>
+  <RSID_DefName>DefName: {0}</RSID_DefName>
   <!-- Settings -->
   <RSID_ShowHP.Label>Show max HP for linkable structures and doors</RSID_ShowHP.Label>
   <RSID_ShowHP.Tooltip>Shows the maximum hitpoints for structures such as walls, fences, doors and sandbags</RSID_ShowHP.Tooltip>
@@ -74,6 +75,8 @@
   <RSID_ShowPowerConsumer.Tooltip>Will show the maximum power-consumption of any building that consumes power</RSID_ShowPowerConsumer.Tooltip>
   <RSID_ShowPowerProducer.Label>Show power production</RSID_ShowPowerProducer.Label>
   <RSID_ShowPowerProducer.Tooltip>Will show the maximum power-production of any building that produces power</RSID_ShowPowerProducer.Tooltip>
+  <RSID_ShowDefName.Label>Show defName</RSID_ShowDefName.Label>
+  <RSID_ShowDefName.Tooltip>Will show the defname of all buildables</RSID_ShowDefName.Tooltip>
   <RSID_ShowVFEGas.Label>    Also Gas production/consumption</RSID_ShowVFEGas.Label>
   <RSID_ShowVFEGas.Tooltip>Will show the production/consumption of gas of buildings in Vanilla Furniture Expanded - Power. Depends on the power-settings above</RSID_ShowVFEGas.Tooltip>
   <RSID_ShowRimefeller.Label>    Also Chemfuel use</RSID_ShowRimefeller.Label>

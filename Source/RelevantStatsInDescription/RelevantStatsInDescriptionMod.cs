@@ -156,6 +156,9 @@ internal class RelevantStatsInDescriptionMod : Mod
             RelevantStatsInDescriptionSettings.RelativeWork = false;
         }
 
+        listing_Standard.CheckboxLabeled("RSID_ShowDefName.Label".Translate(),
+            ref RelevantStatsInDescriptionSettings.ShowDefName,
+            "RSID_ShowDefName.Tooltip".Translate());
         listing_Standard.CheckboxLabeled("RSID_RemoveRotateWidget.Label".Translate(),
             ref RelevantStatsInDescriptionSettings.RemoveRotateWidget,
             "RSID_RemoveRotateWidget.Tooltip".Translate());

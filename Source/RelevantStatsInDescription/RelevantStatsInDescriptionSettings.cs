@@ -16,6 +16,7 @@ internal class RelevantStatsInDescriptionSettings : ModSettings
     public bool ShowCleanliness = true;
     public bool ShowComfort = true;
     public bool ShowCover = true;
+    public bool ShowDefName;
     public bool ShowHP = true;
     public bool ShowHPForAll;
     public bool ShowImmunityGainSpeed = true;
@@ -65,6 +66,7 @@ internal class RelevantStatsInDescriptionSettings : ModSettings
         Scribe_Values.Look(ref RelativeWork, "RelativeWork");
         Scribe_Values.Look(ref ShowTechLevel, "ShowTechLevel");
         Scribe_Values.Look(ref ShowStorageSpace, "ShowStorageSpace", true);
+        Scribe_Values.Look(ref ShowDefName, "ShowDefName");
         Scribe_Values.Look(ref RemoveRotateWidget, "RemoveRotateWidget", true);
     }
 }

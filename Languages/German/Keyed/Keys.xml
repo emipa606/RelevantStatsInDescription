@@ -86,4 +86,7 @@
   <RSID_ShowSize.Tooltip>Zeigt die Größe des Gebäudes an, wenn es platziert wird</RSID_ShowSize.Tooltip>
   <RSID_RemoveRotateWidget.Label>Entfernen Sie das Rotations-Informationsfenster</RSID_RemoveRotateWidget.Label>
   <RSID_RemoveRotateWidget.Tooltip>Entfernt das Rotationsinformationsfenster über dem Architektenmenü, falls Sie denken, dass Sie es inzwischen auswendig gelernt haben.</RSID_RemoveRotateWidget.Tooltip>
+  <RSID_DefName>DefName: {0}</RSID_DefName>
+  <RSID_ShowDefName.Label>DefName anzeigen</RSID_ShowDefName.Label>
+  <RSID_ShowDefName.Tooltip>Zeigt den Defnamen aller Buildables an</RSID_ShowDefName.Tooltip>
 </LanguageData>

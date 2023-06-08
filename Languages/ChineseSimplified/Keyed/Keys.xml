@@ -85,4 +85,7 @@
   <RSID_ShowSize.Tooltip>显示建筑物放置时的尺寸</RSID_ShowSize.Tooltip>
   <RSID_RemoveRotateWidget.Label>移除旋转信息窗口</RSID_RemoveRotateWidget.Label>
   <RSID_RemoveRotateWidget.Tooltip>将删除建筑师菜单上方的旋转信息窗口，如果你认为你现在已经记住了它。</RSID_RemoveRotateWidget.Tooltip>
+  <RSID_DefName>DefName：{0}</RSID_DefName>
+  <RSID_ShowDefName.Label>显示defName</RSID_ShowDefName.Label>
+  <RSID_ShowDefName.Tooltip>将显示所有可建文件的defname</RSID_ShowDefName.Tooltip>
 </LanguageData>

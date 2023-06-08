@@ -160,6 +160,12 @@ public class RelevantStatsInDescription
                 }
             }
 
+            // Defname
+            if (RelevantStatsInDescriptionMod.instance.RelevantStatsInDescriptionSettings.ShowDefName)
+            {
+                arrayToAdd.Add("RSID_DefName".Translate(floorDef.defName));
+            }
+
             if (arrayToAdd.Any())
             {
                 if (!string.IsNullOrEmpty(def.description))
@@ -487,6 +493,12 @@ public class RelevantStatsInDescription
                         "RSID_WorkExact".Translate(Math.Ceiling(workToBuild / 60)));
                 }
             }
+        }
+
+        // Defname
+        if (RelevantStatsInDescriptionMod.instance.RelevantStatsInDescriptionSettings.ShowDefName)
+        {
+            arrayToAdd.Add("RSID_DefName".Translate(buildableThing.defName));
         }
 
         if (arrayToAdd.Any())
