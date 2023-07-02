@@ -278,9 +278,15 @@ public class RelevantStatsInDescription
         }
 
         // Poweruse
-        var consumption = buildableThing.GetCompProperties<CompProperties_Power>()?.PowerConsumption;
-        if (consumption != null)
+        var powerComp = buildableThing.GetCompProperties<CompProperties_Power>();
+        if (powerComp != null)
         {
+            var consumption = powerComp.PowerConsumption;
+            if (powerComp.compClass == typeof(CompPowerPlantSolar))
+            {
+                consumption = -CompPowerPlantSolar.FullSunPower;
+            }
+
             if (RelevantStatsInDescriptionMod.instance.RelevantStatsInDescriptionSettings.ShowPowerConsumer &&
                 consumption > 0)
             {

@@ -1,5 +1,8 @@
 # Changelog for RelevantStatsInDescription
 
+1.4.8 - Fixed solar-panels not showing the correct power-output.
+
+
 1.4.7 - Added defname as a mod-option.
 Used DeepL to update translations for ChineseSimplified, French, German, Russian
 
