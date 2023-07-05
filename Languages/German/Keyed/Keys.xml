@@ -89,4 +89,7 @@
   <RSID_DefName>DefName: {0}</RSID_DefName>
   <RSID_ShowDefName.Label>DefName anzeigen</RSID_ShowDefName.Label>
   <RSID_ShowDefName.Tooltip>Zeigt den Defnamen aller Buildables an</RSID_ShowDefName.Tooltip>
+  <RSID_PowerUserVaried>Stromverbrauch: {0}W ({1}W)</RSID_PowerUserVaried>
+  <RSID_VariedPowerModLoaded.Label>Varied power-mod aktiv, öffnen Sie diese Einstellungsseite erneut, nachdem Sie irgendwelche Leistungseinstellungen geändert haben.</RSID_VariedPowerModLoaded.Label>
+  <RSID_VariedPowerModLoaded.Tooltip>Es ist ein Mod aktiv, der den Stromverbrauch von Gegenständen verändert, wenn sie nicht in Gebrauch sind (Turn It On and Off - RePowered oder LightsOut). Wenn Sie die Energieeinstellungen in einer dieser Mods ändern, öffnen Sie diese Einstellungsseite erneut, um die zwischengespeicherten Energiewerte in den Beschreibungen zu löschen. Andernfalls werden Sie die aktualisierten Werte im Spiel nicht sehen.</RSID_VariedPowerModLoaded.Tooltip>
 </LanguageData>

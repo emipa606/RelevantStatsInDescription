@@ -88,4 +88,7 @@
   <RSID_DefName>DefName：{0}</RSID_DefName>
   <RSID_ShowDefName.Label>显示defName</RSID_ShowDefName.Label>
   <RSID_ShowDefName.Tooltip>将显示所有可建文件的defname</RSID_ShowDefName.Tooltip>
+  <RSID_PowerUserVaried>用电量：{0}W ({1}W)</RSID_PowerUserVaried>
+  <RSID_VariedPowerModLoaded.Label>变化的电源模式激活，在改变任何电源设置后重新打开这个设置页面。</RSID_VariedPowerModLoaded.Label>
+  <RSID_VariedPowerModLoaded.Tooltip>有一个激活的修改，可以修改物品在不使用时的电力消耗（Turn It On and Off - RePowered or LightsOut）。如果你改变了这些mods中关于电力的设置，请在之后重新打开这个设置页面，以清除描述中的缓存电力值。否则，你将无法在游戏中看到更新的数值。</RSID_VariedPowerModLoaded.Tooltip>
 </LanguageData>

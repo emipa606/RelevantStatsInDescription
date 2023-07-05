@@ -88,4 +88,7 @@
   <RSID_DefName>DefName : {0}</RSID_DefName>
   <RSID_ShowDefName.Label>Montrer defName</RSID_ShowDefName.Label>
   <RSID_ShowDefName.Tooltip>Affiche le nom de tous les éléments constructibles</RSID_ShowDefName.Tooltip>
+  <RSID_PowerUserVaried>Consommation électrique : {0}W ({1}W)</RSID_PowerUserVaried>
+  <RSID_VariedPowerModLoaded.Label>Varied power-mod active, rouvrir cette page de réglages après avoir modifié les réglages de puissance.</RSID_VariedPowerModLoaded.Label>
+  <RSID_VariedPowerModLoaded.Tooltip>Il existe un mod actif qui modifie la consommation d'énergie des objets lorsqu'ils ne sont pas utilisés (Turn It On and Off - RePowered ou LightsOut). Si vous modifiez les paramètres concernant la puissance dans l'un de ces mods, rouvrez cette page de paramètres après pour effacer les valeurs de puissance mises en cache dans les descriptions. Sinon, vous ne verrez pas les valeurs mises à jour dans le jeu.</RSID_VariedPowerModLoaded.Tooltip>
 </LanguageData>

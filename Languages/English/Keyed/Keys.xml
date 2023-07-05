@@ -21,6 +21,7 @@
   <RSID_SurgerySuccessChanceFactor>Surgery chance: {0}</RSID_SurgerySuccessChanceFactor>
   <RSID_MedicalTendQuality>Tend quality offset: {0}</RSID_MedicalTendQuality>
   <RSID_PowerUser>Poweruse: {0}W</RSID_PowerUser>
+  <RSID_PowerUserVaried>Poweruse: {0}W ({1}W)</RSID_PowerUserVaried>
   <RSID_PowerProducer>Max PowerGen: {0}W</RSID_PowerProducer>
   <RSID_ChemfuelUser>Chemfuel use: {0}/d</RSID_ChemfuelUser>
   <RSID_GasUser>Gas use: {0} m3/d</RSID_GasUser>
@@ -73,6 +74,8 @@
   <RSID_ShowMedicalTendQuality.Tooltip>Shows the medical tend quality for any bed that defaults as a hospital bed, if defined, or animal bed</RSID_ShowMedicalTendQuality.Tooltip>
   <RSID_ShowPowerConsumer.Label>Show power consumption</RSID_ShowPowerConsumer.Label>
   <RSID_ShowPowerConsumer.Tooltip>Will show the maximum power-consumption of any building that consumes power</RSID_ShowPowerConsumer.Tooltip>
+  <RSID_VariedPowerModLoaded.Label>    Varied power-mod active, reopen this settings page after changing any power-settings.</RSID_VariedPowerModLoaded.Label>
+  <RSID_VariedPowerModLoaded.Tooltip>There is a mod active that modifies power-draw of items when they are not in use (Turn It On and Off - RePowered or LightsOut). If you change the settings regarding power in any of these mods, reopen this settings page after to clear the cached powervalues in the descriptions. If not you will not see the updated values in game.</RSID_VariedPowerModLoaded.Tooltip>
   <RSID_ShowPowerProducer.Label>Show power production</RSID_ShowPowerProducer.Label>
   <RSID_ShowPowerProducer.Tooltip>Will show the maximum power-production of any building that produces power</RSID_ShowPowerProducer.Tooltip>
   <RSID_ShowDefName.Label>Show defName</RSID_ShowDefName.Label>

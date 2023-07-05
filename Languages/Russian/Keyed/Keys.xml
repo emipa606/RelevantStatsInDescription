@@ -88,4 +88,7 @@
   <RSID_DefName>DefName: {0}</RSID_DefName>
   <RSID_ShowDefName.Label>Показать defName</RSID_ShowDefName.Label>
   <RSID_ShowDefName.Tooltip>Показывает имена всех объектов сборки</RSID_ShowDefName.Tooltip>
+  <RSID_PowerUserVaried>Энергопотребление: {0}W ({1}W)</RSID_PowerUserVaried>
+  <RSID_VariedPowerModLoaded.Label>Мод "Разнообразная мощность" активен, после изменения любых настроек мощности снова откройте эту страницу настроек.</RSID_VariedPowerModLoaded.Label>
+  <RSID_VariedPowerModLoaded.Tooltip>Существует мод, изменяющий потребление энергии предметами, когда они не используются (Turn It On and Off - RePowered или LightsOut). Если вы измените настройки мощности в любом из этих модов, откройте эту страницу настроек снова, чтобы очистить кэшированные значения мощности в описаниях. В противном случае вы не увидите обновленные значения в игре.</RSID_VariedPowerModLoaded.Tooltip>
 </LanguageData>

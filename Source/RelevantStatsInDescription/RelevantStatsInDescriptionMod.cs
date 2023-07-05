@@ -120,6 +120,13 @@ internal class RelevantStatsInDescriptionMod : Mod
         listing_Standard.CheckboxLabeled("RSID_ShowPowerConsumer.Label".Translate(),
             ref RelevantStatsInDescriptionSettings.ShowPowerConsumer,
             "RSID_ShowPowerConsumer.Tooltip".Translate());
+        if (RelevantStatsInDescriptionSettings.ShowPowerConsumer && (RelevantStatsInDescription.RepowerOnOffLoaded ||
+                                                                     RelevantStatsInDescription.LightsOutLoaded))
+        {
+            listing_Standard.Label("RSID_VariedPowerModLoaded.Label".Translate(), -1f,
+                "RSID_VariedPowerModLoaded.Tooltip".Translate());
+        }
+
         listing_Standard.CheckboxLabeled("RSID_ShowPowerProducer.Label".Translate(),
             ref RelevantStatsInDescriptionSettings.ShowPowerProducer,
             "RSID_ShowPowerProducer.Tooltip".Translate());

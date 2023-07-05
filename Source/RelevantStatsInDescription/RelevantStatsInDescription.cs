@@ -4,6 +4,7 @@ using System.Linq;
 using System.Reflection;
 using HarmonyLib;
 using RimWorld;
+using UnityEngine;
 using Verse;
 
 namespace RelevantStatsInDescription;
@@ -16,20 +17,42 @@ public class RelevantStatsInDescription
     public static readonly bool VFEPowerLoaded;
     public static readonly bool RimefellerLoaded;
     public static readonly bool LWMLoaded;
+    public static readonly bool RepowerOnOffLoaded;
+    public static readonly bool LightsOutLoaded;
+    private static readonly FieldInfo repowerOnOffPowerLevels;
+    private static readonly MethodInfo lightsOutPostfix;
+    private static readonly PropertyInfo lightsOutActiveResourceDrawRate;
 
     static RelevantStatsInDescription()
     {
         VFEPowerLoaded = ModLister.GetActiveModWithIdentifier("VanillaExpanded.VFEPower") != null;
         RimefellerLoaded = ModLister.GetActiveModWithIdentifier("Dubwise.Rimefeller") != null;
         LWMLoaded = ModLister.GetActiveModWithIdentifier("LWM.DeepStorage") != null;
+        RepowerOnOffLoaded = ModLister.GetActiveModWithIdentifier("Mlie.TurnOnOffRePowered") != null;
+        LightsOutLoaded = ModLister.GetActiveModWithIdentifier("juanlopez2008.LightsOut") != null;
         cachedDescriptions = new Dictionary<string, string>();
         var harmony = new Harmony("Mlie.RelevantStatsInDescription");
         harmony.PatchAll(Assembly.GetExecutingAssembly());
+
+        if (RepowerOnOffLoaded)
+        {
+            repowerOnOffPowerLevels = AccessTools.Field("TurnOnOffRePowered.TurnItOnandOff:powerLevels");
+        }
+
+        if (!LightsOutLoaded)
+        {
+            return;
+        }
+
+        lightsOutPostfix = AccessTools.Method("LightsOut.Patches.Power.DisableBasePowerDrawOnGet:Postfix");
+        lightsOutActiveResourceDrawRate =
+            AccessTools.Property("LightsOut.Boilerplate.ModSettings:ActiveResourceDrawRate");
     }
 
     public static void ClearCache()
     {
         cachedDescriptions = new Dictionary<string, string>();
+        Log.Message("[RelevantStatsInDescription]: Clearing cached descriptions");
     }
 
     public static float GetExtraHeight()
@@ -193,10 +216,17 @@ public class RelevantStatsInDescription
             stuff = GenStuff.DefaultStuffFor(def);
         }
 
-        var thing = new Thing { def = buildableThing };
+        var thing = new ThingWithComps { def = buildableThing };
         if (stuff != null)
         {
             thing.SetStuffDirect(stuff);
+        }
+
+        if (buildableThing.comps.Any())
+        {
+            thing.InitializeComps();
+            thing.PostMake();
+            thing.PostPostMake();
         }
 
         // Structural building
@@ -287,16 +317,19 @@ public class RelevantStatsInDescription
                 consumption = -CompPowerPlantSolar.FullSunPower;
             }
 
-            if (RelevantStatsInDescriptionMod.instance.RelevantStatsInDescriptionSettings.ShowPowerConsumer &&
-                consumption > 0)
-            {
-                arrayToAdd.Add("RSID_PowerUser".Translate(consumption.ToString()));
-            }
-
             if (RelevantStatsInDescriptionMod.instance.RelevantStatsInDescriptionSettings.ShowPowerProducer &&
                 consumption < 0)
             {
                 arrayToAdd.Add("RSID_PowerProducer".Translate((consumption * -1).ToString()));
+            }
+
+            if (RelevantStatsInDescriptionMod.instance.RelevantStatsInDescriptionSettings.ShowPowerConsumer &&
+                consumption > 0)
+            {
+                var variedConsumption = getMinMaxPower(buildableThing, thing, -consumption);
+                arrayToAdd.Add(variedConsumption == null
+                    ? "RSID_PowerUser".Translate(consumption.ToString())
+                    : "RSID_PowerUserVaried".Translate(variedConsumption.Item2, variedConsumption.Item1));
             }
         }
 
@@ -518,5 +551,54 @@ public class RelevantStatsInDescription
         }
 
         return cachedDescriptions[descriptionKey] + buildableThing.description;
+    }
+
+    private static Tuple<float, float> getMinMaxPower(ThingDef buildableThing, Thing thing, float originalConsumption)
+    {
+        if (RepowerOnOffLoaded)
+        {
+            var powerValues = (Dictionary<string, Vector2>)repowerOnOffPowerLevels.GetValue(null);
+            if (powerValues == null || !powerValues.Any())
+            {
+                return null;
+            }
+
+            if (!powerValues.ContainsKey(buildableThing.defName))
+            {
+                return null;
+            }
+
+            return new Tuple<float, float>(powerValues[buildableThing.defName][0] * -1,
+                powerValues[buildableThing.defName][1] * -1);
+        }
+
+        if (!LightsOutLoaded)
+        {
+            return null;
+        }
+
+        var itemCompPowerTrader = thing.TryGetComp<CompPowerTrader>();
+        if (itemCompPowerTrader == null)
+        {
+            return null;
+        }
+
+
+        var arguments = new object[] { itemCompPowerTrader, originalConsumption, false };
+        lightsOutPostfix.Invoke(null, arguments);
+        var lowValue = (float)arguments[1];
+
+
+        var highPowerFactor = (float)lightsOutActiveResourceDrawRate.GetValue(null);
+
+        //arguments = new object[] { itemCompPowerTrader, originalConsumption, true };
+        //lightsOutPostfix.Invoke(null, arguments);
+        var highValue = originalConsumption;
+        if (buildableThing.hasInteractionCell)
+        {
+            highValue *= highPowerFactor;
+        }
+
+        return new Tuple<float, float>(lowValue * -1, highValue * -1);
     }
 }
