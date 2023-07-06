@@ -91,4 +91,7 @@
   <RSID_PowerUserVaried>Энергопотребление: {0}W ({1}W)</RSID_PowerUserVaried>
   <RSID_VariedPowerModLoaded.Label>Мод "Разнообразная мощность" активен, после изменения любых настроек мощности снова откройте эту страницу настроек.</RSID_VariedPowerModLoaded.Label>
   <RSID_VariedPowerModLoaded.Tooltip>Существует мод, изменяющий потребление энергии предметами, когда они не используются (Turn It On and Off - RePowered или LightsOut). Если вы измените настройки мощности в любом из этих модов, откройте эту страницу настроек снова, чтобы очистить кэшированные значения мощности в описаниях. В противном случае вы не увидите обновленные значения в игре.</RSID_VariedPowerModLoaded.Tooltip>
+  <RSID_ResearchSpeedFactor>Скорость исследования: {0}</RSID_ResearchSpeedFactor>
+  <RSID_ShowResearchSpeed.Label>Показать скорость исследования</RSID_ShowResearchSpeed.Label>
+  <RSID_ShowResearchSpeed.Tooltip>Показывает относительную скорость исследования исследовательских стендов</RSID_ShowResearchSpeed.Tooltip>
 </LanguageData>

@@ -1,5 +1,9 @@
 # Changelog for RelevantStatsInDescription
 
+1.4.10 - Added research-speed stat.
+Used DeepL to update translations for ChineseSimplified, French, German, Russian
+
+
 1.4.9 - Added support for mods that modifies power-draw: Turn It On and Off - RePowered and LightsOut.
 Used DeepL to update translations for ChineseSimplified, French, German, Russian
 

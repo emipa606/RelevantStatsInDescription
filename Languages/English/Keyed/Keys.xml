@@ -19,6 +19,7 @@
   <RSID_BedRestEffectiveness>Bedrest: {0}</RSID_BedRestEffectiveness>
   <RSID_ImmunityGainSpeedFactor>Immunity gainspeed: {0}</RSID_ImmunityGainSpeedFactor>
   <RSID_SurgerySuccessChanceFactor>Surgery chance: {0}</RSID_SurgerySuccessChanceFactor>
+  <RSID_ResearchSpeedFactor>Research speed: {0}</RSID_ResearchSpeedFactor>
   <RSID_MedicalTendQuality>Tend quality offset: {0}</RSID_MedicalTendQuality>
   <RSID_PowerUser>Poweruse: {0}W</RSID_PowerUser>
   <RSID_PowerUserVaried>Poweruse: {0}W ({1}W)</RSID_PowerUserVaried>
@@ -54,6 +55,8 @@
   <RSID_ShowWealth.Tooltip>Shows the colony wealth given by any building</RSID_ShowWealth.Tooltip>
   <RSID_ShowCleanliness.Label>Show cleanliness given</RSID_ShowCleanliness.Label>
   <RSID_ShowCleanliness.Tooltip>Shows the cleanliness given if defined</RSID_ShowCleanliness.Tooltip>
+  <RSID_ShowResearchSpeed.Label>Show research speed</RSID_ShowResearchSpeed.Label>
+  <RSID_ShowResearchSpeed.Tooltip>Shows the relative research speed of research-benches</RSID_ShowResearchSpeed.Tooltip>
   <RSID_ShowTechLevel.Label>Show tech level</RSID_ShowTechLevel.Label>
   <RSID_ShowTechLevel.Tooltip>Shows the tech level of the building if any</RSID_ShowTechLevel.Tooltip>
   <RSID_ShowJoy.Label>Show joy gain factor</RSID_ShowJoy.Label>

@@ -117,6 +117,9 @@ internal class RelevantStatsInDescriptionMod : Mod
         listing_Standard.CheckboxLabeled("RSID_ShowMedicalTendQuality.Label".Translate(),
             ref RelevantStatsInDescriptionSettings.ShowMedicalTendQuality,
             "RSID_ShowMedicalTendQuality.Tooltip".Translate());
+        listing_Standard.CheckboxLabeled("RSID_ShowResearchSpeed.Label".Translate(),
+            ref RelevantStatsInDescriptionSettings.ShowResearchSpeed,
+            "RSID_ShowResearchSpeed.Tooltip".Translate());
         listing_Standard.CheckboxLabeled("RSID_ShowPowerConsumer.Label".Translate(),
             ref RelevantStatsInDescriptionSettings.ShowPowerConsumer,
             "RSID_ShowPowerConsumer.Tooltip".Translate());

@@ -430,6 +430,16 @@ public class RelevantStatsInDescription
             }
         }
 
+        // Research Speed
+        if (RelevantStatsInDescriptionMod.instance.RelevantStatsInDescriptionSettings.ShowResearchSpeed &&
+            buildableThing.thingClass == typeof(Building_ResearchBench) &&
+            buildableThing.StatBaseDefined(StatDefOf.ResearchSpeedFactor))
+        {
+            arrayToAdd.Add(
+                "RSID_ResearchSpeedFactor".Translate(
+                    thing.GetStatValue(StatDefOf.ResearchSpeedFactor).ToStringPercent()));
+        }
+
         // Cleanliness
         if (RelevantStatsInDescriptionMod.instance.RelevantStatsInDescriptionSettings.ShowCleanliness)
         {

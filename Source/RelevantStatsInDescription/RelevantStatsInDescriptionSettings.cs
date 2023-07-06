@@ -26,6 +26,7 @@ internal class RelevantStatsInDescriptionSettings : ModSettings
     public bool ShowMedicalTendQuality = true;
     public bool ShowPowerConsumer = true;
     public bool ShowPowerProducer = true;
+    public bool ShowResearchSpeed = true;
     public bool ShowRimefeller = true;
     public bool ShowSize = true;
     public bool ShowStorageSpace = true;
@@ -58,6 +59,7 @@ internal class RelevantStatsInDescriptionSettings : ModSettings
         Scribe_Values.Look(ref ShowImmunityGainSpeed, "ShowImmunityGainSpeed", true);
         Scribe_Values.Look(ref ShowSurgerySuccessChance, "ShowSurgerySuccessChance", true);
         Scribe_Values.Look(ref ShowMedicalTendQuality, "ShowMedicalTendQuality", true);
+        Scribe_Values.Look(ref ShowResearchSpeed, "ShowResearchSpeed", true);
         Scribe_Values.Look(ref ShowPowerConsumer, "ShowPowerConsumer", true);
         Scribe_Values.Look(ref ShowPowerProducer, "ShowPowerProducer", true);
         Scribe_Values.Look(ref ShowVFEGas, "ShowVFEGas", true);
