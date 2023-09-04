@@ -1,5 +1,8 @@
 # Changelog for RelevantStatsInDescription
 
+1.4.11 - Fixed an incompatibility with [url=https://steamcommunity.com/sharedfiles/filedetails/?id=2571189146]Windows[/url]
+
+
 1.4.10 - Added research-speed stat.
 Used DeepL to update translations for ChineseSimplified, French, German, Russian
 

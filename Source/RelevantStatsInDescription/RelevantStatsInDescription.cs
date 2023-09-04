@@ -224,9 +224,12 @@ public class RelevantStatsInDescription
 
         if (buildableThing.comps.Any())
         {
-            thing.InitializeComps();
-            thing.PostMake();
-            thing.PostPostMake();
+            if (buildableThing.thingClass.Name != "Building_Window")
+            {
+                thing.InitializeComps();
+                thing.PostMake();
+                thing.PostPostMake();
+            }
         }
 
         // Structural building
