@@ -94,4 +94,7 @@
   <RSID_ResearchSpeedFactor>Скорость исследования: {0}</RSID_ResearchSpeedFactor>
   <RSID_ShowResearchSpeed.Label>Показать скорость исследования</RSID_ShowResearchSpeed.Label>
   <RSID_ShowResearchSpeed.Tooltip>Показывает относительную скорость исследования исследовательских стендов</RSID_ShowResearchSpeed.Tooltip>
+  <RSID_DominantStyle>Доминирующий стиль: {0}</RSID_DominantStyle>
+  <RSID_ShowDominantStyle.Label>Показать доминирующий стиль</RSID_ShowDominantStyle.Label>
+  <RSID_ShowDominantStyle.Tooltip>Показывает любой определенный доминирующий стиль строительных конструкций</RSID_ShowDominantStyle.Tooltip>
 </LanguageData>

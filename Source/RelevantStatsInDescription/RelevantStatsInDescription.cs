@@ -104,6 +104,19 @@ public class RelevantStatsInDescription
                 }
             }
 
+
+            // Dominant style
+            if (RelevantStatsInDescriptionMod.instance.RelevantStatsInDescriptionSettings.ShowDominantStyle &&
+                ModsConfig.IdeologyActive)
+            {
+                var styleCategory = floorDef.dominantStyleCategory;
+
+                if (styleCategory != null)
+                {
+                    arrayToAdd.Add("RSID_DominantStyle".Translate(styleCategory.LabelCap));
+                }
+            }
+
             // Beauty
             if (RelevantStatsInDescriptionMod.instance.RelevantStatsInDescriptionSettings.ShowBeauty)
             {
@@ -515,6 +528,22 @@ public class RelevantStatsInDescription
                 affordanceNeeded != TerrainAffordanceDefOf.Light)
             {
                 arrayToAdd.Add("RSID_AffordanceRequirement".Translate(affordanceNeeded.LabelCap));
+            }
+        }
+
+        // Dominant style
+        if (RelevantStatsInDescriptionMod.instance.RelevantStatsInDescriptionSettings.ShowDominantStyle &&
+            ModsConfig.IdeologyActive)
+        {
+            var styleCategory = buildableThing.dominantStyleCategory;
+            if (styleCategory == null && Faction.OfPlayer.ideos?.PrimaryIdeo != null)
+            {
+                styleCategory = Faction.OfPlayer.ideos.PrimaryIdeo.GetStyleCategoryFor(buildableThing);
+            }
+
+            if (styleCategory != null)
+            {
+                arrayToAdd.Add("RSID_DominantStyle".Translate(styleCategory.LabelCap));
             }
         }
 

@@ -95,4 +95,7 @@
   <RSID_ResearchSpeedFactor>Forschungsgeschwindigkeit: {0}</RSID_ResearchSpeedFactor>
   <RSID_ShowResearchSpeed.Label>Forschungsgeschwindigkeit anzeigen</RSID_ShowResearchSpeed.Label>
   <RSID_ShowResearchSpeed.Tooltip>Zeigt die relative Forschungsgeschwindigkeit der Forschungsbänke</RSID_ShowResearchSpeed.Tooltip>
+  <RSID_DominantStyle>Dominanter Stil: {0}</RSID_DominantStyle>
+  <RSID_ShowDominantStyle.Label>Dominanten Stil zeigen</RSID_ShowDominantStyle.Label>
+  <RSID_ShowDominantStyle.Tooltip>Zeigt jeden definierten dominanten Stil von baubaren Objekten</RSID_ShowDominantStyle.Tooltip>
 </LanguageData>

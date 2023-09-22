@@ -14,7 +14,7 @@ internal class RelevantStatsInDescriptionMod : Mod
 
     private static string currentVersion;
 
-    private Vector2 scrollPosition;
+    //private Vector2 scrollPosition;
 
     /// <summary>
     ///     Constructor
@@ -48,15 +48,15 @@ internal class RelevantStatsInDescriptionMod : Mod
     /// <param name="rect"></param>
     public override void DoSettingsWindowContents(Rect rect)
     {
-        var viewRect = new Rect(rect)
-        {
-            width = rect.width * 0.97f,
-            height = (typeof(RelevantStatsInDescriptionSettings).GetFields().Length * 25f) + 10f
-        };
-        Widgets.BeginScrollView(rect, ref scrollPosition, viewRect);
+        //var viewRect = new Rect(rect)
+        //{
+        //    width = rect.width * 0.97f,
+        //    height = (typeof(RelevantStatsInDescriptionSettings).GetFields().Length * 25f) + 10f
+        //};
+        //Widgets.BeginScrollView(rect, ref scrollPosition, viewRect);
         var listing_Standard = new Listing_Standard();
-        listing_Standard.Begin(viewRect);
-        listing_Standard.Gap();
+        listing_Standard.Begin(rect);
+        listing_Standard.ColumnWidth = (rect.width / 2) - 10f;
         listing_Standard.CheckboxLabeled("RSID_ShowHP.Label".Translate(), ref RelevantStatsInDescriptionSettings.ShowHP,
             "RSID_ShowHP.Tooltip".Translate());
         if (RelevantStatsInDescriptionSettings.ShowHP)
@@ -75,6 +75,13 @@ internal class RelevantStatsInDescriptionMod : Mod
         listing_Standard.CheckboxLabeled("RSID_ShowAffordanceRequirement.Label".Translate(),
             ref RelevantStatsInDescriptionSettings.ShowAffordanceRequirement,
             "RSID_ShowAffordanceRequirement.Tooltip".Translate());
+        if (ModsConfig.IdeologyActive)
+        {
+            listing_Standard.CheckboxLabeled("RSID_ShowDominantStyle.Label".Translate(),
+                ref RelevantStatsInDescriptionSettings.ShowDominantStyle,
+                "RSID_ShowDominantStyle.Tooltip".Translate());
+        }
+
         listing_Standard.CheckboxLabeled("RSID_ShowCover.Label".Translate(),
             ref RelevantStatsInDescriptionSettings.ShowCover,
             "RSID_ShowCover.Tooltip".Translate());
@@ -102,6 +109,7 @@ internal class RelevantStatsInDescriptionMod : Mod
         listing_Standard.CheckboxLabeled("RSID_ShowJoyKind.Label".Translate(),
             ref RelevantStatsInDescriptionSettings.ShowJoyKind,
             "RSID_ShowJoyKind.Tooltip".Translate());
+        listing_Standard.NewColumn();
         listing_Standard.CheckboxLabeled("RSID_ShowComfort.Label".Translate(),
             ref RelevantStatsInDescriptionSettings.ShowComfort,
             "RSID_ShowComfort.Tooltip".Translate());
@@ -182,7 +190,7 @@ internal class RelevantStatsInDescriptionMod : Mod
         }
 
         listing_Standard.End();
-        Widgets.EndScrollView();
+        //Widgets.EndScrollView();
     }
 
     public override void WriteSettings()
