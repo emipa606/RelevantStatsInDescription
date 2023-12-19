@@ -97,4 +97,8 @@
   <RSID_DominantStyle>Доминирующий стиль: {0}</RSID_DominantStyle>
   <RSID_ShowDominantStyle.Label>Показать доминирующий стиль</RSID_ShowDominantStyle.Label>
   <RSID_ShowDominantStyle.Tooltip>Показывает любой определенный доминирующий стиль строительных конструкций</RSID_ShowDominantStyle.Tooltip>
+  <RSID_DPS>Дмг/с: {0}</RSID_DPS>
+  <RSID_StoppingPower>Остановочная мощность: {0}</RSID_StoppingPower>
+  <RSID_ShowDPS.Label>Показать DPS турели</RSID_ShowDPS.Label>
+  <RSID_ShowDPS.Tooltip>Показывает среднее значение DPS на турелях, может показывать неверные значения в зависимости от используемого снаряда.</RSID_ShowDPS.Tooltip>
 </LanguageData>

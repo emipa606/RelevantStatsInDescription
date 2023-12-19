@@ -98,4 +98,8 @@
   <RSID_DominantStyle>Dominanter Stil: {0}</RSID_DominantStyle>
   <RSID_ShowDominantStyle.Label>Dominanten Stil zeigen</RSID_ShowDominantStyle.Label>
   <RSID_ShowDominantStyle.Tooltip>Zeigt jeden definierten dominanten Stil von baubaren Objekten</RSID_ShowDominantStyle.Tooltip>
+  <RSID_DPS>Dmg/s: {0}</RSID_DPS>
+  <RSID_StoppingPower>Bremsvermögen: {0}</RSID_StoppingPower>
+  <RSID_ShowDPS.Label>Revolver-DPS anzeigen</RSID_ShowDPS.Label>
+  <RSID_ShowDPS.Tooltip>Zeigt den durchschnittlichen DPS-Wert von Geschütztürmen an. Je nach verwendetem Projektil kann dieser Wert falsch sein.</RSID_ShowDPS.Tooltip>
 </LanguageData>

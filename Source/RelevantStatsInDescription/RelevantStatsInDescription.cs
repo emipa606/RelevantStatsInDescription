@@ -19,6 +19,7 @@ public class RelevantStatsInDescription
     public static readonly bool LWMLoaded;
     public static readonly bool RepowerOnOffLoaded;
     public static readonly bool LightsOutLoaded;
+    public static readonly Dictionary<ThingDef, float> TurretDps;
     private static readonly FieldInfo repowerOnOffPowerLevels;
     private static readonly MethodInfo lightsOutPostfix;
     private static readonly PropertyInfo lightsOutActiveResourceDrawRate;
@@ -33,6 +34,45 @@ public class RelevantStatsInDescription
         cachedDescriptions = new Dictionary<string, string>();
         var harmony = new Harmony("Mlie.RelevantStatsInDescription");
         harmony.PatchAll(Assembly.GetExecutingAssembly());
+        TurretDps = [];
+        foreach (var turret in DefDatabase<ThingDef>.AllDefs.Where(def => def.building?.turretGunDef != null))
+        {
+            if (turret.building.turretGunDef.verbs == null || !turret.building.turretGunDef.verbs.Any())
+            {
+                Log.Message(
+                    $"[RelevantStatsInDescription]: Skipping dps-calculation of {turret.LabelCap} as it has no valid attack-verbs");
+                continue;
+            }
+
+            var attackVerb = turret.building.turretGunDef.verbs[0];
+            var bullet = attackVerb.defaultProjectile;
+            if (bullet?.projectile == null)
+            {
+                Log.Message(
+                    $"[RelevantStatsInDescription]: Skipping dps-calculation of {turret.LabelCap} as it has no default projectile defined");
+                continue;
+            }
+
+            if (!bullet.projectile.damageDef.harmsHealth)
+            {
+                Log.Message(
+                    $"[RelevantStatsInDescription]: Skipping dps-calculation of {turret.LabelCap} as its projectile does not cause damage to health");
+                continue;
+            }
+
+            var cooldown = 0f;
+            if (turret.building.turretGunDef.StatBaseDefined(StatDefOf.RangedWeapon_Cooldown))
+            {
+                cooldown = turret.building.turretGunDef.GetStatValueAbstract(StatDefOf.RangedWeapon_Cooldown);
+            }
+
+            float burstDamage = bullet.projectile.damageAmountBase * attackVerb.burstShotCount;
+            var warmupTicks = (cooldown + attackVerb.warmupTime) * 60;
+            float burstTicks = (attackVerb.burstShotCount - 1) * attackVerb.ticksBetweenBurstShots;
+            var totalTime = (warmupTicks + burstTicks) / 60;
+
+            TurretDps[turret] = (float)Math.Round(burstDamage / totalTime, 2);
+        }
 
         if (RepowerOnOffLoaded)
         {
@@ -271,6 +311,13 @@ public class RelevantStatsInDescription
             {
                 arrayToAdd.Add("RSID_MaxHP".Translate(thing.MaxHitPoints));
             }
+        }
+
+        // DPS
+        if (RelevantStatsInDescriptionMod.instance.RelevantStatsInDescriptionSettings.ShowDPS &&
+            TurretDps.TryGetValue(buildableThing, out var turretDps))
+        {
+            arrayToAdd.Add("RSID_DPS".Translate(turretDps));
         }
 
         // Comfort

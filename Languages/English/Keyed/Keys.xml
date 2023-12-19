@@ -28,7 +28,8 @@
   <RSID_GasUser>Gas use: {0} m3/d</RSID_GasUser>
   <RSID_GasProducer>Max GasGen: {0} m3/d</RSID_GasProducer>
   <RSID_AffordanceRequirement>Affordance: {0}</RSID_AffordanceRequirement>
-  <RSID_DPM>Damage/min: {0}</RSID_DPM>
+  <RSID_DPS>Dmg/s: {0}</RSID_DPS>
+  <RSID_StoppingPower>Stopping power: {0}</RSID_StoppingPower>
   <RSID_WorkExact>Work to build: {0}</RSID_WorkExact>
   <RSID_WorkRelative>Workamount: {0}</RSID_WorkRelative>
   <RSID_TechLevel>Tech level: {0}</RSID_TechLevel>
@@ -52,6 +53,8 @@
   <RSID_ShowMass.Tooltip>Shows the mass of any building that is minifiable</RSID_ShowMass.Tooltip>
   <RSID_ShowSize.Label>Show size</RSID_ShowSize.Label>
   <RSID_ShowSize.Tooltip>Shows the size of the building when placed</RSID_ShowSize.Tooltip>
+  <RSID_ShowDPS.Label>Show turret DPS</RSID_ShowDPS.Label>
+  <RSID_ShowDPS.Tooltip>Shows the average DPS on turrets, this may show incorrect values depending on the projectile used.</RSID_ShowDPS.Tooltip>
   <RSID_ShowWealth.Label>Show wealth given</RSID_ShowWealth.Label>
   <RSID_ShowWealth.Tooltip>Shows the colony wealth given by any building</RSID_ShowWealth.Tooltip>
   <RSID_ShowCleanliness.Label>Show cleanliness given</RSID_ShowCleanliness.Label>

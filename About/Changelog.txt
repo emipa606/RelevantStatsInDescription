@@ -1,5 +1,9 @@
 # Changelog for RelevantStatsInDescription
 
+1.4.13 - Added turret dps-information.
+Used DeepL to update translations for ChineseSimplified, French, German, Russian
+
+
 1.4.12 - Added show of dominant style if Ideology is loaded.
 Used DeepL to update translations for ChineseSimplified, French, German, Russian
 

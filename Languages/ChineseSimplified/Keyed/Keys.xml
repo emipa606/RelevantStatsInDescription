@@ -97,4 +97,8 @@
   <RSID_DominantStyle>主导风格：{0}</RSID_DominantStyle>
   <RSID_ShowDominantStyle.Label>展示主导风格</RSID_ShowDominantStyle.Label>
   <RSID_ShowDominantStyle.Tooltip>将显示任何已定义的可建造建筑的主要风格</RSID_ShowDominantStyle.Tooltip>
+  <RSID_DPS>Dmg/s: {0}</RSID_DPS>
+  <RSID_StoppingPower>制动功率：{0｝</RSID_StoppingPower>
+  <RSID_ShowDPS.Label>显示炮塔 DPS</RSID_ShowDPS.Label>
+  <RSID_ShowDPS.Tooltip>显示炮塔的平均 DPS，根据使用的弹丸不同，可能会显示不正确的数值。</RSID_ShowDPS.Tooltip>
 </LanguageData>

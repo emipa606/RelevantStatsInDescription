@@ -97,4 +97,8 @@
   <RSID_DominantStyle>Style dominant : {0}</RSID_DominantStyle>
   <RSID_ShowDominantStyle.Label>Montrer le style dominant</RSID_ShowDominantStyle.Label>
   <RSID_ShowDominantStyle.Tooltip>Montrera n'importe quel style dominant défini de produits à construire</RSID_ShowDominantStyle.Tooltip>
+  <RSID_DPS>Dmg/s : {0}</RSID_DPS>
+  <RSID_StoppingPower>Puissance d'arrêt : {0}</RSID_StoppingPower>
+  <RSID_ShowDPS.Label>Afficher le DPS de la tourelle</RSID_ShowDPS.Label>
+  <RSID_ShowDPS.Tooltip>Indique le DPS moyen sur les tourelles. Les valeurs peuvent être incorrectes en fonction du projectile utilisé.</RSID_ShowDPS.Tooltip>
 </LanguageData>

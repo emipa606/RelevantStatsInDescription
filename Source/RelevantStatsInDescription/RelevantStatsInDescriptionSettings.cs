@@ -18,6 +18,7 @@ internal class RelevantStatsInDescriptionSettings : ModSettings
     public bool ShowCover = true;
     public bool ShowDefName;
     public bool ShowDominantStyle = true;
+    public bool ShowDPS;
     public bool ShowHP = true;
     public bool ShowHPForAll;
     public bool ShowImmunityGainSpeed = true;
@@ -67,6 +68,7 @@ internal class RelevantStatsInDescriptionSettings : ModSettings
         Scribe_Values.Look(ref ShowRimefeller, "ShowRimefeller", true);
         Scribe_Values.Look(ref ShowWorkToBuild, "ShowWorkToBuild", true);
         Scribe_Values.Look(ref RelativeWork, "RelativeWork");
+        Scribe_Values.Look(ref ShowDPS, "ShowDPS");
         Scribe_Values.Look(ref ShowTechLevel, "ShowTechLevel");
         Scribe_Values.Look(ref ShowStorageSpace, "ShowStorageSpace", true);
         Scribe_Values.Look(ref ShowDefName, "ShowDefName");
