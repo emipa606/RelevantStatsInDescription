@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <LanguageData>
   <!-- Info -->
   <RSID_Undefined>Undefined</RSID_Undefined>
@@ -16,6 +16,7 @@
   <RSID_Joy>Joy gainfactor: {0}</RSID_Joy>
   <RSID_JoyKind>Joy kind: {0}</RSID_JoyKind>
   <RSID_Comfort>Comfort: {0}</RSID_Comfort>
+  <RSID_UIOrder>UI order: {0}</RSID_UIOrder>
   <RSID_BedRestEffectiveness>Bedrest: {0}</RSID_BedRestEffectiveness>
   <RSID_ImmunityGainSpeedFactor>Immunity gainspeed: {0}</RSID_ImmunityGainSpeedFactor>
   <RSID_SurgerySuccessChanceFactor>Surgery chance: {0}</RSID_SurgerySuccessChanceFactor>
@@ -39,7 +40,7 @@
   <!-- Settings -->
   <RSID_ShowHP.Label>Show max HP for linkable structures and doors</RSID_ShowHP.Label>
   <RSID_ShowHP.Tooltip>Shows the maximum hitpoints for structures such as walls, fences, doors and sandbags</RSID_ShowHP.Tooltip>
-  <RSID_ShowHPForAll.Label>    Show for all stuffable</RSID_ShowHPForAll.Label>
+  <RSID_ShowHPForAll.Label> Show for all stuffable</RSID_ShowHPForAll.Label>
   <RSID_ShowHPForAll.Tooltip>Shows maximum hitpoints for all stuffable buildings</RSID_ShowHPForAll.Tooltip>
   <RSID_ShowAffordance.Label>Show affordance given</RSID_ShowAffordance.Label>
   <RSID_ShowAffordance.Tooltip>Shows the maximum highest terrain affordance given by floors and bridges</RSID_ShowAffordance.Tooltip>
@@ -68,6 +69,8 @@
   <RSID_ShowJoyKind.Label>Show joy kind</RSID_ShowJoyKind.Label>
   <RSID_ShowJoyKind.Tooltip>Shows the joy-kind for any joy-gain for buildings</RSID_ShowJoyKind.Tooltip>
   <RSID_ShowComfort.Label>Show comfort given</RSID_ShowComfort.Label>
+  <RSID_ShowUIOrder.Tooltip>Shows the UI order of a building. The UI order is the order in which buildings in the architect menu are displayed in.</RSID_ShowUIOrder.Tooltip>
+  <RSID_ShowUIOrder.Label>Show UI order</RSID_ShowUIOrder.Label>
   <RSID_ShowComfort.Tooltip>Shows any comfort given by a building</RSID_ShowComfort.Tooltip>
   <RSID_ShowBedRest.Label>Show bedrest effectivness</RSID_ShowBedRest.Label>
   <RSID_ShowBedRest.Tooltip>Shows the bedrest effectivness for any bed</RSID_ShowBedRest.Tooltip>
@@ -81,7 +84,7 @@
   <RSID_ShowMedicalTendQuality.Tooltip>Shows the medical tend quality for any bed that defaults as a hospital bed, if defined, or animal bed</RSID_ShowMedicalTendQuality.Tooltip>
   <RSID_ShowPowerConsumer.Label>Show power consumption</RSID_ShowPowerConsumer.Label>
   <RSID_ShowPowerConsumer.Tooltip>Will show the maximum power-consumption of any building that consumes power</RSID_ShowPowerConsumer.Tooltip>
-  <RSID_VariedPowerModLoaded.Label>    Varied power-mod active, reopen this settings page after changing any power-settings.</RSID_VariedPowerModLoaded.Label>
+  <RSID_VariedPowerModLoaded.Label> Varied power-mod active, reopen this settings page after changing any power-settings.</RSID_VariedPowerModLoaded.Label>
   <RSID_VariedPowerModLoaded.Tooltip>There is a mod active that modifies power-draw of items when they are not in use (Turn It On and Off - RePowered or LightsOut). If you change the settings regarding power in any of these mods, reopen this settings page after to clear the cached powervalues in the descriptions. If not you will not see the updated values in game.</RSID_VariedPowerModLoaded.Tooltip>
   <RSID_ShowPowerProducer.Label>Show power production</RSID_ShowPowerProducer.Label>
   <RSID_ShowPowerProducer.Tooltip>Will show the maximum power-production of any building that produces power</RSID_ShowPowerProducer.Tooltip>
@@ -89,13 +92,13 @@
   <RSID_ShowDefName.Tooltip>Will show the defname of all buildables</RSID_ShowDefName.Tooltip>
   <RSID_ShowDominantStyle.Label>Show dominant style</RSID_ShowDominantStyle.Label>
   <RSID_ShowDominantStyle.Tooltip>Will show any defined dominant style of buildables</RSID_ShowDominantStyle.Tooltip>
-  <RSID_ShowVFEGas.Label>    Also Gas production/consumption</RSID_ShowVFEGas.Label>
+  <RSID_ShowVFEGas.Label> Also Gas production/consumption</RSID_ShowVFEGas.Label>
   <RSID_ShowVFEGas.Tooltip>Will show the production/consumption of gas of buildings in Vanilla Furniture Expanded - Power. Depends on the power-settings above</RSID_ShowVFEGas.Tooltip>
-  <RSID_ShowRimefeller.Label>    Also Chemfuel use</RSID_ShowRimefeller.Label>
+  <RSID_ShowRimefeller.Label> Also Chemfuel use</RSID_ShowRimefeller.Label>
   <RSID_ShowRimefeller.Tooltip>Will show the chemfuel use of powerplants in Rimefeller. Depends on the power-settings above</RSID_ShowRimefeller.Tooltip>
   <RSID_ShowWorkToBuild.Label>Show work amount</RSID_ShowWorkToBuild.Label>
   <RSID_ShowWorkToBuild.Tooltip>Will show the amount of work required for completing the building</RSID_ShowWorkToBuild.Tooltip>
-  <RSID_RelativeWork.Label>    Show relative work-amount</RSID_RelativeWork.Label>
+  <RSID_RelativeWork.Label> Show relative work-amount</RSID_RelativeWork.Label>
   <RSID_RelativeWork.Tooltip>Will show the workamount as small/medium/large to get more of a general idea of the amount of work</RSID_RelativeWork.Tooltip>
   <RSID_RemoveRotateWidget.Label>Remove the rotate-info window</RSID_RemoveRotateWidget.Label>
   <RSID_RemoveRotateWidget.Tooltip>Will remove the rotate-info window above the architect menu, if you think that you have it memorized by now.</RSID_RemoveRotateWidget.Tooltip>
