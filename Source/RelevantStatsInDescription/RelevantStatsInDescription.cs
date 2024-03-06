@@ -623,6 +623,12 @@ public class RelevantStatsInDescription
             }
         }
 
+        // UI Order
+        if (RelevantStatsInDescriptionMod.instance.RelevantStatsInDescriptionSettings.ShowUIOrder)
+        {
+            arrayToAdd.Add("RSID_UIOrder".Translate(buildableThing.uiOrder));
+        }
+
         // Defname
         if (RelevantStatsInDescriptionMod.instance.RelevantStatsInDescriptionSettings.ShowDefName)
         {
