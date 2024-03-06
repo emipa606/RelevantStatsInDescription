@@ -1,4 +1,4 @@
-﻿using Mlie;
+using Mlie;
 using UnityEngine;
 using Verse;
 
@@ -20,7 +20,8 @@ internal class RelevantStatsInDescriptionMod : Mod
     ///     Constructor
     /// </summary>
     /// <param name="content"></param>
-    public RelevantStatsInDescriptionMod(ModContentPack content) : base(content)
+    public RelevantStatsInDescriptionMod(ModContentPack content)
+        : base(content)
     {
         instance = this;
         RelevantStatsInDescriptionSettings = GetSettings<RelevantStatsInDescriptionSettings>();
@@ -57,132 +58,217 @@ internal class RelevantStatsInDescriptionMod : Mod
         var listing_Standard = new Listing_Standard();
         listing_Standard.Begin(rect);
         listing_Standard.ColumnWidth = (rect.width / 2) - 10f;
-        listing_Standard.CheckboxLabeled("RSID_ShowHP.Label".Translate(), ref RelevantStatsInDescriptionSettings.ShowHP,
-            "RSID_ShowHP.Tooltip".Translate());
+        listing_Standard.CheckboxLabeled(
+            "RSID_ShowHP.Label".Translate(),
+            ref RelevantStatsInDescriptionSettings.ShowHP,
+            "RSID_ShowHP.Tooltip".Translate()
+        );
         if (RelevantStatsInDescriptionSettings.ShowHP)
         {
-            listing_Standard.CheckboxLabeled("RSID_ShowHPForAll.Label".Translate(),
+            listing_Standard.CheckboxLabeled(
+                "RSID_ShowHPForAll.Label".Translate(),
                 ref RelevantStatsInDescriptionSettings.ShowHPForAll,
-                "RSID_ShowHPForAll.Tooltip".Translate());
+                "RSID_ShowHPForAll.Tooltip".Translate()
+            );
         }
         else
         {
             RelevantStatsInDescriptionSettings.ShowHPForAll = false;
         }
 
-        listing_Standard.CheckboxLabeled("RSID_ShowAffordance.Label".Translate(),
-            ref RelevantStatsInDescriptionSettings.ShowAffordance, "RSID_ShowAffordance.Tooltip".Translate());
-        listing_Standard.CheckboxLabeled("RSID_ShowAffordanceRequirement.Label".Translate(),
+        listing_Standard.CheckboxLabeled(
+            "RSID_ShowAffordance.Label".Translate(),
+            ref RelevantStatsInDescriptionSettings.ShowAffordance,
+            "RSID_ShowAffordance.Tooltip".Translate()
+        );
+        listing_Standard.CheckboxLabeled(
+            "RSID_ShowAffordanceRequirement.Label".Translate(),
             ref RelevantStatsInDescriptionSettings.ShowAffordanceRequirement,
-            "RSID_ShowAffordanceRequirement.Tooltip".Translate());
+            "RSID_ShowAffordanceRequirement.Tooltip".Translate()
+        );
         if (ModsConfig.IdeologyActive)
         {
-            listing_Standard.CheckboxLabeled("RSID_ShowDominantStyle.Label".Translate(),
+            listing_Standard.CheckboxLabeled(
+                "RSID_ShowDominantStyle.Label".Translate(),
                 ref RelevantStatsInDescriptionSettings.ShowDominantStyle,
-                "RSID_ShowDominantStyle.Tooltip".Translate());
+                "RSID_ShowDominantStyle.Tooltip".Translate()
+            );
         }
 
-        listing_Standard.CheckboxLabeled("RSID_ShowCover.Label".Translate(),
+        listing_Standard.CheckboxLabeled(
+            "RSID_ShowCover.Label".Translate(),
             ref RelevantStatsInDescriptionSettings.ShowCover,
-            "RSID_ShowCover.Tooltip".Translate());
-        listing_Standard.CheckboxLabeled("RSID_ShowBeauty.Label".Translate(),
+            "RSID_ShowCover.Tooltip".Translate()
+        );
+        listing_Standard.CheckboxLabeled(
+            "RSID_ShowBeauty.Label".Translate(),
             ref RelevantStatsInDescriptionSettings.ShowBeauty,
-            "RSID_ShowBeauty.Tooltip".Translate());
-        listing_Standard.CheckboxLabeled("RSID_ShowWealth.Label".Translate(),
+            "RSID_ShowBeauty.Tooltip".Translate()
+        );
+        listing_Standard.CheckboxLabeled(
+            "RSID_ShowWealth.Label".Translate(),
             ref RelevantStatsInDescriptionSettings.ShowWealth,
-            "RSID_ShowWealth.Tooltip".Translate());
-        listing_Standard.CheckboxLabeled("RSID_ShowMass.Label".Translate(),
+            "RSID_ShowWealth.Tooltip".Translate()
+        );
+        listing_Standard.CheckboxLabeled(
+            "RSID_ShowMass.Label".Translate(),
             ref RelevantStatsInDescriptionSettings.ShowMass,
-            "RSID_ShowMass.Tooltip".Translate());
-        listing_Standard.CheckboxLabeled("RSID_ShowDPS.Label".Translate(),
+            "RSID_ShowMass.Tooltip".Translate()
+        );
+        listing_Standard.CheckboxLabeled(
+            "RSID_ShowDPS.Label".Translate(),
             ref RelevantStatsInDescriptionSettings.ShowDPS,
-            "RSID_ShowDPS.Tooltip".Translate());
-        listing_Standard.CheckboxLabeled("RSID_ShowSize.Label".Translate(),
+            "RSID_ShowDPS.Tooltip".Translate()
+        );
+        listing_Standard.CheckboxLabeled(
+            "RSID_ShowSize.Label".Translate(),
             ref RelevantStatsInDescriptionSettings.ShowSize,
-            "RSID_ShowSize.Tooltip".Translate());
-        listing_Standard.CheckboxLabeled("RSID_ShowCleanliness.Label".Translate(),
+            "RSID_ShowSize.Tooltip".Translate()
+        );
+        listing_Standard.CheckboxLabeled(
+            "RSID_ShowCleanliness.Label".Translate(),
             ref RelevantStatsInDescriptionSettings.ShowCleanliness,
-            "RSID_ShowCleanliness.Tooltip".Translate());
-        listing_Standard.CheckboxLabeled("RSID_ShowTechLevel.Label".Translate(),
+            "RSID_ShowCleanliness.Tooltip".Translate()
+        );
+        listing_Standard.CheckboxLabeled(
+            "RSID_ShowTechLevel.Label".Translate(),
             ref RelevantStatsInDescriptionSettings.ShowTechLevel,
-            "RSID_ShowTechLevel.Tooltip".Translate());
-        listing_Standard.CheckboxLabeled("RSID_ShowJoy.Label".Translate(),
+            "RSID_ShowTechLevel.Tooltip".Translate()
+        );
+        listing_Standard.CheckboxLabeled(
+            "RSID_ShowJoy.Label".Translate(),
             ref RelevantStatsInDescriptionSettings.ShowJoy,
-            "RSID_ShowJoy.Tooltip".Translate());
-        listing_Standard.CheckboxLabeled("RSID_ShowJoyKind.Label".Translate(),
+            "RSID_ShowJoy.Tooltip".Translate()
+        );
+        listing_Standard.CheckboxLabeled(
+            "RSID_ShowJoyKind.Label".Translate(),
             ref RelevantStatsInDescriptionSettings.ShowJoyKind,
-            "RSID_ShowJoyKind.Tooltip".Translate());
+            "RSID_ShowJoyKind.Tooltip".Translate()
+        );
         listing_Standard.NewColumn();
-        listing_Standard.CheckboxLabeled("RSID_ShowComfort.Label".Translate(),
+        listing_Standard.CheckboxLabeled(
+            "RSID_ShowComfort.Label".Translate(),
             ref RelevantStatsInDescriptionSettings.ShowComfort,
-            "RSID_ShowComfort.Tooltip".Translate());
-        listing_Standard.CheckboxLabeled("RSID_ShowBedRest.Label".Translate(),
+            "RSID_ShowComfort.Tooltip".Translate()
+        );
+        listing_Standard.CheckboxLabeled(
+            "RSID_ShowBedRest.Label".Translate(),
             ref RelevantStatsInDescriptionSettings.ShowBedRest,
-            "RSID_ShowBedRest.Tooltip".Translate());
-        listing_Standard.CheckboxLabeled("RSID_ShowImmunityGainSpeed.Label".Translate(),
+            "RSID_ShowBedRest.Tooltip".Translate()
+        );
+        listing_Standard.CheckboxLabeled(
+            "RSID_ShowImmunityGainSpeed.Label".Translate(),
             ref RelevantStatsInDescriptionSettings.ShowImmunityGainSpeed,
-            "RSID_ShowImmunityGainSpeed.Tooltip".Translate());
-        listing_Standard.CheckboxLabeled("RSID_ShowSurgerySuccessChance.Label".Translate(),
+            "RSID_ShowImmunityGainSpeed.Tooltip".Translate()
+        );
+        listing_Standard.CheckboxLabeled(
+            "RSID_ShowSurgerySuccessChance.Label".Translate(),
             ref RelevantStatsInDescriptionSettings.ShowSurgerySuccessChance,
-            "RSID_ShowSurgerySuccessChance.Tooltip".Translate());
-        listing_Standard.CheckboxLabeled("RSID_ShowMedicalTendQuality.Label".Translate(),
+            "RSID_ShowSurgerySuccessChance.Tooltip".Translate()
+        );
+        listing_Standard.CheckboxLabeled(
+            "RSID_ShowMedicalTendQuality.Label".Translate(),
             ref RelevantStatsInDescriptionSettings.ShowMedicalTendQuality,
-            "RSID_ShowMedicalTendQuality.Tooltip".Translate());
-        listing_Standard.CheckboxLabeled("RSID_ShowResearchSpeed.Label".Translate(),
+            "RSID_ShowMedicalTendQuality.Tooltip".Translate()
+        );
+        listing_Standard.CheckboxLabeled(
+            "RSID_ShowResearchSpeed.Label".Translate(),
             ref RelevantStatsInDescriptionSettings.ShowResearchSpeed,
-            "RSID_ShowResearchSpeed.Tooltip".Translate());
-        listing_Standard.CheckboxLabeled("RSID_ShowPowerConsumer.Label".Translate(),
+            "RSID_ShowResearchSpeed.Tooltip".Translate()
+        );
+        listing_Standard.CheckboxLabeled(
+            "RSID_ShowPowerConsumer.Label".Translate(),
             ref RelevantStatsInDescriptionSettings.ShowPowerConsumer,
-            "RSID_ShowPowerConsumer.Tooltip".Translate());
-        if (RelevantStatsInDescriptionSettings.ShowPowerConsumer && (RelevantStatsInDescription.RepowerOnOffLoaded ||
-                                                                     RelevantStatsInDescription.LightsOutLoaded))
+            "RSID_ShowPowerConsumer.Tooltip".Translate()
+        );
+        if (
+            RelevantStatsInDescriptionSettings.ShowPowerConsumer
+            && (
+                RelevantStatsInDescription.RepowerOnOffLoaded
+                || RelevantStatsInDescription.LightsOutLoaded
+            )
+        )
         {
-            listing_Standard.Label("RSID_VariedPowerModLoaded.Label".Translate(), -1f,
-                "RSID_VariedPowerModLoaded.Tooltip".Translate());
+            listing_Standard.Label(
+                "RSID_VariedPowerModLoaded.Label".Translate(),
+                -1f,
+                "RSID_VariedPowerModLoaded.Tooltip".Translate()
+            );
         }
 
-        listing_Standard.CheckboxLabeled("RSID_ShowPowerProducer.Label".Translate(),
+        listing_Standard.CheckboxLabeled(
+            "RSID_ShowPowerProducer.Label".Translate(),
             ref RelevantStatsInDescriptionSettings.ShowPowerProducer,
-            "RSID_ShowPowerProducer.Tooltip".Translate());
-        listing_Standard.CheckboxLabeled("RSID_ShowStorageSpace.Label".Translate(),
+            "RSID_ShowPowerProducer.Tooltip".Translate()
+        );
+        listing_Standard.CheckboxLabeled(
+            "RSID_ShowStorageSpace.Label".Translate(),
             ref RelevantStatsInDescriptionSettings.ShowStorageSpace,
-            "RSID_ShowStorageSpace.Tooltip".Translate());
-        if (RelevantStatsInDescription.VFEPowerLoaded && (RelevantStatsInDescriptionSettings.ShowPowerConsumer ||
-                                                          RelevantStatsInDescriptionSettings.ShowPowerProducer))
+            "RSID_ShowStorageSpace.Tooltip".Translate()
+        );
+        if (
+            RelevantStatsInDescription.VFEPowerLoaded
+            && (
+                RelevantStatsInDescriptionSettings.ShowPowerConsumer
+                || RelevantStatsInDescriptionSettings.ShowPowerProducer
+            )
+        )
         {
-            listing_Standard.CheckboxLabeled("RSID_ShowVFEGas.Label".Translate(),
+            listing_Standard.CheckboxLabeled(
+                "RSID_ShowVFEGas.Label".Translate(),
                 ref RelevantStatsInDescriptionSettings.ShowVFEGas,
-                "RSID_ShowVFEGas.Tooltip".Translate());
+                "RSID_ShowVFEGas.Tooltip".Translate()
+            );
         }
 
-        if (RelevantStatsInDescription.RimefellerLoaded && (RelevantStatsInDescriptionSettings.ShowPowerConsumer ||
-                                                            RelevantStatsInDescriptionSettings.ShowPowerProducer))
+        if (
+            RelevantStatsInDescription.RimefellerLoaded
+            && (
+                RelevantStatsInDescriptionSettings.ShowPowerConsumer
+                || RelevantStatsInDescriptionSettings.ShowPowerProducer
+            )
+        )
         {
-            listing_Standard.CheckboxLabeled("RSID_ShowRimefeller.Label".Translate(),
+            listing_Standard.CheckboxLabeled(
+                "RSID_ShowRimefeller.Label".Translate(),
                 ref RelevantStatsInDescriptionSettings.ShowRimefeller,
-                "RSID_ShowRimefeller.Tooltip".Translate());
+                "RSID_ShowRimefeller.Tooltip".Translate()
+            );
         }
 
-        listing_Standard.CheckboxLabeled("RSID_ShowWorkToBuild.Label".Translate(),
+        listing_Standard.CheckboxLabeled(
+            "RSID_ShowWorkToBuild.Label".Translate(),
             ref RelevantStatsInDescriptionSettings.ShowWorkToBuild,
-            "RSID_ShowWorkToBuild.Tooltip".Translate());
+            "RSID_ShowWorkToBuild.Tooltip".Translate()
+        );
         if (RelevantStatsInDescriptionSettings.ShowWorkToBuild)
         {
-            listing_Standard.CheckboxLabeled("RSID_RelativeWork.Label".Translate(),
+            listing_Standard.CheckboxLabeled(
+                "RSID_RelativeWork.Label".Translate(),
                 ref RelevantStatsInDescriptionSettings.RelativeWork,
-                "RSID_RelativeWork.Tooltip".Translate());
+                "RSID_RelativeWork.Tooltip".Translate()
+            );
         }
         else
         {
             RelevantStatsInDescriptionSettings.RelativeWork = false;
         }
 
-        listing_Standard.CheckboxLabeled("RSID_ShowDefName.Label".Translate(),
+        listing_Standard.CheckboxLabeled(
+            "RSID_ShowDefName.Label".Translate(),
             ref RelevantStatsInDescriptionSettings.ShowDefName,
-            "RSID_ShowDefName.Tooltip".Translate());
-        listing_Standard.CheckboxLabeled("RSID_RemoveRotateWidget.Label".Translate(),
+            "RSID_ShowDefName.Tooltip".Translate()
+        );
+        listing_Standard.CheckboxLabeled(
+            "RSID_ShowUIOrder.Label".Translate(),
+            ref RelevantStatsInDescriptionSettings.ShowUIOrder,
+            "RSID_ShowUIOrder.Tooltip".Translate()
+        );
+        listing_Standard.CheckboxLabeled(
+            "RSID_RemoveRotateWidget.Label".Translate(),
             ref RelevantStatsInDescriptionSettings.RemoveRotateWidget,
-            "RSID_RemoveRotateWidget.Tooltip".Translate());
+            "RSID_RemoveRotateWidget.Tooltip".Translate()
+        );
 
         if (currentVersion != null)
         {
