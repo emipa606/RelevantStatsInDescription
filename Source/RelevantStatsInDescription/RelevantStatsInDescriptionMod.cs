@@ -180,6 +180,9 @@ internal class RelevantStatsInDescriptionMod : Mod
         listing_Standard.CheckboxLabeled("RSID_ShowDefName.Label".Translate(),
             ref RelevantStatsInDescriptionSettings.ShowDefName,
             "RSID_ShowDefName.Tooltip".Translate());
+        listing_Standard.CheckboxLabeled("RSID_ShowUIOrder.Label".Translate(),
+            ref RelevantStatsInDescriptionSettings.ShowUIOrder,
+            "RSID_ShowUIOrder.Tooltip".Translate());
         listing_Standard.CheckboxLabeled("RSID_RemoveRotateWidget.Label".Translate(),
             ref RelevantStatsInDescriptionSettings.RemoveRotateWidget,
             "RSID_RemoveRotateWidget.Tooltip".Translate());
