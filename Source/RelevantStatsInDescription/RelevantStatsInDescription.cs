@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
@@ -29,18 +29,27 @@ public class RelevantStatsInDescription
         VFEPowerLoaded = ModLister.GetActiveModWithIdentifier("VanillaExpanded.VFEPower") != null;
         RimefellerLoaded = ModLister.GetActiveModWithIdentifier("Dubwise.Rimefeller") != null;
         LWMLoaded = ModLister.GetActiveModWithIdentifier("LWM.DeepStorage") != null;
-        RepowerOnOffLoaded = ModLister.GetActiveModWithIdentifier("Mlie.TurnOnOffRePowered") != null;
+        RepowerOnOffLoaded =
+            ModLister.GetActiveModWithIdentifier("Mlie.TurnOnOffRePowered") != null;
         LightsOutLoaded = ModLister.GetActiveModWithIdentifier("juanlopez2008.LightsOut") != null;
         cachedDescriptions = new Dictionary<string, string>();
         var harmony = new Harmony("Mlie.RelevantStatsInDescription");
         harmony.PatchAll(Assembly.GetExecutingAssembly());
         TurretDps = [];
-        foreach (var turret in DefDatabase<ThingDef>.AllDefs.Where(def => def.building?.turretGunDef != null))
+        foreach (
+            var turret in DefDatabase<ThingDef>
+                .AllDefs
+                .Where(def => def.building?.turretGunDef != null)
+        )
         {
-            if (turret.building.turretGunDef.verbs == null || !turret.building.turretGunDef.verbs.Any())
+            if (
+                turret.building.turretGunDef.verbs == null
+                || !turret.building.turretGunDef.verbs.Any()
+            )
             {
                 Log.Message(
-                    $"[RelevantStatsInDescription]: Skipping dps-calculation of {turret.LabelCap} as it has no valid attack-verbs");
+                    $"[RelevantStatsInDescription]: Skipping dps-calculation of {turret.LabelCap} as it has no valid attack-verbs"
+                );
                 continue;
             }
 
@@ -49,21 +58,26 @@ public class RelevantStatsInDescription
             if (bullet?.projectile == null)
             {
                 Log.Message(
-                    $"[RelevantStatsInDescription]: Skipping dps-calculation of {turret.LabelCap} as it has no default projectile defined");
+                    $"[RelevantStatsInDescription]: Skipping dps-calculation of {turret.LabelCap} as it has no default projectile defined"
+                );
                 continue;
             }
 
             if (!bullet.projectile.damageDef.harmsHealth)
             {
                 Log.Message(
-                    $"[RelevantStatsInDescription]: Skipping dps-calculation of {turret.LabelCap} as its projectile does not cause damage to health");
+                    $"[RelevantStatsInDescription]: Skipping dps-calculation of {turret.LabelCap} as its projectile does not cause damage to health"
+                );
                 continue;
             }
 
             var cooldown = 0f;
             if (turret.building.turretGunDef.StatBaseDefined(StatDefOf.RangedWeapon_Cooldown))
             {
-                cooldown = turret.building.turretGunDef.GetStatValueAbstract(StatDefOf.RangedWeapon_Cooldown);
+                cooldown = turret
+                    .building
+                    .turretGunDef
+                    .GetStatValueAbstract(StatDefOf.RangedWeapon_Cooldown);
             }
 
             float burstDamage = bullet.projectile.damageAmountBase * attackVerb.burstShotCount;
@@ -76,7 +90,9 @@ public class RelevantStatsInDescription
 
         if (RepowerOnOffLoaded)
         {
-            repowerOnOffPowerLevels = AccessTools.Field("TurnOnOffRePowered.TurnItOnandOff:powerLevels");
+            repowerOnOffPowerLevels = AccessTools.Field(
+                "TurnOnOffRePowered.TurnItOnandOff:powerLevels"
+            );
         }
 
         if (!LightsOutLoaded)
@@ -84,9 +100,12 @@ public class RelevantStatsInDescription
             return;
         }
 
-        lightsOutPostfix = AccessTools.Method("LightsOut.Patches.Power.DisableBasePowerDrawOnGet:Postfix");
-        lightsOutActiveResourceDrawRate =
-            AccessTools.Property("LightsOut.Boilerplate.ModSettings:ActiveResourceDrawRate");
+        lightsOutPostfix = AccessTools.Method(
+            "LightsOut.Patches.Power.DisableBasePowerDrawOnGet:Postfix"
+        );
+        lightsOutActiveResourceDrawRate = AccessTools.Property(
+            "LightsOut.Boilerplate.ModSettings:ActiveResourceDrawRate"
+        );
     }
 
     public static void ClearCache()
@@ -97,8 +116,19 @@ public class RelevantStatsInDescription
 
     public static float GetExtraHeight()
     {
-        return (typeof(RelevantStatsInDescriptionSettings).GetFields().Count(info =>
-            (bool)info.GetValue(RelevantStatsInDescriptionMod.instance.RelevantStatsInDescriptionSettings)) * 5f) + 10f;
+        return (
+                typeof(RelevantStatsInDescriptionSettings)
+                    .GetFields()
+                    .Count(
+                        info =>
+                            (bool)
+                                info.GetValue(
+                                    RelevantStatsInDescriptionMod
+                                        .instance
+                                        .RelevantStatsInDescriptionSettings
+                                )
+                    ) * 5f
+            ) + 10f;
     }
 
     public static string GetUpdatedDescription(BuildableDef def, ThingDef stuff)
@@ -114,40 +144,63 @@ public class RelevantStatsInDescription
         if (def is TerrainDef floorDef)
         {
             // Affordances
-            if (RelevantStatsInDescriptionMod.instance.RelevantStatsInDescriptionSettings.ShowAffordance)
+            if (
+                RelevantStatsInDescriptionMod
+                    .instance
+                    .RelevantStatsInDescriptionSettings
+                    .ShowAffordance
+            )
             {
-                if (floorDef.affordances?.Any() == true && !floorDef.affordances.Contains(TerrainAffordanceDefOf.Heavy))
+                if (
+                    floorDef.affordances?.Any() == true
+                    && !floorDef.affordances.Contains(TerrainAffordanceDefOf.Heavy)
+                )
                 {
                     if (floorDef.affordances.Contains(TerrainAffordanceDefOf.Medium))
                     {
-                        arrayToAdd.Add("RSID_MaxAffordance".Translate(TerrainAffordanceDefOf.Medium.LabelCap));
+                        arrayToAdd.Add(
+                            "RSID_MaxAffordance".Translate(TerrainAffordanceDefOf.Medium.LabelCap)
+                        );
                     }
                     else if (floorDef.affordances.Contains(TerrainAffordanceDefOf.Light))
                     {
-                        arrayToAdd.Add("RSID_MaxAffordance".Translate(TerrainAffordanceDefOf.Light.LabelCap));
+                        arrayToAdd.Add(
+                            "RSID_MaxAffordance".Translate(TerrainAffordanceDefOf.Light.LabelCap)
+                        );
                     }
                     else
                     {
-                        arrayToAdd.Add("RSID_MaxAffordance".Translate("RSID_Undefined".Translate()));
+                        arrayToAdd.Add(
+                            "RSID_MaxAffordance".Translate("RSID_Undefined".Translate())
+                        );
                     }
                 }
             }
 
             // Affordance requirement
-            if (RelevantStatsInDescriptionMod.instance.RelevantStatsInDescriptionSettings.ShowAffordanceRequirement)
+            if (
+                RelevantStatsInDescriptionMod
+                    .instance
+                    .RelevantStatsInDescriptionSettings
+                    .ShowAffordanceRequirement
+            )
             {
                 var affordanceNeeded = floorDef.GetTerrainAffordanceNeed(stuff);
-                if (affordanceNeeded != null &&
-                    affordanceNeeded != TerrainAffordanceDefOf.Light)
+                if (affordanceNeeded != null && affordanceNeeded != TerrainAffordanceDefOf.Light)
                 {
-                    arrayToAdd.Add("RSID_AffordanceRequirement".Translate(affordanceNeeded.LabelCap));
+                    arrayToAdd.Add(
+                        "RSID_AffordanceRequirement".Translate(affordanceNeeded.LabelCap)
+                    );
                 }
             }
 
-
             // Dominant style
-            if (RelevantStatsInDescriptionMod.instance.RelevantStatsInDescriptionSettings.ShowDominantStyle &&
-                ModsConfig.IdeologyActive)
+            if (
+                RelevantStatsInDescriptionMod
+                    .instance
+                    .RelevantStatsInDescriptionSettings
+                    .ShowDominantStyle && ModsConfig.IdeologyActive
+            )
             {
                 var styleCategory = floorDef.dominantStyleCategory;
 
@@ -158,7 +211,9 @@ public class RelevantStatsInDescription
             }
 
             // Beauty
-            if (RelevantStatsInDescriptionMod.instance.RelevantStatsInDescriptionSettings.ShowBeauty)
+            if (
+                RelevantStatsInDescriptionMod.instance.RelevantStatsInDescriptionSettings.ShowBeauty
+            )
             {
                 var beauty = floorDef.GetStatValueAbstract(StatDefOf.Beauty);
                 if (beauty != 0)
@@ -168,7 +223,9 @@ public class RelevantStatsInDescription
             }
 
             // Wealth
-            if (RelevantStatsInDescriptionMod.instance.RelevantStatsInDescriptionSettings.ShowWealth)
+            if (
+                RelevantStatsInDescriptionMod.instance.RelevantStatsInDescriptionSettings.ShowWealth
+            )
             {
                 var wealth = floorDef.GetStatValueAbstract(StatDefOf.MarketValue);
                 if (wealth != 0)
@@ -178,7 +235,12 @@ public class RelevantStatsInDescription
             }
 
             // Cleanliness
-            if (RelevantStatsInDescriptionMod.instance.RelevantStatsInDescriptionSettings.ShowCleanliness)
+            if (
+                RelevantStatsInDescriptionMod
+                    .instance
+                    .RelevantStatsInDescriptionSettings
+                    .ShowCleanliness
+            )
             {
                 var cleanliness = floorDef.GetStatValueAbstract(StatDefOf.Cleanliness);
                 if (cleanliness != 0)
@@ -188,7 +250,12 @@ public class RelevantStatsInDescription
             }
 
             // TechLevel
-            if (RelevantStatsInDescriptionMod.instance.RelevantStatsInDescriptionSettings.ShowTechLevel)
+            if (
+                RelevantStatsInDescriptionMod
+                    .instance
+                    .RelevantStatsInDescriptionSettings
+                    .ShowTechLevel
+            )
             {
                 if (floorDef.researchPrerequisites?.Any() == true)
                 {
@@ -203,29 +270,47 @@ public class RelevantStatsInDescription
 
                     if (techLevel > 0)
                     {
-                        arrayToAdd.Add("RSID_TechLevel".Translate(((TechLevel)techLevel).ToString()));
+                        arrayToAdd.Add(
+                            "RSID_TechLevel".Translate(((TechLevel)techLevel).ToString())
+                        );
                     }
                 }
             }
 
             // Work to build
-            if (RelevantStatsInDescriptionMod.instance.RelevantStatsInDescriptionSettings.ShowWorkToBuild)
+            if (
+                RelevantStatsInDescriptionMod
+                    .instance
+                    .RelevantStatsInDescriptionSettings
+                    .ShowWorkToBuild
+            )
             {
                 var workToBuild = floorDef.GetStatValueAbstract(StatDefOf.WorkToBuild);
                 if (workToBuild != 0)
                 {
-                    if (RelevantStatsInDescriptionMod.instance.RelevantStatsInDescriptionSettings.RelativeWork)
+                    if (
+                        RelevantStatsInDescriptionMod
+                            .instance
+                            .RelevantStatsInDescriptionSettings
+                            .RelativeWork
+                    )
                     {
                         switch (workToBuild)
                         {
                             case < 1000:
-                                arrayToAdd.Add("RSID_WorkRelative".Translate("RSID_Small".Translate()));
+                                arrayToAdd.Add(
+                                    "RSID_WorkRelative".Translate("RSID_Small".Translate())
+                                );
                                 break;
                             case < 5000:
-                                arrayToAdd.Add("RSID_WorkRelative".Translate("RSID_Medium".Translate()));
+                                arrayToAdd.Add(
+                                    "RSID_WorkRelative".Translate("RSID_Medium".Translate())
+                                );
                                 break;
                             default:
-                                arrayToAdd.Add("RSID_WorkRelative".Translate("RSID_Large".Translate()));
+                                arrayToAdd.Add(
+                                    "RSID_WorkRelative".Translate("RSID_Large".Translate())
+                                );
                                 break;
                         }
                     }
@@ -237,7 +322,12 @@ public class RelevantStatsInDescription
             }
 
             // Defname
-            if (RelevantStatsInDescriptionMod.instance.RelevantStatsInDescriptionSettings.ShowDefName)
+            if (
+                RelevantStatsInDescriptionMod
+                    .instance
+                    .RelevantStatsInDescriptionSettings
+                    .ShowDefName
+            )
             {
                 arrayToAdd.Add("RSID_DefName".Translate(floorDef.defName));
             }
@@ -286,36 +376,50 @@ public class RelevantStatsInDescription
         }
 
         // Structural building
-        if (buildableThing.graphicData?.linkFlags != null &&
-            ((buildableThing.graphicData.linkFlags & LinkFlags.Wall) != 0 ||
-             (buildableThing.graphicData.linkFlags & LinkFlags.Fences) != 0 ||
-             (buildableThing.graphicData.linkFlags & LinkFlags.Barricades) != 0 ||
-             (buildableThing.graphicData.linkFlags & LinkFlags.Sandbags) != 0) ||
-            buildableThing.IsDoor)
+        if (
+            buildableThing.graphicData?.linkFlags != null
+                && (
+                    (buildableThing.graphicData.linkFlags & LinkFlags.Wall) != 0
+                    || (buildableThing.graphicData.linkFlags & LinkFlags.Fences) != 0
+                    || (buildableThing.graphicData.linkFlags & LinkFlags.Barricades) != 0
+                    || (buildableThing.graphicData.linkFlags & LinkFlags.Sandbags) != 0
+                )
+            || buildableThing.IsDoor
+        )
         {
             if (RelevantStatsInDescriptionMod.instance.RelevantStatsInDescriptionSettings.ShowHP)
             {
                 arrayToAdd.Add("RSID_MaxHP".Translate(thing.MaxHitPoints));
             }
 
-            if (RelevantStatsInDescriptionMod.instance.RelevantStatsInDescriptionSettings.ShowCover &&
-                buildableThing.fillPercent < 1)
+            if (
+                RelevantStatsInDescriptionMod.instance.RelevantStatsInDescriptionSettings.ShowCover
+                && buildableThing.fillPercent < 1
+            )
             {
-                arrayToAdd.Add("RSID_Cover".Translate(buildableThing.fillPercent.ToStringPercent()));
+                arrayToAdd.Add(
+                    "RSID_Cover".Translate(buildableThing.fillPercent.ToStringPercent())
+                );
             }
         }
         else
         {
-            if (RelevantStatsInDescriptionMod.instance.RelevantStatsInDescriptionSettings.ShowHPForAll &&
-                buildableThing.MadeFromStuff)
+            if (
+                RelevantStatsInDescriptionMod
+                    .instance
+                    .RelevantStatsInDescriptionSettings
+                    .ShowHPForAll && buildableThing.MadeFromStuff
+            )
             {
                 arrayToAdd.Add("RSID_MaxHP".Translate(thing.MaxHitPoints));
             }
         }
 
         // DPS
-        if (RelevantStatsInDescriptionMod.instance.RelevantStatsInDescriptionSettings.ShowDPS &&
-            TurretDps.TryGetValue(buildableThing, out var turretDps))
+        if (
+            RelevantStatsInDescriptionMod.instance.RelevantStatsInDescriptionSettings.ShowDPS
+            && TurretDps.TryGetValue(buildableThing, out var turretDps)
+        )
         {
             arrayToAdd.Add("RSID_DPS".Translate(turretDps));
         }
@@ -327,45 +431,76 @@ public class RelevantStatsInDescription
 
             if (comfort > 0)
             {
-                arrayToAdd.Add(
-                    "RSID_Comfort".Translate(comfort.ToStringPercent()));
+                arrayToAdd.Add("RSID_Comfort".Translate(comfort.ToStringPercent()));
             }
         }
 
         // Bed
         if (buildableThing.IsBed)
         {
-            if (RelevantStatsInDescriptionMod.instance.RelevantStatsInDescriptionSettings.ShowBedRest &&
-                buildableThing.StatBaseDefined(StatDefOf.BedRestEffectiveness))
+            if (
+                RelevantStatsInDescriptionMod
+                    .instance
+                    .RelevantStatsInDescriptionSettings
+                    .ShowBedRest && buildableThing.StatBaseDefined(StatDefOf.BedRestEffectiveness)
+            )
             {
                 arrayToAdd.Add(
                     "RSID_BedRestEffectiveness".Translate(
-                        thing.GetStatValue(StatDefOf.BedRestEffectiveness).ToStringPercent()));
+                        thing.GetStatValue(StatDefOf.BedRestEffectiveness).ToStringPercent()
+                    )
+                );
             }
 
-            if (buildableThing.building.bed_defaultMedical || !buildableThing.building.bed_humanlike)
+            if (
+                buildableThing.building.bed_defaultMedical || !buildableThing.building.bed_humanlike
+            )
             {
-                if (RelevantStatsInDescriptionMod.instance.RelevantStatsInDescriptionSettings.ShowMedicalTendQuality &&
-                    buildableThing.StatBaseDefined(StatDefOf.MedicalTendQualityOffset))
+                if (
+                    RelevantStatsInDescriptionMod
+                        .instance
+                        .RelevantStatsInDescriptionSettings
+                        .ShowMedicalTendQuality
+                    && buildableThing.StatBaseDefined(StatDefOf.MedicalTendQualityOffset)
+                )
                 {
-                    arrayToAdd.Add("RSID_MedicalTendQuality".Translate(
-                        thing.GetStatValue(StatDefOf.MedicalTendQualityOffset).ToStringPercent()));
+                    arrayToAdd.Add(
+                        "RSID_MedicalTendQuality".Translate(
+                            thing.GetStatValue(StatDefOf.MedicalTendQualityOffset).ToStringPercent()
+                        )
+                    );
                 }
 
-                if (RelevantStatsInDescriptionMod.instance.RelevantStatsInDescriptionSettings.ShowImmunityGainSpeed &&
-                    buildableThing.StatBaseDefined(StatDefOf.ImmunityGainSpeedFactor))
+                if (
+                    RelevantStatsInDescriptionMod
+                        .instance
+                        .RelevantStatsInDescriptionSettings
+                        .ShowImmunityGainSpeed
+                    && buildableThing.StatBaseDefined(StatDefOf.ImmunityGainSpeedFactor)
+                )
                 {
-                    arrayToAdd.Add("RSID_ImmunityGainSpeedFactor".Translate(
-                        thing.GetStatValue(StatDefOf.ImmunityGainSpeedFactor).ToStringPercent()));
+                    arrayToAdd.Add(
+                        "RSID_ImmunityGainSpeedFactor".Translate(
+                            thing.GetStatValue(StatDefOf.ImmunityGainSpeedFactor).ToStringPercent()
+                        )
+                    );
                 }
 
-                if (RelevantStatsInDescriptionMod.instance.RelevantStatsInDescriptionSettings
-                        .ShowSurgerySuccessChance &&
-                    buildableThing.StatBaseDefined(StatDefOf.SurgerySuccessChanceFactor))
+                if (
+                    RelevantStatsInDescriptionMod
+                        .instance
+                        .RelevantStatsInDescriptionSettings
+                        .ShowSurgerySuccessChance
+                    && buildableThing.StatBaseDefined(StatDefOf.SurgerySuccessChanceFactor)
+                )
                 {
-                    arrayToAdd.Add("RSID_SurgerySuccessChanceFactor".Translate(
-                        thing.GetStatValue(StatDefOf.SurgerySuccessChanceFactor)
-                            .ToStringPercent()));
+                    arrayToAdd.Add(
+                        "RSID_SurgerySuccessChanceFactor".Translate(
+                            thing
+                                .GetStatValue(StatDefOf.SurgerySuccessChanceFactor)
+                                .ToStringPercent()
+                        )
+                    );
                 }
             }
         }
@@ -380,19 +515,34 @@ public class RelevantStatsInDescription
                 consumption = -CompPowerPlantSolar.FullSunPower;
             }
 
-            if (RelevantStatsInDescriptionMod.instance.RelevantStatsInDescriptionSettings.ShowPowerProducer &&
-                consumption < 0)
+            if (
+                RelevantStatsInDescriptionMod
+                    .instance
+                    .RelevantStatsInDescriptionSettings
+                    .ShowPowerProducer
+                && consumption < 0
+            )
             {
                 arrayToAdd.Add("RSID_PowerProducer".Translate((consumption * -1).ToString()));
             }
 
-            if (RelevantStatsInDescriptionMod.instance.RelevantStatsInDescriptionSettings.ShowPowerConsumer &&
-                consumption > 0)
+            if (
+                RelevantStatsInDescriptionMod
+                    .instance
+                    .RelevantStatsInDescriptionSettings
+                    .ShowPowerConsumer
+                && consumption > 0
+            )
             {
                 var variedConsumption = getMinMaxPower(buildableThing, thing, -consumption);
-                arrayToAdd.Add(variedConsumption == null
-                    ? "RSID_PowerUser".Translate(consumption.ToString())
-                    : "RSID_PowerUserVaried".Translate(variedConsumption.Item2, variedConsumption.Item1));
+                arrayToAdd.Add(
+                    variedConsumption == null
+                        ? "RSID_PowerUser".Translate(consumption.ToString())
+                        : "RSID_PowerUserVaried".Translate(
+                            variedConsumption.Item2,
+                            variedConsumption.Item1
+                        )
+                );
             }
         }
 
@@ -402,51 +552,84 @@ public class RelevantStatsInDescription
             var chemfuelConsumtion = 0f;
             foreach (var compProperty in buildableThing.comps)
             {
-                if (compProperty == null ||
-                    compProperty.GetType().FullName?.EndsWith("Rimefeller.CompProperties_PowerPlant") == false)
+                if (
+                    compProperty == null
+                    || compProperty
+                        .GetType()
+                        .FullName
+                        ?.EndsWith("Rimefeller.CompProperties_PowerPlant") == false
+                )
                 {
                     continue;
                 }
 
-                chemfuelConsumtion = (float)AccessTools.Field(AccessTools.TypeByName(compProperty.GetType().FullName),
-                        "FuelRate")
-                    .GetValue(compProperty);
+                chemfuelConsumtion = (float)
+                    AccessTools
+                        .Field(AccessTools.TypeByName(compProperty.GetType().FullName), "FuelRate")
+                        .GetValue(compProperty);
             }
 
-            if (RelevantStatsInDescriptionMod.instance.RelevantStatsInDescriptionSettings.ShowRimefeller &&
-                chemfuelConsumtion != 0)
+            if (
+                RelevantStatsInDescriptionMod
+                    .instance
+                    .RelevantStatsInDescriptionSettings
+                    .ShowRimefeller
+                && chemfuelConsumtion != 0
+            )
             {
                 arrayToAdd.Add("RSID_ChemfuelUser".Translate(chemfuelConsumtion.ToString()));
             }
         }
 
         // Gasuse
-        if (VFEPowerLoaded && RelevantStatsInDescriptionMod.instance.RelevantStatsInDescriptionSettings.ShowVFEGas)
+        if (
+            VFEPowerLoaded
+            && RelevantStatsInDescriptionMod.instance.RelevantStatsInDescriptionSettings.ShowVFEGas
+        )
         {
             var gasConsumption = 0f;
             foreach (var compProperty in buildableThing.comps)
             {
-                if (compProperty == null ||
-                    compProperty.GetType().FullName?.EndsWith("GasNetwork.CompProperties_GasTrader") == false)
+                if (
+                    compProperty == null
+                    || compProperty
+                        .GetType()
+                        .FullName
+                        ?.EndsWith("GasNetwork.CompProperties_GasTrader") == false
+                )
                 {
                     continue;
                 }
 
-                gasConsumption = (float)AccessTools.Field(AccessTools.TypeByName(compProperty.GetType().FullName),
-                        "gasConsumption")
-                    .GetValue(compProperty);
+                gasConsumption = (float)
+                    AccessTools
+                        .Field(
+                            AccessTools.TypeByName(compProperty.GetType().FullName),
+                            "gasConsumption"
+                        )
+                        .GetValue(compProperty);
             }
 
             if (gasConsumption != 0)
             {
-                if (RelevantStatsInDescriptionMod.instance.RelevantStatsInDescriptionSettings.ShowPowerConsumer &&
-                    gasConsumption > 0)
+                if (
+                    RelevantStatsInDescriptionMod
+                        .instance
+                        .RelevantStatsInDescriptionSettings
+                        .ShowPowerConsumer
+                    && gasConsumption > 0
+                )
                 {
                     arrayToAdd.Add("RSID_GasUser".Translate(gasConsumption.ToString()));
                 }
 
-                if (RelevantStatsInDescriptionMod.instance.RelevantStatsInDescriptionSettings.ShowPowerProducer &&
-                    gasConsumption < 0)
+                if (
+                    RelevantStatsInDescriptionMod
+                        .instance
+                        .RelevantStatsInDescriptionSettings
+                        .ShowPowerProducer
+                    && gasConsumption < 0
+                )
                 {
                     arrayToAdd.Add("RSID_GasProducer".Translate((gasConsumption * -1).ToString()));
                 }
@@ -464,12 +647,17 @@ public class RelevantStatsInDescription
         }
 
         // Mass
-        if (RelevantStatsInDescriptionMod.instance.RelevantStatsInDescriptionSettings.ShowMass &&
-            buildableThing.Minifiable)
+        if (
+            RelevantStatsInDescriptionMod.instance.RelevantStatsInDescriptionSettings.ShowMass
+            && buildableThing.Minifiable
+        )
         {
-            var mass = buildableThing.comps?.Any(properties => properties.compClass.Name == "CompWaterStorage") == true
-                ? buildableThing.GetStatValueAbstract(StatDefOf.Mass)
-                : thing.GetStatValue(StatDefOf.Mass);
+            var mass =
+                buildableThing
+                    .comps
+                    ?.Any(properties => properties.compClass.Name == "CompWaterStorage") == true
+                    ? buildableThing.GetStatValueAbstract(StatDefOf.Mass)
+                    : thing.GetStatValue(StatDefOf.Mass);
 
             if (mass != 0)
             {
@@ -494,17 +682,29 @@ public class RelevantStatsInDescription
         }
 
         // Research Speed
-        if (RelevantStatsInDescriptionMod.instance.RelevantStatsInDescriptionSettings.ShowResearchSpeed &&
-            buildableThing.thingClass == typeof(Building_ResearchBench) &&
-            buildableThing.StatBaseDefined(StatDefOf.ResearchSpeedFactor))
+        if (
+            RelevantStatsInDescriptionMod
+                .instance
+                .RelevantStatsInDescriptionSettings
+                .ShowResearchSpeed
+            && buildableThing.thingClass == typeof(Building_ResearchBench)
+            && buildableThing.StatBaseDefined(StatDefOf.ResearchSpeedFactor)
+        )
         {
             arrayToAdd.Add(
                 "RSID_ResearchSpeedFactor".Translate(
-                    thing.GetStatValue(StatDefOf.ResearchSpeedFactor).ToStringPercent()));
+                    thing.GetStatValue(StatDefOf.ResearchSpeedFactor).ToStringPercent()
+                )
+            );
         }
 
         // Cleanliness
-        if (RelevantStatsInDescriptionMod.instance.RelevantStatsInDescriptionSettings.ShowCleanliness)
+        if (
+            RelevantStatsInDescriptionMod
+                .instance
+                .RelevantStatsInDescriptionSettings
+                .ShowCleanliness
+        )
         {
             var cleanliness = thing.GetStatValue(StatDefOf.Cleanliness);
             if (cleanliness != 0)
@@ -546,7 +746,12 @@ public class RelevantStatsInDescription
                 }
             }
 
-            if (RelevantStatsInDescriptionMod.instance.RelevantStatsInDescriptionSettings.ShowJoyKind)
+            if (
+                RelevantStatsInDescriptionMod
+                    .instance
+                    .RelevantStatsInDescriptionSettings
+                    .ShowJoyKind
+            )
             {
                 var joyKind = buildableThing.building?.joyKind;
                 if (joyKind != null)
@@ -557,7 +762,12 @@ public class RelevantStatsInDescription
         }
 
         // Storage
-        if (RelevantStatsInDescriptionMod.instance.RelevantStatsInDescriptionSettings.ShowStorageSpace)
+        if (
+            RelevantStatsInDescriptionMod
+                .instance
+                .RelevantStatsInDescriptionSettings
+                .ShowStorageSpace
+        )
         {
             if (buildableThing.building.fixedStorageSettings != null)
             {
@@ -568,24 +778,36 @@ public class RelevantStatsInDescription
         }
 
         // Affordance requirement
-        if (RelevantStatsInDescriptionMod.instance.RelevantStatsInDescriptionSettings.ShowAffordanceRequirement)
+        if (
+            RelevantStatsInDescriptionMod
+                .instance
+                .RelevantStatsInDescriptionSettings
+                .ShowAffordanceRequirement
+        )
         {
             var affordanceNeeded = buildableThing.GetTerrainAffordanceNeed(stuff);
-            if (affordanceNeeded != null &&
-                affordanceNeeded != TerrainAffordanceDefOf.Light)
+            if (affordanceNeeded != null && affordanceNeeded != TerrainAffordanceDefOf.Light)
             {
                 arrayToAdd.Add("RSID_AffordanceRequirement".Translate(affordanceNeeded.LabelCap));
             }
         }
 
         // Dominant style
-        if (RelevantStatsInDescriptionMod.instance.RelevantStatsInDescriptionSettings.ShowDominantStyle &&
-            ModsConfig.IdeologyActive)
+        if (
+            RelevantStatsInDescriptionMod
+                .instance
+                .RelevantStatsInDescriptionSettings
+                .ShowDominantStyle && ModsConfig.IdeologyActive
+        )
         {
             var styleCategory = buildableThing.dominantStyleCategory;
             if (styleCategory == null && Faction.OfPlayer.ideos?.PrimaryIdeo != null)
             {
-                styleCategory = Faction.OfPlayer.ideos.PrimaryIdeo.GetStyleCategoryFor(buildableThing);
+                styleCategory = Faction
+                    .OfPlayer
+                    .ideos
+                    .PrimaryIdeo
+                    .GetStyleCategoryFor(buildableThing);
             }
 
             if (styleCategory != null)
@@ -595,12 +817,22 @@ public class RelevantStatsInDescription
         }
 
         // Work to build
-        if (RelevantStatsInDescriptionMod.instance.RelevantStatsInDescriptionSettings.ShowWorkToBuild)
+        if (
+            RelevantStatsInDescriptionMod
+                .instance
+                .RelevantStatsInDescriptionSettings
+                .ShowWorkToBuild
+        )
         {
             var workToBuild = buildableThing.GetStatValueAbstract(StatDefOf.WorkToBuild, stuff);
             if (workToBuild != 0)
             {
-                if (RelevantStatsInDescriptionMod.instance.RelevantStatsInDescriptionSettings.RelativeWork)
+                if (
+                    RelevantStatsInDescriptionMod
+                        .instance
+                        .RelevantStatsInDescriptionSettings
+                        .RelativeWork
+                )
                 {
                     switch (workToBuild)
                     {
@@ -608,7 +840,9 @@ public class RelevantStatsInDescription
                             arrayToAdd.Add("RSID_WorkRelative".Translate("RSID_Small".Translate()));
                             break;
                         case < 5000:
-                            arrayToAdd.Add("RSID_WorkRelative".Translate("RSID_Medium".Translate()));
+                            arrayToAdd.Add(
+                                "RSID_WorkRelative".Translate("RSID_Medium".Translate())
+                            );
                             break;
                         default:
                             arrayToAdd.Add("RSID_WorkRelative".Translate("RSID_Large".Translate()));
@@ -617,10 +851,15 @@ public class RelevantStatsInDescription
                 }
                 else
                 {
-                    arrayToAdd.Add(
-                        "RSID_WorkExact".Translate(Math.Ceiling(workToBuild / 60)));
+                    arrayToAdd.Add("RSID_WorkExact".Translate(Math.Ceiling(workToBuild / 60)));
                 }
             }
+        }
+
+        // UI Order
+        if (RelevantStatsInDescriptionMod.instance.RelevantStatsInDescriptionSettings.ShowUIOrder)
+        {
+            arrayToAdd.Add("RSID_UIOrder".Translate(buildableThing.uiOrder));
         }
 
         // Defname
@@ -642,7 +881,11 @@ public class RelevantStatsInDescription
         return cachedDescriptions[descriptionKey] + buildableThing.description;
     }
 
-    private static Tuple<float, float> getMinMaxPower(ThingDef buildableThing, Thing thing, float originalConsumption)
+    private static Tuple<float, float> getMinMaxPower(
+        ThingDef buildableThing,
+        Thing thing,
+        float originalConsumption
+    )
     {
         if (RepowerOnOffLoaded)
         {
@@ -657,8 +900,10 @@ public class RelevantStatsInDescription
                 return null;
             }
 
-            return new Tuple<float, float>(powerValues[buildableThing.defName][0] * -1,
-                powerValues[buildableThing.defName][1] * -1);
+            return new Tuple<float, float>(
+                powerValues[buildableThing.defName][0] * -1,
+                powerValues[buildableThing.defName][1] * -1
+            );
         }
 
         if (!LightsOutLoaded)
@@ -672,11 +917,9 @@ public class RelevantStatsInDescription
             return null;
         }
 
-
         var arguments = new object[] { itemCompPowerTrader, originalConsumption, false };
         lightsOutPostfix.Invoke(null, arguments);
         var lowValue = (float)arguments[1];
-
 
         var highPowerFactor = (float)lightsOutActiveResourceDrawRate.GetValue(null);
 
