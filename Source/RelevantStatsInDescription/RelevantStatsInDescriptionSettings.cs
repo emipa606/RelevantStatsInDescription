@@ -34,6 +34,7 @@ internal class RelevantStatsInDescriptionSettings : ModSettings
     public bool ShowStorageSpace = true;
     public bool ShowSurgerySuccessChance = true;
     public bool ShowTechLevel;
+    public bool ShowUIOrder;
     public bool ShowVFEGas = true;
     public bool ShowWealth = true;
     public bool ShowWorkToBuild = true;
@@ -71,6 +72,7 @@ internal class RelevantStatsInDescriptionSettings : ModSettings
         Scribe_Values.Look(ref ShowDPS, "ShowDPS");
         Scribe_Values.Look(ref ShowTechLevel, "ShowTechLevel");
         Scribe_Values.Look(ref ShowStorageSpace, "ShowStorageSpace", true);
+        Scribe_Values.Look(ref ShowUIOrder, "ShowUIOrder");
         Scribe_Values.Look(ref ShowDefName, "ShowDefName");
         Scribe_Values.Look(ref RemoveRotateWidget, "RemoveRotateWidget", true);
         Scribe_Values.Look(ref ShowDominantStyle, "ShowDominantStyle", true);
