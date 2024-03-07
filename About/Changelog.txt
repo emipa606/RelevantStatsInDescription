@@ -1,5 +1,9 @@
 # Changelog for RelevantStatsInDescription
 
+1.4.14 - Added UIOrder setting, thanks to Deadmano
+Used DeepL to update translations for ChineseSimplified, French, German, Russian
+
+
 1.4.13 - Added turret dps-information.
 Used DeepL to update translations for ChineseSimplified, French, German, Russian
 

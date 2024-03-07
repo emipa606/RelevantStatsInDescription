@@ -102,4 +102,7 @@
   <RSID_StoppingPower>Bremsvermögen: {0}</RSID_StoppingPower>
   <RSID_ShowDPS.Label>Revolver-DPS anzeigen</RSID_ShowDPS.Label>
   <RSID_ShowDPS.Tooltip>Zeigt den durchschnittlichen DPS-Wert von Geschütztürmen an. Je nach verwendetem Projektil kann dieser Wert falsch sein.</RSID_ShowDPS.Tooltip>
+  <RSID_UIOrder>UI-Bestellung: {0}</RSID_UIOrder>
+  <RSID_ShowUIOrder.Label>UI-Reihenfolge anzeigen</RSID_ShowUIOrder.Label>
+  <RSID_ShowUIOrder.Tooltip>Zeigt die UI-Reihenfolge eines Gebäudes an. Die UI-Reihenfolge ist die Reihenfolge, in der die Gebäude im Architektenmenü angezeigt werden.</RSID_ShowUIOrder.Tooltip>
 </LanguageData>

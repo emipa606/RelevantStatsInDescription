@@ -101,4 +101,7 @@
   <RSID_StoppingPower>Puissance d'arrêt : {0}</RSID_StoppingPower>
   <RSID_ShowDPS.Label>Afficher le DPS de la tourelle</RSID_ShowDPS.Label>
   <RSID_ShowDPS.Tooltip>Indique le DPS moyen sur les tourelles. Les valeurs peuvent être incorrectes en fonction du projectile utilisé.</RSID_ShowDPS.Tooltip>
+  <RSID_UIOrder>Ordre de l'interface utilisateur : {0}</RSID_UIOrder>
+  <RSID_ShowUIOrder.Label>Afficher l'ordre de l'interface utilisateur</RSID_ShowUIOrder.Label>
+  <RSID_ShowUIOrder.Tooltip>Affiche l'ordre UI d'un bâtiment. L'ordre UI est l'ordre dans lequel les bâtiments sont affichés dans le menu architecte.</RSID_ShowUIOrder.Tooltip>
 </LanguageData>

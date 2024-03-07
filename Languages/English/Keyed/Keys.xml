@@ -70,8 +70,8 @@
   <RSID_ShowJoyKind.Tooltip>Shows the joy-kind for any joy-gain for buildings</RSID_ShowJoyKind.Tooltip>
   <RSID_ShowComfort.Label>Show comfort given</RSID_ShowComfort.Label>
   <RSID_ShowComfort.Tooltip>Shows any comfort given by a building</RSID_ShowComfort.Tooltip>
-  <RSID_ShowUIOrder.Tooltip>Shows the UI order of a building. The UI order is the order in which buildings in the architect menu are displayed in.</RSID_ShowUIOrder.Tooltip>
   <RSID_ShowUIOrder.Label>Show UI order</RSID_ShowUIOrder.Label>
+  <RSID_ShowUIOrder.Tooltip>Shows the UI order of a building. The UI order is the order in which buildings in the architect menu are displayed in.</RSID_ShowUIOrder.Tooltip>
   <RSID_ShowBedRest.Label>Show bedrest effectivness</RSID_ShowBedRest.Label>
   <RSID_ShowBedRest.Tooltip>Shows the bedrest effectivness for any bed</RSID_ShowBedRest.Tooltip>
   <RSID_ShowStorageSpace.Label>Show max storage space</RSID_ShowStorageSpace.Label>
