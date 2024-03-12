@@ -186,6 +186,9 @@ internal class RelevantStatsInDescriptionMod : Mod
         listing_Standard.CheckboxLabeled("RSID_RemoveRotateWidget.Label".Translate(),
             ref RelevantStatsInDescriptionSettings.RemoveRotateWidget,
             "RSID_RemoveRotateWidget.Tooltip".Translate());
+        listing_Standard.CheckboxLabeled("RSID_UseToolip.Label".Translate(),
+            ref RelevantStatsInDescriptionSettings.UseTooltip,
+            "RSID_UseToolip.Tooltip".Translate());
 
         if (currentVersion != null)
         {

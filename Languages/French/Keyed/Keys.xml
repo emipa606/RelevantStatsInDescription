@@ -104,4 +104,6 @@
   <RSID_UIOrder>Ordre de l'interface utilisateur : {0}</RSID_UIOrder>
   <RSID_ShowUIOrder.Label>Afficher l'ordre de l'interface utilisateur</RSID_ShowUIOrder.Label>
   <RSID_ShowUIOrder.Tooltip>Affiche l'ordre UI d'un bâtiment. L'ordre UI est l'ordre dans lequel les bâtiments sont affichés dans le menu architecte.</RSID_ShowUIOrder.Tooltip>
+  <RSID_UseToolip.Label>Utiliser la fenêtre d'info-bulle à la place</RSID_UseToolip.Label>
+  <RSID_UseToolip.Tooltip>Affiche les informations supplémentaires dans une fenêtre d'infobulle au lieu de les ajouter à la description originale.</RSID_UseToolip.Tooltip>
 </LanguageData>

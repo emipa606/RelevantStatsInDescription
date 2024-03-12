@@ -101,11 +101,16 @@ public class RelevantStatsInDescription
             (bool)info.GetValue(RelevantStatsInDescriptionMod.instance.RelevantStatsInDescriptionSettings)) * 5f) + 10f;
     }
 
-    public static string GetUpdatedDescription(BuildableDef def, ThingDef stuff)
+    public static string GetUpdatedDescription(BuildableDef def, ThingDef stuff, bool onlyAddition = false)
     {
         var descriptionKey = $"{def.defName}|{stuff?.defName}";
         if (cachedDescriptions.TryGetValue(descriptionKey, out var description))
         {
+            if (onlyAddition)
+            {
+                return description;
+            }
+
             return description + def.description;
         }
 
@@ -244,7 +249,7 @@ public class RelevantStatsInDescription
 
             if (arrayToAdd.Any())
             {
-                if (!string.IsNullOrEmpty(def.description))
+                if (!string.IsNullOrEmpty(def.description) && !onlyAddition)
                 {
                     arrayToAdd.Add(" - - - \n");
                 }
@@ -256,12 +261,17 @@ public class RelevantStatsInDescription
                 cachedDescriptions[descriptionKey] = string.Empty;
             }
 
+            if (onlyAddition)
+            {
+                return cachedDescriptions[descriptionKey];
+            }
+
             return cachedDescriptions[descriptionKey] + floorDef.description;
         }
 
         if (def is not ThingDef buildableThing)
         {
-            return def.description;
+            return onlyAddition ? string.Empty : def.description;
         }
 
         if (stuff == null && def.MadeFromStuff)
@@ -637,12 +647,21 @@ public class RelevantStatsInDescription
 
         if (arrayToAdd.Any())
         {
-            arrayToAdd.Add(" - - - \n");
+            if (!onlyAddition)
+            {
+                arrayToAdd.Add(" - - - \n");
+            }
+
             cachedDescriptions[descriptionKey] = string.Join("\n", arrayToAdd);
         }
         else
         {
             cachedDescriptions[descriptionKey] = string.Empty;
+        }
+
+        if (onlyAddition)
+        {
+            return cachedDescriptions[descriptionKey];
         }
 
         return cachedDescriptions[descriptionKey] + buildableThing.description;

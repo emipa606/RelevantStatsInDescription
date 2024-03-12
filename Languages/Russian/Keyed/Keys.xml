@@ -104,4 +104,6 @@
   <RSID_UIOrder>Порядок пользовательского интерфейса: {0}</RSID_UIOrder>
   <RSID_ShowUIOrder.Label>Показать порядок пользовательского интерфейса</RSID_ShowUIOrder.Label>
   <RSID_ShowUIOrder.Tooltip>Показывает порядок пользовательского интерфейса здания. Порядок пользовательского интерфейса - это порядок, в котором отображаются здания в меню архитектора.</RSID_ShowUIOrder.Tooltip>
+  <RSID_UseToolip.Label>Вместо этого используйте окно с подсказками</RSID_UseToolip.Label>
+  <RSID_UseToolip.Tooltip>Будет показывать дополнительную информацию в окне подсказки вместо того, чтобы добавлять ее к оригинальному описанию</RSID_UseToolip.Tooltip>
 </LanguageData>

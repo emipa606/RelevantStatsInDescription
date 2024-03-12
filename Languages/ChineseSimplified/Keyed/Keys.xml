@@ -104,4 +104,6 @@
   <RSID_UIOrder>用户界面顺序：{0}</RSID_UIOrder>
   <RSID_ShowUIOrder.Label>显示用户界面顺序</RSID_ShowUIOrder.Label>
   <RSID_ShowUIOrder.Tooltip>显示建筑物的用户界面顺序。用户界面顺序是建筑师菜单中建筑物的显示顺序。</RSID_ShowUIOrder.Tooltip>
+  <RSID_UseToolip.Label>改用工具提示窗口</RSID_UseToolip.Label>
+  <RSID_UseToolip.Tooltip>将在工具提示窗口中显示额外信息，而不是将其添加到原始描述中</RSID_UseToolip.Tooltip>
 </LanguageData>

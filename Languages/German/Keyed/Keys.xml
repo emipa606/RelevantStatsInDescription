@@ -105,4 +105,6 @@
   <RSID_UIOrder>UI-Bestellung: {0}</RSID_UIOrder>
   <RSID_ShowUIOrder.Label>UI-Reihenfolge anzeigen</RSID_ShowUIOrder.Label>
   <RSID_ShowUIOrder.Tooltip>Zeigt die UI-Reihenfolge eines Gebäudes an. Die UI-Reihenfolge ist die Reihenfolge, in der die Gebäude im Architektenmenü angezeigt werden.</RSID_ShowUIOrder.Tooltip>
+  <RSID_UseToolip.Label>Stattdessen Tooltip-Fenster verwenden</RSID_UseToolip.Label>
+  <RSID_UseToolip.Tooltip>Zeigt die zusätzlichen Informationen in einem Tooltip-Fenster an, anstatt sie der ursprünglichen Beschreibung hinzuzufügen</RSID_UseToolip.Tooltip>
 </LanguageData>

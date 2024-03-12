@@ -38,6 +38,7 @@ internal class RelevantStatsInDescriptionSettings : ModSettings
     public bool ShowVFEGas = true;
     public bool ShowWealth = true;
     public bool ShowWorkToBuild = true;
+    public bool UseTooltip;
 
     /// <summary>
     ///     Saving and loading the values
@@ -70,6 +71,7 @@ internal class RelevantStatsInDescriptionSettings : ModSettings
         Scribe_Values.Look(ref ShowWorkToBuild, "ShowWorkToBuild", true);
         Scribe_Values.Look(ref RelativeWork, "RelativeWork");
         Scribe_Values.Look(ref ShowDPS, "ShowDPS");
+        Scribe_Values.Look(ref UseTooltip, "UseTooltip");
         Scribe_Values.Look(ref ShowTechLevel, "ShowTechLevel");
         Scribe_Values.Look(ref ShowStorageSpace, "ShowStorageSpace", true);
         Scribe_Values.Look(ref ShowUIOrder, "ShowUIOrder");
