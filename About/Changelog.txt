@@ -1,5 +1,8 @@
 # Changelog for RelevantStatsInDescription
 
+1.5.0 - Updated for 1.5
+
+
 1.4.15 - Added setting to show the extra info as a separate tooltip instead
 Used DeepL to update translations for ChineseSimplified, French, German, Russian
 

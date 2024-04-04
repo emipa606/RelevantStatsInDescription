@@ -8,6 +8,7 @@
     <li>1.2</li>
     <li>1.3</li>
     <li>1.4</li>
+    <li>1.5</li>
   </supportedVersions>
   <modDependencies>
     <li>
@@ -26,7 +27,7 @@ Depending on the type of building, selected stats are shown in the description-w
 This can make it easier to select the best wall for your defence or the right power-generator for your current need.
 
 Each stat can be turned off in the settings if they are not needed.
-Can be added/removed from existing save.
+There is also a setting to show the extra info in a separate tooltip-window instead.
 
 Supported mods
 [list]
@@ -68,4 +69,5 @@ Since modding is just a hobby for me I expect no donations to keep modding. If y
 [/list]
 
 [url=https://steamcommunity.com/sharedfiles/filedetails/changelog/2692669482][img]https://img.shields.io/github/v/release/emipa606/RelevantStatsInDescription?label=latest%20version&amp;style=plastic&amp;labelColor=0070cd&amp;color=white[/img][/url]</description>
+  <modVersion IgnoreIfNoMatchingField="True">1.5.0</modVersion>
 </ModMetaData>

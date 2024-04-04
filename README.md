@@ -7,7 +7,7 @@ Depending on the type of building, selected stats are shown in the description-w
 This can make it easier to select the best wall for your defence or the right power-generator for your current need.
 
 Each stat can be turned off in the settings if they are not needed.
-Can be added/removed from existing save.
+There is also a setting to show the extra info in a separate tooltip-window instead.
 
 Supported mods
 

@@ -7,7 +7,7 @@ using Verse;
 
 namespace RelevantStatsInDescription;
 
-[HarmonyPatch(typeof(ArchitectCategoryTab), "DoInfoBox")]
+[HarmonyPatch(typeof(ArchitectCategoryTab), nameof(ArchitectCategoryTab.DoInfoBox))]
 public static class ArchitectCategoryTab_DoInfoBox
 {
     public static void Prefix(ref Rect infoRect)
@@ -36,14 +36,9 @@ public static class ArchitectCategoryTab_DoInfoBox
 
         if (designator is Designator_Dropdown designatorDropdown)
         {
-            if (designatorDropdown.activeDesignatorSet)
-            {
-                designator = designatorDropdown.activeDesignator;
-            }
-            else
-            {
-                designator = designatorDropdown.Elements.First();
-            }
+            designator = designatorDropdown.activeDesignatorSet
+                ? designatorDropdown.activeDesignator
+                : designatorDropdown.Elements.First();
         }
 
         if (designator is not Designator_Build buildDesignator)

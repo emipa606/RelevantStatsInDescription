@@ -385,10 +385,10 @@ public class RelevantStatsInDescription
         if (powerComp != null)
         {
             var consumption = powerComp.PowerConsumption;
-            if (powerComp.compClass == typeof(CompPowerPlantSolar))
-            {
-                consumption = -CompPowerPlantSolar.FullSunPower;
-            }
+            //if (powerComp.compClass == typeof(CompPowerPlantSolar))
+            //{
+            //    consumption = -powerComp.PowerConsumption;
+            //}
 
             if (RelevantStatsInDescriptionMod.instance.RelevantStatsInDescriptionSettings.ShowPowerProducer &&
                 consumption < 0)

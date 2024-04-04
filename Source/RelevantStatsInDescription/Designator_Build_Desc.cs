@@ -4,7 +4,7 @@ using Verse;
 
 namespace RelevantStatsInDescription;
 
-[HarmonyPatch(typeof(Designator_Build), "Desc", MethodType.Getter)]
+[HarmonyPatch(typeof(Designator_Build), nameof(Designator_Build.Desc), MethodType.Getter)]
 public static class Designator_Build_Desc
 {
     public static void Postfix(ref string __result, BuildableDef ___entDef, ThingDef ___stuffDef)
