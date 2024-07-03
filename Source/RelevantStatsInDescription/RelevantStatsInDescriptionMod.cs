@@ -177,6 +177,9 @@ internal class RelevantStatsInDescriptionMod : Mod
             RelevantStatsInDescriptionSettings.RelativeWork = false;
         }
 
+        listing_Standard.CheckboxLabeled("RSID_ShowFloorQuality.Label".Translate(),
+            ref RelevantStatsInDescriptionSettings.ShowFloorQuality,
+            "RSID_ShowFloorQuality.Tooltip".Translate());
         listing_Standard.CheckboxLabeled("RSID_ShowDefName.Label".Translate(),
             ref RelevantStatsInDescriptionSettings.ShowDefName,
             "RSID_ShowDefName.Tooltip".Translate());
