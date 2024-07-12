@@ -37,6 +37,9 @@
   <RSID_StorageSpace>Max stacks stored: {0}</RSID_StorageSpace>
   <RSID_DefName>DefName: {0}</RSID_DefName>
   <RSID_DominantStyle>Dominant style: {0}</RSID_DominantStyle>
+  <RSID_FloorQuality>Floor Quality: {0}</RSID_FloorQuality>
+  <RSID_FloorQuality_Fine>Fine</RSID_FloorQuality_Fine>
+  <RSID_FloorQuality_Common>Common</RSID_FloorQuality_Common>
   <!-- Settings -->
   <RSID_ShowHP.Label>Show max HP for linkable structures and doors</RSID_ShowHP.Label>
   <RSID_ShowHP.Tooltip>Shows the maximum hitpoints for structures such as walls, fences, doors and sandbags</RSID_ShowHP.Tooltip>
@@ -88,6 +91,8 @@
   <RSID_VariedPowerModLoaded.Tooltip>There is a mod active that modifies power-draw of items when they are not in use (Turn It On and Off - RePowered or LightsOut). If you change the settings regarding power in any of these mods, reopen this settings page after to clear the cached powervalues in the descriptions. If not you will not see the updated values in game.</RSID_VariedPowerModLoaded.Tooltip>
   <RSID_ShowPowerProducer.Label>Show power production</RSID_ShowPowerProducer.Label>
   <RSID_ShowPowerProducer.Tooltip>Will show the maximum power-production of any building that produces power</RSID_ShowPowerProducer.Tooltip>
+  <RSID_ShowFloorQuality.Label>Show floor quality</RSID_ShowFloorQuality.Label>
+  <RSID_ShowFloorQuality.Tooltip>Will show if the floor is of fine quality for royalty, or only acceptable for common pawns.</RSID_ShowFloorQuality.Tooltip>
   <RSID_ShowDefName.Label>Show defName</RSID_ShowDefName.Label>
   <RSID_ShowDefName.Tooltip>Will show the defname of all buildables</RSID_ShowDefName.Tooltip>
   <RSID_ShowDominantStyle.Label>Show dominant style</RSID_ShowDominantStyle.Label>

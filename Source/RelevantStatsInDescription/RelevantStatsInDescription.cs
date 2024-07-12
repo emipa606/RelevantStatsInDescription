@@ -241,6 +241,13 @@ public class RelevantStatsInDescription
                 }
             }
 
+            // Floor Quality (Royalty)
+            if (RelevantStatsInDescriptionMod.instance.RelevantStatsInDescriptionSettings.ShowFloorQuality && ModsConfig.RoyaltyActive)
+            {
+                var floorQuality = floorDef.IsFine ? "RSID_FloorQuality_Fine".Translate() : "RSID_FloorQuality_Common".Translate();
+                arrayToAdd.Add("RSID_FloorQuality".Translate(floorQuality));
+            }
+
             // Defname
             if (RelevantStatsInDescriptionMod.instance.RelevantStatsInDescriptionSettings.ShowDefName)
             {
