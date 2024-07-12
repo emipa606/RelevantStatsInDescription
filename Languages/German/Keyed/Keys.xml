@@ -107,4 +107,9 @@
   <RSID_ShowUIOrder.Tooltip>Zeigt die UI-Reihenfolge eines Gebäudes an. Die UI-Reihenfolge ist die Reihenfolge, in der die Gebäude im Architektenmenü angezeigt werden.</RSID_ShowUIOrder.Tooltip>
   <RSID_UseToolip.Label>Stattdessen Tooltip-Fenster verwenden</RSID_UseToolip.Label>
   <RSID_UseToolip.Tooltip>Zeigt die zusätzlichen Informationen in einem Tooltip-Fenster an, anstatt sie der ursprünglichen Beschreibung hinzuzufügen</RSID_UseToolip.Tooltip>
+  <RSID_FloorQuality>Bodenqualität: {0}</RSID_FloorQuality>
+  <RSID_FloorQuality_Fine>Fein</RSID_FloorQuality_Fine>
+  <RSID_FloorQuality_Common>Gemeinsame</RSID_FloorQuality_Common>
+  <RSID_ShowFloorQuality.Label>Qualität der Ausstellungsfläche</RSID_ShowFloorQuality.Label>
+  <RSID_ShowFloorQuality.Tooltip>Zeigt an, ob der Boden von guter Qualität für Könige ist oder nur für gewöhnliche Bauern akzeptabel.</RSID_ShowFloorQuality.Tooltip>
 </LanguageData>

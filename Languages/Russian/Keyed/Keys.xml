@@ -106,4 +106,9 @@
   <RSID_ShowUIOrder.Tooltip>Показывает порядок пользовательского интерфейса здания. Порядок пользовательского интерфейса - это порядок, в котором отображаются здания в меню архитектора.</RSID_ShowUIOrder.Tooltip>
   <RSID_UseToolip.Label>Вместо этого используйте окно с подсказками</RSID_UseToolip.Label>
   <RSID_UseToolip.Tooltip>Будет показывать дополнительную информацию в окне подсказки вместо того, чтобы добавлять ее к оригинальному описанию</RSID_UseToolip.Tooltip>
+  <RSID_FloorQuality>Качество пола: {0}</RSID_FloorQuality>
+  <RSID_FloorQuality_Fine>Fine</RSID_FloorQuality_Fine>
+  <RSID_FloorQuality_Common>Общие</RSID_FloorQuality_Common>
+  <RSID_ShowFloorQuality.Label>Качество выставочного зала</RSID_ShowFloorQuality.Label>
+  <RSID_ShowFloorQuality.Tooltip>Покажет, является ли пол прекрасного качества для королевских особ, или он подходит только для обычных пешек.</RSID_ShowFloorQuality.Tooltip>
 </LanguageData>

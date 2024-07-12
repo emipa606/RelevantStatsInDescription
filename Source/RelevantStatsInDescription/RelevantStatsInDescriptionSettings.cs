@@ -19,6 +19,7 @@ internal class RelevantStatsInDescriptionSettings : ModSettings
     public bool ShowDefName;
     public bool ShowDominantStyle = true;
     public bool ShowDPS;
+    public bool ShowFloorQuality = true;
     public bool ShowHP = true;
     public bool ShowHPForAll;
     public bool ShowImmunityGainSpeed = true;
@@ -38,7 +39,6 @@ internal class RelevantStatsInDescriptionSettings : ModSettings
     public bool ShowVFEGas = true;
     public bool ShowWealth = true;
     public bool ShowWorkToBuild = true;
-    public bool ShowFloorQuality = true;
     public bool UseTooltip;
 
     /// <summary>
