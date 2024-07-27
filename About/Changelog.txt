@@ -1,5 +1,8 @@
 # Changelog for RelevantStatsInDescription
 
+1.5.2 - Fixed chinese translation by lisanhu
+
+
 1.5.1 - Added showing if terrain counts as Fine if royalty is installed. Thanks delmain!
 Used DeepL to update translations for ChineseSimplified, French, German, Russian
 
