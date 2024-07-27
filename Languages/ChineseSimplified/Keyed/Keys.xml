@@ -98,7 +98,7 @@
   <RSID_ShowDominantStyle.Label>展示主导风格</RSID_ShowDominantStyle.Label>
   <RSID_ShowDominantStyle.Tooltip>将显示任何已定义的可建造建筑的主要风格</RSID_ShowDominantStyle.Tooltip>
   <RSID_DPS>Dmg/s: {0}</RSID_DPS>
-  <RSID_StoppingPower>制动功率：{0｝</RSID_StoppingPower>
+  <RSID_StoppingPower>制动功率：{0}</RSID_StoppingPower>
   <RSID_ShowDPS.Label>显示炮塔 DPS</RSID_ShowDPS.Label>
   <RSID_ShowDPS.Tooltip>显示炮塔的平均 DPS，根据使用的弹丸不同，可能会显示不正确的数值。</RSID_ShowDPS.Tooltip>
   <RSID_UIOrder>用户界面顺序：{0}</RSID_UIOrder>
@@ -106,7 +106,7 @@
   <RSID_ShowUIOrder.Tooltip>显示建筑物的用户界面顺序。用户界面顺序是建筑师菜单中建筑物的显示顺序。</RSID_ShowUIOrder.Tooltip>
   <RSID_UseToolip.Label>改用工具提示窗口</RSID_UseToolip.Label>
   <RSID_UseToolip.Tooltip>将在工具提示窗口中显示额外信息，而不是将其添加到原始描述中</RSID_UseToolip.Tooltip>
-  <RSID_FloorQuality>地板质量：{0｝</RSID_FloorQuality>
+  <RSID_FloorQuality>地板质量：{0}</RSID_FloorQuality>
   <RSID_FloorQuality_Fine>精美</RSID_FloorQuality_Fine>
   <RSID_FloorQuality_Common>常见问题</RSID_FloorQuality_Common>
   <RSID_ShowFloorQuality.Label>展会现场质量</RSID_ShowFloorQuality.Label>
