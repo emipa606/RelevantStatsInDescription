@@ -1,0 +1,113 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <!-- Información -->
+  <RSID_Undefined>Indefinido</RSID_Undefined>
+  <RSID_Small>Pequeño</RSID_Small>
+  <RSID_Medium>Mediano</RSID_Medium>
+  <RSID_Large>Grande</RSID_Large>
+  <RSID_MaxHP>Máx. de puntos de vida: {0}</RSID_MaxHP>
+  <RSID_MaxAffordance>Máx. soporte de suelo: {0}</RSID_MaxAffordance>
+  <RSID_Cover>Cobertura: {0}</RSID_Cover>
+  <RSID_Beauty>Estética: {0}</RSID_Beauty>
+  <RSID_Mass>Masa: {0}</RSID_Mass>
+  <RSID_Size>Tamaño: {0}</RSID_Size>
+  <RSID_Wealth>Riqueza: {0}</RSID_Wealth>
+  <RSID_Cleanliness>Limpieza: {0}</RSID_Cleanliness>
+  <RSID_Joy>Factor de diversión: {0}</RSID_Joy>
+  <RSID_JoyKind>Tipo de diversión: {0}</RSID_JoyKind>
+  <RSID_Comfort>Comodidad: {0}</RSID_Comfort>
+  <RSID_UIOrder>Orden en la interfaz: {0}</RSID_UIOrder>
+  <RSID_BedRestEffectiveness>Reposo en cama: {0}</RSID_BedRestEffectiveness>
+  <RSID_ImmunityGainSpeedFactor>Gan. inmunidad: {0}</RSID_ImmunityGainSpeedFactor>
+  <RSID_SurgerySuccessChanceFactor>Efec. cirugía: {0}</RSID_SurgerySuccessChanceFactor>
+  <RSID_ResearchSpeedFactor>Vel. de investigación: {0}</RSID_ResearchSpeedFactor>
+  <RSID_MedicalTendQuality>Calidad de cuidado médico: {0}</RSID_MedicalTendQuality>
+  <RSID_PowerUser>Uso energía: {0}W</RSID_PowerUser>
+  <RSID_PowerUserVaried>Consumo de energía: {0}W ({1}W)</RSID_PowerUserVaried>
+  <RSID_PowerProducer>Gen. energía máx.: {0}W</RSID_PowerProducer>
+  <RSID_ChemfuelUser>Uso comb. químico: {0}/d</RSID_ChemfuelUser>
+  <RSID_GasUser>Uso de gas: {0} m3/d</RSID_GasUser>
+  <RSID_GasProducer>Máx. prod. de gas: {0} m3/d</RSID_GasProducer>
+  <RSID_AffordanceRequirement>Suelo necesario: {0}</RSID_AffordanceRequirement>
+  <RSID_DPS>Daño por segundo: {0}</RSID_DPS>
+  <RSID_StoppingPower>Poder de detención: {0}</RSID_StoppingPower>
+  <RSID_WorkExact>Trabajo para construir: {0}</RSID_WorkExact>
+  <RSID_WorkRelative>Cantidad de trabajo: {0}</RSID_WorkRelative>
+  <RSID_TechLevel>Nivel tecnológico: {0}</RSID_TechLevel>
+  <RSID_StorageSpace>Máx. de pilas: {0}</RSID_StorageSpace>
+  <RSID_DefName>Nombre de definición: {0}</RSID_DefName>
+  <RSID_DominantStyle>Estilo dominante: {0}</RSID_DominantStyle>
+  <RSID_FloorQuality>Calidad del suelo: {0}</RSID_FloorQuality>
+  <RSID_FloorQuality_Fine>De lujo</RSID_FloorQuality_Fine>
+  <RSID_FloorQuality_Common>Común</RSID_FloorQuality_Common>
+  <!-- Configuraciones -->
+  <RSID_ShowHP.Label>Mostrar puntos de vida máximos para estructuras enlazables y puertas</RSID_ShowHP.Label>
+  <RSID_ShowHP.Tooltip>Muestra los puntos de vida máximos para estructuras como muros, vallas, puertas y sacos de arena</RSID_ShowHP.Tooltip>
+  <RSID_ShowHPForAll.Label>    Mostrar para todos los elementos rellenable</RSID_ShowHPForAll.Label>
+  <RSID_ShowHPForAll.Tooltip>Muestra los puntos de vida máximos para todos los edificios rellenable</RSID_ShowHPForAll.Tooltip>
+  <RSID_ShowAffordance.Label>Mostrar suelo otorgado</RSID_ShowAffordance.Label>
+  <RSID_ShowAffordance.Tooltip>Muestra el mayor soporte de suelo otorgado por suelos y puentes</RSID_ShowAffordance.Tooltip>
+  <RSID_ShowAffordanceRequirement.Label>Mostrar suelo requerido</RSID_ShowAffordanceRequirement.Label>
+  <RSID_ShowAffordanceRequirement.Tooltip>Muestra el soporte mínimo de suelo requerido por los edificios</RSID_ShowAffordanceRequirement.Tooltip>
+  <RSID_ShowCover.Label>Mostrar cobertura otorgada</RSID_ShowCover.Label>
+  <RSID_ShowCover.Tooltip>Muestra la cobertura otorgada por estructuras como vallas y sacos de arena</RSID_ShowCover.Tooltip>
+  <RSID_ShowBeauty.Label>Mostrar estética otorgada</RSID_ShowBeauty.Label>
+  <RSID_ShowBeauty.Tooltip>Muestra la estética otorgada por cualquier edificio, se muestran tanto valores positivos como negativos</RSID_ShowBeauty.Tooltip>
+  <RSID_ShowMass.Label>Mostrar masa</RSID_ShowMass.Label>
+  <RSID_ShowMass.Tooltip>Muestra la masa de cualquier edificio que se pueda miniaturizar</RSID_ShowMass.Tooltip>
+  <RSID_ShowSize.Label>Mostrar tamaño</RSID_ShowSize.Label>
+  <RSID_ShowSize.Tooltip>Muestra el tamaño del edificio cuando se coloca</RSID_ShowSize.Tooltip>
+  <RSID_ShowDPS.Label>Mostrar daño por segundo de la torreta</RSID_ShowDPS.Label>
+  <RSID_ShowDPS.Tooltip>Muestra el daño por segundo promedio de las torretas, esto puede mostrar valores incorrectos dependiendo del proyectil utilizado.</RSID_ShowDPS.Tooltip>
+  <RSID_ShowWealth.Label>Mostrar riqueza otorgada</RSID_ShowWealth.Label>
+  <RSID_ShowWealth.Tooltip>Muestra la riqueza de la colonia otorgada por cualquier edificio</RSID_ShowWealth.Tooltip>
+  <RSID_ShowCleanliness.Label>Mostrar limpieza otorgada</RSID_ShowCleanliness.Label>
+  <RSID_ShowCleanliness.Tooltip>Muestra la limpieza otorgada si está definida</RSID_ShowCleanliness.Tooltip>
+  <RSID_ShowResearchSpeed.Label>Mostrar velocidad de investigación</RSID_ShowResearchSpeed.Label>
+  <RSID_ShowResearchSpeed.Tooltip>Muestra la velocidad relativa de investigación de los bancos de investigación</RSID_ShowResearchSpeed.Tooltip>
+  <RSID_ShowTechLevel.Label>Mostrar nivel tecnológico</RSID_ShowTechLevel.Label>
+  <RSID_ShowTechLevel.Tooltip>Muestra el nivel tecnológico del edificio, si lo tiene</RSID_ShowTechLevel.Tooltip>
+  <RSID_ShowJoy.Label>Mostrar factor de ganancia de diversión</RSID_ShowJoy.Label>
+  <RSID_ShowJoy.Tooltip>Muestra cualquier factor de ganancia de diversión definido para un edificio</RSID_ShowJoy.Tooltip>
+  <RSID_ShowJoyKind.Label>Mostrar tipo de diversión</RSID_ShowJoyKind.Label>
+  <RSID_ShowJoyKind.Tooltip>Muestra el tipo de diversión por cualquier ganancia de diversión para edificios</RSID_ShowJoyKind.Tooltip>
+  <RSID_ShowComfort.Label>Mostrar comodidad otorgada</RSID_ShowComfort.Label>
+  <RSID_ShowComfort.Tooltip>Muestra cualquier comodidad otorgada por un edificio</RSID_ShowComfort.Tooltip>
+  <RSID_ShowUIOrder.Label>Mostrar orden en la interfaz</RSID_ShowUIOrder.Label>
+  <RSID_ShowUIOrder.Tooltip>Muestra el orden en la interfaz de un edificio. El orden en la interfaz es el orden en que los edificios se muestran en el menú del arquitecto.</RSID_ShowUIOrder.Tooltip>
+  <RSID_ShowBedRest.Label>Mostrar efectividad del reposo en cama</RSID_ShowBedRest.Label>
+  <RSID_ShowBedRest.Tooltip>Muestra la efectividad del reposo en cama para cualquier cama</RSID_ShowBedRest.Tooltip>
+  <RSID_ShowStorageSpace.Label>Mostrar espacio máximo de almacenamiento</RSID_ShowStorageSpace.Label>
+  <RSID_ShowStorageSpace.Tooltip>Muestra la cantidad posible de pilas para almacenar</RSID_ShowStorageSpace.Tooltip>
+  <RSID_ShowImmunityGainSpeed.Label>Mostrar velocidad de ganancia de inmunidad</RSID_ShowImmunityGainSpeed.Label>
+  <RSID_ShowImmunityGainSpeed.Tooltip>Muestra la velocidad de ganancia de inmunidad para cualquier cama que por defecto sea una cama de hospital, si está definida, o una cama de animal</RSID_ShowImmunityGainSpeed.Tooltip>
+  <RSID_ShowSurgerySuccessChance.Label>Mostrar probabilidad de éxito en cirugía</RSID_ShowSurgerySuccessChance.Label>
+  <RSID_ShowSurgerySuccessChance.Tooltip>Muestra la probabilidad de éxito en cirugía para cualquier cama que por defecto sea una cama de hospital, si está definida, o una cama de animal</RSID_ShowSurgerySuccessChance.Tooltip>
+  <RSID_ShowMedicalTendQuality.Label>Mostrar calidad de cuidado médico</RSID_ShowMedicalTendQuality.Label>
+  <RSID_ShowMedicalTendQuality.Tooltip>Muestra la calidad de cuidado médico para cualquier cama que por defecto sea una cama de hospital, si está definida, o una cama de animal</RSID_ShowMedicalTendQuality.Tooltip>
+  <RSID_ShowPowerConsumer.Label>Mostrar consumo de energía</RSID_ShowPowerConsumer.Label>
+  <RSID_ShowPowerConsumer.Tooltip>Mostrará el consumo máximo de energía de cualquier edificio que consuma energía</RSID_ShowPowerConsumer.Tooltip>
+  <RSID_VariedPowerModLoaded.Label>    Módulo de energía variable activo, vuelve a abrir esta página de configuración después de cambiar cualquier configuración de energía.</RSID_VariedPowerModLoaded.Label>
+  <RSID_VariedPowerModLoaded.Tooltip>Hay un mod activo que modifica el consumo de energía de los artículos cuando no están en uso (Turn It On and Off - RePowered o LightsOut). Si cambias las configuraciones relacionadas con la energía en cualquiera de estos mods, vuelve a abrir esta página de configuración después para borrar los valores de energía almacenados en caché en las descripciones. Si no lo haces, no verás los valores actualizados en el juego.</RSID_VariedPowerModLoaded.Tooltip>
+  <RSID_ShowPowerProducer.Label>Mostrar producción de energía</RSID_ShowPowerProducer.Label>
+  <RSID_ShowPowerProducer.Tooltip>Mostrará la producción máxima de energía de cualquier edificio que produzca energía</RSID_ShowPowerProducer.Tooltip>
+  <RSID_ShowFloorQuality.Label>Mostrar calidad del suelo</RSID_ShowFloorQuality.Label>
+  <RSID_ShowFloorQuality.Tooltip>Mostrará si el suelo es de calidad para la realeza o solo aceptable para los colonos comunes.</RSID_ShowFloorQuality.Tooltip>
+  <RSID_ShowDefName.Label>Mostrar nombre de definición</RSID_ShowDefName.Label>
+  <RSID_ShowDefName.Tooltip>Mostrará el nombre de definición de todos los elementos construibles</RSID_ShowDefName.Tooltip>
+  <RSID_ShowDominantStyle.Label>Mostrar estilo dominante</RSID_ShowDominantStyle.Label>
+  <RSID_ShowDominantStyle.Tooltip>Mostrará cualquier estilo dominante definido para elementos construibles</RSID_ShowDominantStyle.Tooltip>
+  <RSID_ShowVFEGas.Label>    También producción/consumo de gas</RSID_ShowVFEGas.Label>
+  <RSID_ShowVFEGas.Tooltip>Mostrará la producción/consumo de gas de los edificios en Vanilla Furniture Expanded - Power. Depende de las configuraciones de energía anteriores</RSID_ShowVFEGas.Tooltip>
+  <RSID_ShowRimefeller.Label>    También uso de combustibles químicos</RSID_ShowRimefeller.Label>
+  <RSID_ShowRimefeller.Tooltip>Mostrará el uso de combustibles químicos de las plantas de energía en Rimefeller. Depende de las configuraciones de energía anteriores</RSID_ShowRimefeller.Tooltip>
+  <RSID_ShowWorkToBuild.Label>Mostrar cantidad de trabajo</RSID_ShowWorkToBuild.Label>
+  <RSID_ShowWorkToBuild.Tooltip>Mostrará la cantidad de trabajo requerida para completar la construcción</RSID_ShowWorkToBuild.Tooltip>
+  <RSID_RelativeWork.Label>    Mostrar cantidad de trabajo relativa</RSID_RelativeWork.Label>
+  <RSID_RelativeWork.Tooltip>Mostrará la cantidad de trabajo como pequeña/mediana/grande para obtener una idea más general de la cantidad de trabajo</RSID_RelativeWork.Tooltip>
+  <RSID_RemoveRotateWidget.Label>Eliminar la ventana de información de rotación</RSID_RemoveRotateWidget.Label>
+  <RSID_RemoveRotateWidget.Tooltip>Eliminará la ventana de información de rotación sobre el menú del arquitecto, si crees que ya la tienes memorizada.</RSID_RemoveRotateWidget.Tooltip>
+  <RSID_UseToolip.Label>Usar ventana de información emergente en su lugar</RSID_UseToolip.Label>
+  <RSID_UseToolip.Tooltip>Mostrará la información adicional en una ventana emergente en lugar de agregarla a la descripción original</RSID_UseToolip.Tooltip>
+  <RSID_CurrentVersion.Label>Versión del mod instalada: {0}</RSID_CurrentVersion.Label>
+</LanguageData>
