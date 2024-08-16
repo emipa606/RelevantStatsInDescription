@@ -1,5 +1,8 @@
 # Changelog for RelevantStatsInDescription
 
+1.5.3 - Updated spanish translation, thanks Ferchu
+
+
 1.5.2 - Fixed chinese translation by lisanhu
 
 
