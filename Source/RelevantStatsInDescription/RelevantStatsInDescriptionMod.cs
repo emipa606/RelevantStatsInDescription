@@ -180,6 +180,9 @@ internal class RelevantStatsInDescriptionMod : Mod
         listing_Standard.CheckboxLabeled("RSID_ShowFloorQuality.Label".Translate(),
             ref RelevantStatsInDescriptionSettings.ShowFloorQuality,
             "RSID_ShowFloorQuality.Tooltip".Translate());
+        listing_Standard.CheckboxLabeled("RSID_ShowDoorOpenSpeed.Label".Translate(),
+            ref RelevantStatsInDescriptionSettings.ShowDoorOpenSpeed,
+            "RSID_ShowDoorOpenSpeed.Tooltip".Translate());
         listing_Standard.CheckboxLabeled("RSID_ShowDefName.Label".Translate(),
             ref RelevantStatsInDescriptionSettings.ShowDefName,
             "RSID_ShowDefName.Tooltip".Translate());

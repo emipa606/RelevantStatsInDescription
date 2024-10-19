@@ -1,5 +1,9 @@
 # Changelog for RelevantStatsInDescription
 
+1.5.4 - Added option for door opening speed
+Used DeepL to update translations for ChineseSimplified, French, German, Russian, Spanish
+
+
 1.5.3 - Updated spanish translation, thanks Ferchu
 
 

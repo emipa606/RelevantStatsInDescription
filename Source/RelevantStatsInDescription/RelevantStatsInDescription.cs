@@ -597,6 +597,17 @@ public class RelevantStatsInDescription
             }
         }
 
+        // Door Open Speed
+        if (RelevantStatsInDescriptionMod.instance.RelevantStatsInDescriptionSettings.ShowDoorOpenSpeed &&
+            buildableThing.IsDoor)
+        {
+            var doorOpenSpeed = thing.GetStatValue(StatDefOf.DoorOpenSpeed);
+            if (doorOpenSpeed > 0)
+            {
+                arrayToAdd.Add("RSID_DoorOpenSpeed".Translate(doorOpenSpeed.ToStringPercent()));
+            }
+        }
+
         // Dominant style
         if (RelevantStatsInDescriptionMod.instance.RelevantStatsInDescriptionSettings.ShowDominantStyle &&
             ModsConfig.IdeologyActive)

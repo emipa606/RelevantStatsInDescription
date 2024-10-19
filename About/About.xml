@@ -38,6 +38,7 @@ Supported mods
 If you have suggestion of stats that would be usable to show for certain buildings, leave a comment here or on the Discord server linked below.
 
 - German translation added, thanks Dimos!
+- Spanish translation added, thanks Ferchu!
 
 Idea by: Legion
 
@@ -66,8 +67,8 @@ Since modding is just a hobby for me I expect no donations to keep modding. If y
 [*] Do not report errors by making a discussion-thread, I get no notification of that.
 [*] If you have the solution for a problem, please post it to the GitHub repository.
 [*] Use [url=https://github.com/RimSort/RimSort/releases/latest]RimSort[/url] to sort your mods
-[/list]
+[/list] 
 
-[url=https://steamcommunity.com/sharedfiles/filedetails/changelog/2692669482][img]https://img.shields.io/github/v/release/emipa606/RelevantStatsInDescription?label=latest%20version&amp;style=plastic&amp;labelColor=0070cd&amp;color=white[/img][/url]</description>
-  <modVersion IgnoreIfNoMatchingField="True">1.5.3</modVersion>
+[url=https://steamcommunity.com/sharedfiles/filedetails/changelog/2692669482][img]https://img.shields.io/github/v/release/emipa606/RelevantStatsInDescription?label=latest%20version&amp;style=plastic&amp;labelColor=0070cd&amp;color=white[/img][/url] | tags: stats, qol, tooltip, info</description>
+  <modVersion IgnoreIfNoMatchingField="True">1.5.4</modVersion>
 </ModMetaData>

@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <LanguageData>
   <!-- Info -->
   <RSID_Undefined>Unbestimmt</RSID_Undefined>
@@ -112,4 +112,7 @@
   <RSID_FloorQuality_Common>Gemeinsame</RSID_FloorQuality_Common>
   <RSID_ShowFloorQuality.Label>Qualität der Ausstellungsfläche</RSID_ShowFloorQuality.Label>
   <RSID_ShowFloorQuality.Tooltip>Zeigt an, ob der Boden von guter Qualität für Könige ist oder nur für gewöhnliche Bauern akzeptabel.</RSID_ShowFloorQuality.Tooltip>
+  <RSID_DoorOpenSpeed>Geschwindigkeit der Türöffnung: {0}</RSID_DoorOpenSpeed>
+  <RSID_ShowDoorOpenSpeed.Label>Geschwindigkeit der Türöffnung anzeigen</RSID_ShowDoorOpenSpeed.Label>
+  <RSID_ShowDoorOpenSpeed.Tooltip>Zeigt die Öffnungsgeschwindigkeit der Türen an</RSID_ShowDoorOpenSpeed.Tooltip>
 </LanguageData>

@@ -111,4 +111,7 @@
   <RSID_FloorQuality_Common>常见问题</RSID_FloorQuality_Common>
   <RSID_ShowFloorQuality.Label>展会现场质量</RSID_ShowFloorQuality.Label>
   <RSID_ShowFloorQuality.Tooltip>将显示地板的质量是适合皇室使用，还是只适合普通棋子使用。</RSID_ShowFloorQuality.Tooltip>
+  <RSID_DoorOpenSpeed>开门速度： {0}</RSID_DoorOpenSpeed>
+  <RSID_ShowDoorOpenSpeed.Label>显示开门速度</RSID_ShowDoorOpenSpeed.Label>
+  <RSID_ShowDoorOpenSpeed.Tooltip>将显示门的开门速度</RSID_ShowDoorOpenSpeed.Tooltip>
 </LanguageData>

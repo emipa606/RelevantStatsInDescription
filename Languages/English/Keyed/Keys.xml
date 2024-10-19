@@ -40,6 +40,7 @@
   <RSID_FloorQuality>Floor Quality: {0}</RSID_FloorQuality>
   <RSID_FloorQuality_Fine>Fine</RSID_FloorQuality_Fine>
   <RSID_FloorQuality_Common>Common</RSID_FloorQuality_Common>
+  <RSID_DoorOpenSpeed>Door opening speed: {0}</RSID_DoorOpenSpeed>
   <!-- Settings -->
   <RSID_ShowHP.Label>Show max HP for linkable structures and doors</RSID_ShowHP.Label>
   <RSID_ShowHP.Tooltip>Shows the maximum hitpoints for structures such as walls, fences, doors and sandbags</RSID_ShowHP.Tooltip>
@@ -93,6 +94,8 @@
   <RSID_ShowPowerProducer.Tooltip>Will show the maximum power-production of any building that produces power</RSID_ShowPowerProducer.Tooltip>
   <RSID_ShowFloorQuality.Label>Show floor quality</RSID_ShowFloorQuality.Label>
   <RSID_ShowFloorQuality.Tooltip>Will show if the floor is of fine quality for royalty, or only acceptable for common pawns.</RSID_ShowFloorQuality.Tooltip>
+  <RSID_ShowDoorOpenSpeed.Label>Show door opening speed</RSID_ShowDoorOpenSpeed.Label>
+  <RSID_ShowDoorOpenSpeed.Tooltip>Will show the door opening speed of doors</RSID_ShowDoorOpenSpeed.Tooltip>
   <RSID_ShowDefName.Label>Show defName</RSID_ShowDefName.Label>
   <RSID_ShowDefName.Tooltip>Will show the defname of all buildables</RSID_ShowDefName.Tooltip>
   <RSID_ShowDominantStyle.Label>Show dominant style</RSID_ShowDominantStyle.Label>

@@ -18,6 +18,7 @@ internal class RelevantStatsInDescriptionSettings : ModSettings
     public bool ShowCover = true;
     public bool ShowDefName;
     public bool ShowDominantStyle = true;
+    public bool ShowDoorOpenSpeed = true;
     public bool ShowDPS;
     public bool ShowFloorQuality = true;
     public bool ShowHP = true;
@@ -77,6 +78,7 @@ internal class RelevantStatsInDescriptionSettings : ModSettings
         Scribe_Values.Look(ref ShowStorageSpace, "ShowStorageSpace", true);
         Scribe_Values.Look(ref ShowUIOrder, "ShowUIOrder");
         Scribe_Values.Look(ref ShowDefName, "ShowDefName");
+        Scribe_Values.Look(ref ShowDoorOpenSpeed, "ShowDoorOpenSpeed", true);
         Scribe_Values.Look(ref RemoveRotateWidget, "RemoveRotateWidget", true);
         Scribe_Values.Look(ref ShowDominantStyle, "ShowDominantStyle", true);
         Scribe_Values.Look(ref ShowFloorQuality, "ShowFloorQuality", true);
