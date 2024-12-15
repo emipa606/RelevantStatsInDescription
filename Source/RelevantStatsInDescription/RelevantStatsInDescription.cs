@@ -578,7 +578,8 @@ public class RelevantStatsInDescription
         // Storage
         if (RelevantStatsInDescriptionMod.instance.RelevantStatsInDescriptionSettings.ShowStorageSpace)
         {
-            if (buildableThing.building.fixedStorageSettings != null)
+            if (buildableThing.building.fixedStorageSettings != null ||
+                buildableThing.building.defaultStorageSettings != null)
             {
                 var maxItems = buildableThing.building.maxItemsInCell;
                 var cells = buildableThing.size.x * buildableThing.size.z;

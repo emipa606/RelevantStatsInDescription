@@ -1,5 +1,8 @@
 # Changelog for RelevantStatsInDescription
 
+1.5.5 - Should now show storage space for all storage buildings
+
+
 1.5.4 - Added option for door opening speed
 Used DeepL to update translations for ChineseSimplified, French, German, Russian, Spanish
 
