@@ -114,4 +114,6 @@
   <RSID_DoorOpenSpeed>Velocidad de apertura de la puerta: {0}</RSID_DoorOpenSpeed>
   <RSID_ShowDoorOpenSpeed.Label>Mostrar velocidad de apertura de la puerta</RSID_ShowDoorOpenSpeed.Label>
   <RSID_ShowDoorOpenSpeed.Tooltip>Mostrará la velocidad de apertura de las puertas</RSID_ShowDoorOpenSpeed.Tooltip>
+  <!-- Info -->
+  <!-- Settings -->
 </LanguageData>

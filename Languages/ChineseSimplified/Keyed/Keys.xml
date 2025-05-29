@@ -114,4 +114,5 @@
   <RSID_DoorOpenSpeed>开门速度： {0}</RSID_DoorOpenSpeed>
   <RSID_ShowDoorOpenSpeed.Label>显示开门速度</RSID_ShowDoorOpenSpeed.Label>
   <RSID_ShowDoorOpenSpeed.Tooltip>将显示门的开门速度</RSID_ShowDoorOpenSpeed.Tooltip>
+  <!-- Settings -->
 </LanguageData>

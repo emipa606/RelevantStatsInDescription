@@ -19,18 +19,18 @@ public class RelevantStatsInDescription
     public static readonly bool LWMLoaded;
     public static readonly bool RepowerOnOffLoaded;
     public static readonly bool LightsOutLoaded;
-    public static readonly Dictionary<ThingDef, float> TurretDps;
+    private static readonly Dictionary<ThingDef, float> TurretDps;
     private static readonly FieldInfo repowerOnOffPowerLevels;
     private static readonly MethodInfo lightsOutPostfix;
     private static readonly PropertyInfo lightsOutActiveResourceDrawRate;
 
     static RelevantStatsInDescription()
     {
-        VFEPowerLoaded = ModLister.GetActiveModWithIdentifier("VanillaExpanded.VFEPower") != null;
-        RimefellerLoaded = ModLister.GetActiveModWithIdentifier("Dubwise.Rimefeller") != null;
-        LWMLoaded = ModLister.GetActiveModWithIdentifier("LWM.DeepStorage") != null;
-        RepowerOnOffLoaded = ModLister.GetActiveModWithIdentifier("Mlie.TurnOnOffRePowered") != null;
-        LightsOutLoaded = ModLister.GetActiveModWithIdentifier("juanlopez2008.LightsOut") != null;
+        VFEPowerLoaded = ModLister.GetActiveModWithIdentifier("VanillaExpanded.VFEPower", true) != null;
+        RimefellerLoaded = ModLister.GetActiveModWithIdentifier("Dubwise.Rimefeller", true) != null;
+        LWMLoaded = ModLister.GetActiveModWithIdentifier("LWM.DeepStorage", true) != null;
+        RepowerOnOffLoaded = ModLister.GetActiveModWithIdentifier("Mlie.TurnOnOffRePowered", true) != null;
+        LightsOutLoaded = ModLister.GetActiveModWithIdentifier("juanlopez2008.LightsOut", true) != null;
         cachedDescriptions = new Dictionary<string, string>();
         var harmony = new Harmony("Mlie.RelevantStatsInDescription");
         harmony.PatchAll(Assembly.GetExecutingAssembly());
@@ -97,6 +97,11 @@ public class RelevantStatsInDescription
 
     public static float GetExtraHeight()
     {
+        if (RelevantStatsInDescriptionMod.instance.RelevantStatsInDescriptionSettings.UseTooltip)
+        {
+            return 0f;
+        }
+
         return (typeof(RelevantStatsInDescriptionSettings).GetFields().Count(info =>
             (bool)info.GetValue(RelevantStatsInDescriptionMod.instance.RelevantStatsInDescriptionSettings)) * 5f) + 10f;
     }
