@@ -30,11 +30,11 @@
   <RSID_WorkExact>所需工作量。{0}</RSID_WorkExact>
   <RSID_WorkRelative>相对工作量：{0}</RSID_WorkRelative>
   <RSID_TechLevel>技术水平：{0}</RSID_TechLevel>
-  <RSID_StorageSpace>储存的最大堆栈：{0}</RSID_StorageSpace>
+  <RSID_StorageSpace>储存的最大堆叠：{0}</RSID_StorageSpace>
   <RSID_ShowHP.Label>显示可链接结构和门的最大HP</RSID_ShowHP.Label>
-  <RSID_ShowHP.Tooltip>显示墙、围栏、门和沙袋等结构的最大打击点</RSID_ShowHP.Tooltip>
-  <RSID_ShowHPForAll.Label>显示为所有可填充的</RSID_ShowHPForAll.Label>
-  <RSID_ShowHPForAll.Tooltip>显示所有可填充建筑物的最大命中率</RSID_ShowHPForAll.Tooltip>
+  <RSID_ShowHP.Tooltip>显示墙、围栏、门和沙袋等结构的最大HP</RSID_ShowHP.Tooltip>
+  <RSID_ShowHPForAll.Label>为所有可自定义材料的建筑显示</RSID_ShowHPForAll.Label>
+  <RSID_ShowHPForAll.Tooltip>显示所有可自定义材料建筑物的最大HP</RSID_ShowHPForAll.Tooltip>
   <RSID_ShowAffordance.Label>显示给定的承重能力</RSID_ShowAffordance.Label>
   <RSID_ShowAffordance.Tooltip>显示地板和桥梁给予的最大承重能力</RSID_ShowAffordance.Tooltip>
   <RSID_ShowAffordanceRequirement.Label>显示需要的承重</RSID_ShowAffordanceRequirement.Label>
@@ -42,7 +42,7 @@
   <RSID_ShowCover.Label>给予掩护</RSID_ShowCover.Label>
   <RSID_ShowCover.Tooltip>显示围栏和沙袋等结构所给予的掩护</RSID_ShowCover.Tooltip>
   <RSID_ShowBeauty.Label>显示给予的美观度</RSID_ShowBeauty.Label>
-  <RSID_ShowBeauty.Tooltip>显示任何建筑物所赋予的美观，正负值都显示出来。</RSID_ShowBeauty.Tooltip>
+  <RSID_ShowBeauty.Tooltip>显示任何建筑物的美观度，正负值都显示出来。</RSID_ShowBeauty.Tooltip>
   <RSID_ShowMass.Label>显示质量</RSID_ShowMass.Label>
   <RSID_ShowMass.Tooltip>显示任何可分解的建筑物的质量</RSID_ShowMass.Tooltip>
   <RSID_ShowWealth.Label>显示给予的财富</RSID_ShowWealth.Label>
@@ -65,8 +65,8 @@
   <RSID_ShowImmunityGainSpeed.Tooltip>显示任何默认为医院床位（如果定义了的话）或动物床位的免疫力增长速度</RSID_ShowImmunityGainSpeed.Tooltip>
   <RSID_ShowSurgerySuccessChance.Label>显示手术成功的机会</RSID_ShowSurgerySuccessChance.Label>
   <RSID_ShowSurgerySuccessChance.Tooltip>显示任何默认为医院床位（如果定义了的话）或动物床位的手术成功率。</RSID_ShowSurgerySuccessChance.Tooltip>
-  <RSID_ShowMedicalTendQuality.Label>显示医疗倾向的质量</RSID_ShowMedicalTendQuality.Label>
-  <RSID_ShowMedicalTendQuality.Tooltip>显示任何默认为医院床位（如果定义为）或动物床位的医疗倾向质量。</RSID_ShowMedicalTendQuality.Tooltip>
+  <RSID_ShowMedicalTendQuality.Label>显示治疗质量偏移</RSID_ShowMedicalTendQuality.Label>
+  <RSID_ShowMedicalTendQuality.Tooltip>显示任何默认为医院床位（如果定义为）或动物床位的治疗质量偏移。</RSID_ShowMedicalTendQuality.Tooltip>
   <RSID_ShowPowerConsumer.Label>显示功率消耗</RSID_ShowPowerConsumer.Label>
   <RSID_ShowPowerConsumer.Tooltip>将显示任何消耗电力的建筑物的最大耗电量</RSID_ShowPowerConsumer.Tooltip>
   <RSID_ShowPowerProducer.Label>显示电力生产</RSID_ShowPowerProducer.Label>
@@ -75,9 +75,9 @@
   <RSID_ShowVFEGas.Tooltip>将显示Vanilla Furniture Expanded - Power中建筑物的气体生产/消费情况。取决于上面的功率设置</RSID_ShowVFEGas.Tooltip>
   <RSID_ShowRimefeller.Label>同时使用化合燃料</RSID_ShowRimefeller.Label>
   <RSID_ShowRimefeller.Tooltip>将显示Rimefeller中动力装置的化学燃料使用情况。取决于上面的动力设置</RSID_ShowRimefeller.Tooltip>
-  <RSID_ShowWorkToBuild.Label>显示工程量</RSID_ShowWorkToBuild.Label>
-  <RSID_ShowWorkToBuild.Tooltip>将显示完成建筑所需的工程量</RSID_ShowWorkToBuild.Tooltip>
-  <RSID_RelativeWork.Label>显示相对工程量</RSID_RelativeWork.Label>
+  <RSID_ShowWorkToBuild.Label>显示工作量</RSID_ShowWorkToBuild.Label>
+  <RSID_ShowWorkToBuild.Tooltip>将显示完成建筑所需的工作量</RSID_ShowWorkToBuild.Tooltip>
+  <RSID_RelativeWork.Label>显示相对工作量</RSID_RelativeWork.Label>
   <RSID_RelativeWork.Tooltip>将显示工作量为小/中/大，以获得更多关于工作量的总体概念。</RSID_RelativeWork.Tooltip>
   <RSID_CurrentVersion.Label>已安装的模组版本：{0}</RSID_CurrentVersion.Label>
   <RSID_Size>大小：{0}</RSID_Size>
@@ -93,11 +93,11 @@
   <RSID_VariedPowerModLoaded.Tooltip>已激活的模组可以修改物品在不使用时的电力消耗（Turn It On and Off - RePowered 或 LightsOut）。如果你改变了这些模组中关于电力的设置，请在之后重新打开这个设置页面，以清除描述中的缓存电力值。否则，你将无法在游戏中看到更新的数值。</RSID_VariedPowerModLoaded.Tooltip>
   <RSID_ResearchSpeedFactor>研究速度：{0}</RSID_ResearchSpeedFactor>
   <RSID_ShowResearchSpeed.Label>显示研究速度</RSID_ShowResearchSpeed.Label>
-  <RSID_ShowResearchSpeed.Tooltip>显示研究室的相对研究速度</RSID_ShowResearchSpeed.Tooltip>
+  <RSID_ShowResearchSpeed.Tooltip>显示研究台的相对研究速度</RSID_ShowResearchSpeed.Tooltip>
   <RSID_DominantStyle>主导风格：{0}</RSID_DominantStyle>
   <RSID_ShowDominantStyle.Label>显示主导风格</RSID_ShowDominantStyle.Label>
   <RSID_ShowDominantStyle.Tooltip>将显示任何已定义的可建造建筑的主要风格</RSID_ShowDominantStyle.Tooltip>
-  <RSID_DPS>每秒伤害: {0}</RSID_DPS>
+  <RSID_DPS>每秒伤害（DPS）: {0}</RSID_DPS>
   <RSID_StoppingPower>抑制力：{0}</RSID_StoppingPower>
   <RSID_ShowDPS.Label>显示炮塔DPS</RSID_ShowDPS.Label>
   <RSID_ShowDPS.Tooltip>显示炮塔的平均 DPS，根据使用的弹丸不同，可能会显示不正确的数值。</RSID_ShowDPS.Tooltip>
