@@ -14,37 +14,40 @@ public class RelevantStatsInDescription
 {
     private static Dictionary<string, string> cachedDescriptions;
 
-    public static readonly bool VFEPowerLoaded;
+    public static readonly bool VfePowerLoaded;
     public static readonly bool RimefellerLoaded;
-    public static readonly bool LWMLoaded;
     public static readonly bool RepowerOnOffLoaded;
     public static readonly bool LightsOutLoaded;
-    private static readonly Dictionary<ThingDef, float> TurretDps;
+    private static readonly Dictionary<ThingDef, float> turretDps;
     private static readonly FieldInfo repowerOnOffPowerLevels;
     private static readonly MethodInfo lightsOutPostfix;
     private static readonly PropertyInfo lightsOutActiveResourceDrawRate;
+    private static readonly FieldInfo verbsFieldInfo = AccessTools.Field(typeof(ThingDef), "verbs");
+
+    private static readonly FieldInfo damageAmountBaseFieldInfo =
+        AccessTools.Field(typeof(ProjectileProperties), "damageAmountBase");
 
     static RelevantStatsInDescription()
     {
-        VFEPowerLoaded = ModLister.GetActiveModWithIdentifier("VanillaExpanded.VFEPower", true) != null;
+        VfePowerLoaded = ModLister.GetActiveModWithIdentifier("VanillaExpanded.VFEPower", true) != null;
         RimefellerLoaded = ModLister.GetActiveModWithIdentifier("Dubwise.Rimefeller", true) != null;
-        LWMLoaded = ModLister.GetActiveModWithIdentifier("LWM.DeepStorage", true) != null;
         RepowerOnOffLoaded = ModLister.GetActiveModWithIdentifier("Mlie.TurnOnOffRePowered", true) != null;
         LightsOutLoaded = ModLister.GetActiveModWithIdentifier("juanlopez2008.LightsOut", true) != null;
         cachedDescriptions = new Dictionary<string, string>();
         var harmony = new Harmony("Mlie.RelevantStatsInDescription");
         harmony.PatchAll(Assembly.GetExecutingAssembly());
-        TurretDps = [];
+        turretDps = [];
         foreach (var turret in DefDatabase<ThingDef>.AllDefs.Where(def => def.building?.turretGunDef != null))
         {
-            if (turret.building.turretGunDef.verbs == null || !turret.building.turretGunDef.verbs.Any())
+            var verbs = (List<VerbProperties>)verbsFieldInfo.GetValue(turret.building.turretGunDef);
+            if (verbs == null || !verbs.Any())
             {
                 Log.Message(
                     $"[RelevantStatsInDescription]: Skipping dps-calculation of {turret.LabelCap} as it has no valid attack-verbs");
                 continue;
             }
 
-            var attackVerb = turret.building.turretGunDef.verbs[0];
+            var attackVerb = verbs[0];
             var bullet = attackVerb.defaultProjectile;
             if (bullet?.projectile == null)
             {
@@ -66,12 +69,13 @@ public class RelevantStatsInDescription
                 cooldown = turret.building.turretGunDef.GetStatValueAbstract(StatDefOf.RangedWeapon_Cooldown);
             }
 
-            float burstDamage = bullet.projectile.damageAmountBase * attackVerb.burstShotCount;
+            var damageAmountBase = (int)damageAmountBaseFieldInfo.GetValue(bullet.projectile);
+            float burstDamage = damageAmountBase * attackVerb.burstShotCount;
             var warmupTicks = (cooldown + attackVerb.warmupTime) * 60;
             float burstTicks = (attackVerb.burstShotCount - 1) * attackVerb.ticksBetweenBurstShots;
             var totalTime = (warmupTicks + burstTicks) / 60;
 
-            TurretDps[turret] = (float)Math.Round(burstDamage / totalTime, 2);
+            turretDps[turret] = (float)Math.Round(burstDamage / totalTime, 2);
         }
 
         if (RepowerOnOffLoaded)
@@ -339,9 +343,9 @@ public class RelevantStatsInDescription
 
         // DPS
         if (RelevantStatsInDescriptionMod.instance.RelevantStatsInDescriptionSettings.ShowDPS &&
-            TurretDps.TryGetValue(buildableThing, out var turretDps))
+            turretDps.TryGetValue(buildableThing, out var dps))
         {
-            arrayToAdd.Add("RSID_DPS".Translate(turretDps));
+            arrayToAdd.Add("RSID_DPS".Translate(dps));
         }
 
         // Comfort
@@ -399,10 +403,6 @@ public class RelevantStatsInDescription
         if (powerComp != null)
         {
             var consumption = powerComp.PowerConsumption;
-            //if (powerComp.compClass == typeof(CompPowerPlantSolar))
-            //{
-            //    consumption = -powerComp.PowerConsumption;
-            //}
 
             if (RelevantStatsInDescriptionMod.instance.RelevantStatsInDescriptionSettings.ShowPowerProducer &&
                 consumption < 0)
@@ -423,7 +423,7 @@ public class RelevantStatsInDescription
         // Chemfueluse
         if (RimefellerLoaded)
         {
-            var chemfuelConsumtion = 0f;
+            var chemfuelConsumption = 0f;
             foreach (var compProperty in buildableThing.comps)
             {
                 if (compProperty == null ||
@@ -432,20 +432,20 @@ public class RelevantStatsInDescription
                     continue;
                 }
 
-                chemfuelConsumtion = (float)AccessTools.Field(AccessTools.TypeByName(compProperty.GetType().FullName),
+                chemfuelConsumption = (float)AccessTools.Field(AccessTools.TypeByName(compProperty.GetType().FullName),
                         "FuelRate")
                     .GetValue(compProperty);
             }
 
             if (RelevantStatsInDescriptionMod.instance.RelevantStatsInDescriptionSettings.ShowRimefeller &&
-                chemfuelConsumtion != 0)
+                chemfuelConsumption != 0)
             {
-                arrayToAdd.Add("RSID_ChemfuelUser".Translate(chemfuelConsumtion.ToString()));
+                arrayToAdd.Add("RSID_ChemfuelUser".Translate(chemfuelConsumption.ToString()));
             }
         }
 
         // Gasuse
-        if (VFEPowerLoaded && RelevantStatsInDescriptionMod.instance.RelevantStatsInDescriptionSettings.ShowVFEGas)
+        if (VfePowerLoaded && RelevantStatsInDescriptionMod.instance.RelevantStatsInDescriptionSettings.ShowVFEGas)
         {
             var gasConsumption = 0f;
             foreach (var compProperty in buildableThing.comps)
@@ -731,8 +731,6 @@ public class RelevantStatsInDescription
 
         var highPowerFactor = (float)lightsOutActiveResourceDrawRate.GetValue(null);
 
-        //arguments = new object[] { itemCompPowerTrader, originalConsumption, true };
-        //lightsOutPostfix.Invoke(null, arguments);
         var highValue = originalConsumption;
         if (buildableThing.hasInteractionCell)
         {

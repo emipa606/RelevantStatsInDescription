@@ -147,7 +147,7 @@ internal class RelevantStatsInDescriptionMod : Mod
         listing_Standard.CheckboxLabeled("RSID_ShowStorageSpace.Label".Translate(),
             ref RelevantStatsInDescriptionSettings.ShowStorageSpace,
             "RSID_ShowStorageSpace.Tooltip".Translate());
-        if (RelevantStatsInDescription.VFEPowerLoaded && (RelevantStatsInDescriptionSettings.ShowPowerConsumer ||
+        if (RelevantStatsInDescription.VfePowerLoaded && (RelevantStatsInDescriptionSettings.ShowPowerConsumer ||
                                                           RelevantStatsInDescriptionSettings.ShowPowerProducer))
         {
             listing_Standard.CheckboxLabeled("RSID_ShowVFEGas.Label".Translate(),

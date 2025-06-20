@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Linq;
+using System.Reflection;
 using HarmonyLib;
 using RimWorld;
 using UnityEngine;
@@ -7,9 +8,19 @@ using Verse;
 
 namespace RelevantStatsInDescription;
 
-[HarmonyPatch(typeof(ArchitectCategoryTab), nameof(ArchitectCategoryTab.DoInfoBox))]
+[HarmonyPatch(typeof(ArchitectCategoryTab), "DoInfoBox")]
 public static class ArchitectCategoryTab_DoInfoBox
 {
+    private static readonly FieldInfo activeDesignatorSetFieldInfo =
+        AccessTools.Field(typeof(Designator_Dropdown), "activeDesignatorSet");
+
+    private static readonly FieldInfo activeDesignatorFieldInfo =
+        AccessTools.Field(typeof(Designator_Dropdown), "activeDesignator");
+
+    private static readonly FieldInfo entDefFieldInfo =
+        AccessTools.Field(typeof(Designator_Build), "entDef");
+
+
     public static void Prefix(ref Rect infoRect)
     {
         if (RelevantStatsInDescriptionMod.instance.RelevantStatsInDescriptionSettings.UseTooltip)
@@ -36,9 +47,15 @@ public static class ArchitectCategoryTab_DoInfoBox
 
         if (designator is Designator_Dropdown designatorDropdown)
         {
-            designator = designatorDropdown.activeDesignatorSet
-                ? designatorDropdown.activeDesignator
-                : designatorDropdown.Elements.First();
+            var activeDesignatorSet = (bool)activeDesignatorSetFieldInfo.GetValue(designatorDropdown);
+            if (activeDesignatorSet)
+            {
+                designator = (Designator)activeDesignatorFieldInfo.GetValue(designatorDropdown);
+            }
+            else
+            {
+                designator = designatorDropdown.Elements.First();
+            }
         }
 
         if (designator is not Designator_Build buildDesignator)
@@ -46,18 +63,19 @@ public static class ArchitectCategoryTab_DoInfoBox
             return;
         }
 
+        var entDef = (BuildableDef)entDefFieldInfo.GetValue(buildDesignator);
         var toolTip =
-            RelevantStatsInDescription.GetUpdatedDescription(buildDesignator.entDef, buildDesignator.StuffDef, true);
+            RelevantStatsInDescription.GetUpdatedDescription(entDef, buildDesignator.StuffDef, true);
 
         if (string.IsNullOrEmpty(toolTip))
         {
             return;
         }
 
-        ShowTooltip(infoRect, toolTip);
+        showTooltip(infoRect, toolTip);
     }
 
-    private static void ShowTooltip(Rect rect, string toolTip)
+    private static void showTooltip(Rect rect, string toolTip)
     {
         Text.Font = GameFont.Small;
 
