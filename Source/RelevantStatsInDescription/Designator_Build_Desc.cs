@@ -9,7 +9,7 @@ public static class Designator_Build_Desc
 {
     public static void Postfix(ref string __result, BuildableDef ___entDef, ThingDef ___stuffDef)
     {
-        if (RelevantStatsInDescriptionMod.instance.RelevantStatsInDescriptionSettings.UseTooltip)
+        if (RelevantStatsInDescriptionMod.Instance.RelevantStatsInDescriptionSettings.UseTooltip)
         {
             return;
         }

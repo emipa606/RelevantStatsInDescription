@@ -115,4 +115,6 @@
   <RSID_ShowDoorOpenSpeed.Label>Показать скорость открытия двери</RSID_ShowDoorOpenSpeed.Label>
   <RSID_ShowDoorOpenSpeed.Tooltip>Отображает скорость открытия дверей</RSID_ShowDoorOpenSpeed.Tooltip>
   <!-- Settings -->
+  <RSID_ShowWidgetForShapes.Label>По-прежнему отображается виджет для обозначения фигур</RSID_ShowWidgetForShapes.Label>
+  <RSID_ShowWidgetForShapes.Tooltip>По-прежнему будет показывать виджет при отображении форм конструктора для предметов, которые его поддерживают</RSID_ShowWidgetForShapes.Tooltip>
 </LanguageData>

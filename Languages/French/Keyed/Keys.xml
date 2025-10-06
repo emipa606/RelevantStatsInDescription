@@ -115,4 +115,6 @@
   <RSID_ShowDoorOpenSpeed.Label>Afficher la vitesse d'ouverture de la porte</RSID_ShowDoorOpenSpeed.Label>
   <RSID_ShowDoorOpenSpeed.Tooltip>Indique la vitesse d'ouverture des portes</RSID_ShowDoorOpenSpeed.Tooltip>
   <!-- Settings -->
+  <RSID_ShowWidgetForShapes.Label>Affiche toujours le widget pour les formes de désignateurs</RSID_ShowWidgetForShapes.Label>
+  <RSID_ShowWidgetForShapes.Tooltip>Le widget sera toujours affiché lors de l'affichage des formes de désignateur pour les objets qui le supportent.</RSID_ShowWidgetForShapes.Tooltip>
 </LanguageData>

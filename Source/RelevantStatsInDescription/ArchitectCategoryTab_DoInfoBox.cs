@@ -23,7 +23,7 @@ public static class ArchitectCategoryTab_DoInfoBox
 
     public static void Prefix(ref Rect infoRect)
     {
-        if (RelevantStatsInDescriptionMod.instance.RelevantStatsInDescriptionSettings.UseTooltip)
+        if (RelevantStatsInDescriptionMod.Instance.RelevantStatsInDescriptionSettings.UseTooltip)
         {
             return;
         }
@@ -40,7 +40,7 @@ public static class ArchitectCategoryTab_DoInfoBox
 
     public static void Postfix(Rect infoRect, Designator designator)
     {
-        if (!RelevantStatsInDescriptionMod.instance.RelevantStatsInDescriptionSettings.UseTooltip)
+        if (!RelevantStatsInDescriptionMod.Instance.RelevantStatsInDescriptionSettings.UseTooltip)
         {
             return;
         }

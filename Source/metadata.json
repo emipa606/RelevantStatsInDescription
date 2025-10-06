@@ -11,5 +11,11 @@
     "tooltip",
     "info"
   ],
-  "LastXmlCleaning": "2025-06-20T18:58:39.5122959+02:00"
+  "LastXmlCleaning": "2025-10-06T15:29:00.6547383+02:00",
+  "Patches": false,
+  "Defs": false,
+  "Assemblies": true,
+  "LinesOfCode": 51984,
+  "LinesOfXML": 0,
+  "CodeBaseSize": 74
 }

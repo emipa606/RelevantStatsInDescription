@@ -115,4 +115,6 @@
   <RSID_ShowDoorOpenSpeed.Label>显示开门速度</RSID_ShowDoorOpenSpeed.Label>
   <RSID_ShowDoorOpenSpeed.Tooltip>将显示门的开门速度</RSID_ShowDoorOpenSpeed.Tooltip>
   <!-- Settings -->
+  <RSID_ShowWidgetForShapes.Label>仍显示指定形状的小部件</RSID_ShowWidgetForShapes.Label>
+  <RSID_ShowWidgetForShapes.Tooltip>在显示支持小部件的项目的代号形状时，仍会显示小部件</RSID_ShowWidgetForShapes.Tooltip>
 </LanguageData>

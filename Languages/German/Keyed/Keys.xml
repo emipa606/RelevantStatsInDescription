@@ -115,4 +115,6 @@
   <RSID_DoorOpenSpeed>Geschwindigkeit der Türöffnung: {0}</RSID_DoorOpenSpeed>
   <RSID_ShowDoorOpenSpeed.Label>Geschwindigkeit der Türöffnung anzeigen</RSID_ShowDoorOpenSpeed.Label>
   <RSID_ShowDoorOpenSpeed.Tooltip>Zeigt die Öffnungsgeschwindigkeit der Türen an</RSID_ShowDoorOpenSpeed.Tooltip>
+  <RSID_ShowWidgetForShapes.Label>Zeige immer noch Widget für Bezeichnerformen</RSID_ShowWidgetForShapes.Label>
+  <RSID_ShowWidgetForShapes.Tooltip>Zeigt immer noch das Widget an, wenn die Bezeichnerformen für die Gegenstände angezeigt werden, die es unterstützen</RSID_ShowWidgetForShapes.Tooltip>
 </LanguageData>

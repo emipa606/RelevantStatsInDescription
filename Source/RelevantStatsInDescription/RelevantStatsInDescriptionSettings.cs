@@ -39,6 +39,7 @@ internal class RelevantStatsInDescriptionSettings : ModSettings
     public bool ShowUIOrder;
     public bool ShowVFEGas = true;
     public bool ShowWealth = true;
+    public bool ShowWidgetForShapes = true;
     public bool ShowWorkToBuild = true;
     public bool UseTooltip;
 
@@ -80,6 +81,7 @@ internal class RelevantStatsInDescriptionSettings : ModSettings
         Scribe_Values.Look(ref ShowDefName, "ShowDefName");
         Scribe_Values.Look(ref ShowDoorOpenSpeed, "ShowDoorOpenSpeed", true);
         Scribe_Values.Look(ref RemoveRotateWidget, "RemoveRotateWidget", true);
+        Scribe_Values.Look(ref ShowWidgetForShapes, "ShowWidgetForShapes", true);
         Scribe_Values.Look(ref ShowDominantStyle, "ShowDominantStyle", true);
         Scribe_Values.Look(ref ShowFloorQuality, "ShowFloorQuality", true);
     }

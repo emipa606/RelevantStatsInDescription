@@ -116,4 +116,6 @@
   <RSID_ShowDoorOpenSpeed.Tooltip>Mostrará la velocidad de apertura de las puertas</RSID_ShowDoorOpenSpeed.Tooltip>
   <!-- Info -->
   <!-- Settings -->
+  <RSID_ShowWidgetForShapes.Label>Sigue mostrando el widget para las formas designadoras</RSID_ShowWidgetForShapes.Label>
+  <RSID_ShowWidgetForShapes.Tooltip>Seguirá mostrando el widget cuando se muestren formas de designador para los elementos que lo soporten</RSID_ShowWidgetForShapes.Tooltip>
 </LanguageData>

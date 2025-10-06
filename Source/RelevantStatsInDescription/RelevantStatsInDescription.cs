@@ -101,13 +101,13 @@ public class RelevantStatsInDescription
 
     public static float GetExtraHeight()
     {
-        if (RelevantStatsInDescriptionMod.instance.RelevantStatsInDescriptionSettings.UseTooltip)
+        if (RelevantStatsInDescriptionMod.Instance.RelevantStatsInDescriptionSettings.UseTooltip)
         {
             return 0f;
         }
 
         return (typeof(RelevantStatsInDescriptionSettings).GetFields().Count(info =>
-            (bool)info.GetValue(RelevantStatsInDescriptionMod.instance.RelevantStatsInDescriptionSettings)) * 5f) + 10f;
+            (bool)info.GetValue(RelevantStatsInDescriptionMod.Instance.RelevantStatsInDescriptionSettings)) * 5f) + 10f;
     }
 
     public static string GetUpdatedDescription(BuildableDef def, ThingDef stuff, bool onlyAddition = false)
@@ -128,7 +128,7 @@ public class RelevantStatsInDescription
         if (def is TerrainDef floorDef)
         {
             // Affordances
-            if (RelevantStatsInDescriptionMod.instance.RelevantStatsInDescriptionSettings.ShowAffordance)
+            if (RelevantStatsInDescriptionMod.Instance.RelevantStatsInDescriptionSettings.ShowAffordance)
             {
                 if (floorDef.affordances?.Any() == true && !floorDef.affordances.Contains(TerrainAffordanceDefOf.Heavy))
                 {
@@ -148,7 +148,7 @@ public class RelevantStatsInDescription
             }
 
             // Affordance requirement
-            if (RelevantStatsInDescriptionMod.instance.RelevantStatsInDescriptionSettings.ShowAffordanceRequirement)
+            if (RelevantStatsInDescriptionMod.Instance.RelevantStatsInDescriptionSettings.ShowAffordanceRequirement)
             {
                 var affordanceNeeded = floorDef.GetTerrainAffordanceNeed(stuff);
                 if (affordanceNeeded != null &&
@@ -160,7 +160,7 @@ public class RelevantStatsInDescription
 
 
             // Dominant style
-            if (RelevantStatsInDescriptionMod.instance.RelevantStatsInDescriptionSettings.ShowDominantStyle &&
+            if (RelevantStatsInDescriptionMod.Instance.RelevantStatsInDescriptionSettings.ShowDominantStyle &&
                 ModsConfig.IdeologyActive)
             {
                 var styleCategory = floorDef.dominantStyleCategory;
@@ -172,7 +172,7 @@ public class RelevantStatsInDescription
             }
 
             // Beauty
-            if (RelevantStatsInDescriptionMod.instance.RelevantStatsInDescriptionSettings.ShowBeauty)
+            if (RelevantStatsInDescriptionMod.Instance.RelevantStatsInDescriptionSettings.ShowBeauty)
             {
                 var beauty = floorDef.GetStatValueAbstract(StatDefOf.Beauty);
                 if (beauty != 0)
@@ -182,7 +182,7 @@ public class RelevantStatsInDescription
             }
 
             // Wealth
-            if (RelevantStatsInDescriptionMod.instance.RelevantStatsInDescriptionSettings.ShowWealth)
+            if (RelevantStatsInDescriptionMod.Instance.RelevantStatsInDescriptionSettings.ShowWealth)
             {
                 var wealth = floorDef.GetStatValueAbstract(StatDefOf.MarketValue);
                 if (wealth != 0)
@@ -192,7 +192,7 @@ public class RelevantStatsInDescription
             }
 
             // Cleanliness
-            if (RelevantStatsInDescriptionMod.instance.RelevantStatsInDescriptionSettings.ShowCleanliness)
+            if (RelevantStatsInDescriptionMod.Instance.RelevantStatsInDescriptionSettings.ShowCleanliness)
             {
                 var cleanliness = floorDef.GetStatValueAbstract(StatDefOf.Cleanliness);
                 if (cleanliness != 0)
@@ -202,7 +202,7 @@ public class RelevantStatsInDescription
             }
 
             // TechLevel
-            if (RelevantStatsInDescriptionMod.instance.RelevantStatsInDescriptionSettings.ShowTechLevel)
+            if (RelevantStatsInDescriptionMod.Instance.RelevantStatsInDescriptionSettings.ShowTechLevel)
             {
                 if (floorDef.researchPrerequisites?.Any() == true)
                 {
@@ -223,12 +223,12 @@ public class RelevantStatsInDescription
             }
 
             // Work to build
-            if (RelevantStatsInDescriptionMod.instance.RelevantStatsInDescriptionSettings.ShowWorkToBuild)
+            if (RelevantStatsInDescriptionMod.Instance.RelevantStatsInDescriptionSettings.ShowWorkToBuild)
             {
                 var workToBuild = floorDef.GetStatValueAbstract(StatDefOf.WorkToBuild);
                 if (workToBuild != 0)
                 {
-                    if (RelevantStatsInDescriptionMod.instance.RelevantStatsInDescriptionSettings.RelativeWork)
+                    if (RelevantStatsInDescriptionMod.Instance.RelevantStatsInDescriptionSettings.RelativeWork)
                     {
                         switch (workToBuild)
                         {
@@ -251,7 +251,7 @@ public class RelevantStatsInDescription
             }
 
             // Floor Quality (Royalty)
-            if (RelevantStatsInDescriptionMod.instance.RelevantStatsInDescriptionSettings.ShowFloorQuality &&
+            if (RelevantStatsInDescriptionMod.Instance.RelevantStatsInDescriptionSettings.ShowFloorQuality &&
                 ModsConfig.RoyaltyActive)
             {
                 arrayToAdd.Add("RSID_FloorQuality".Translate(floorDef.IsFine
@@ -260,7 +260,7 @@ public class RelevantStatsInDescription
             }
 
             // Defname
-            if (RelevantStatsInDescriptionMod.instance.RelevantStatsInDescriptionSettings.ShowDefName)
+            if (RelevantStatsInDescriptionMod.Instance.RelevantStatsInDescriptionSettings.ShowDefName)
             {
                 arrayToAdd.Add("RSID_DefName".Translate(floorDef.defName));
             }
@@ -321,12 +321,12 @@ public class RelevantStatsInDescription
              (buildableThing.graphicData.linkFlags & LinkFlags.Sandbags) != 0) ||
             buildableThing.IsDoor)
         {
-            if (RelevantStatsInDescriptionMod.instance.RelevantStatsInDescriptionSettings.ShowHP)
+            if (RelevantStatsInDescriptionMod.Instance.RelevantStatsInDescriptionSettings.ShowHP)
             {
                 arrayToAdd.Add("RSID_MaxHP".Translate(thing.MaxHitPoints));
             }
 
-            if (RelevantStatsInDescriptionMod.instance.RelevantStatsInDescriptionSettings.ShowCover &&
+            if (RelevantStatsInDescriptionMod.Instance.RelevantStatsInDescriptionSettings.ShowCover &&
                 buildableThing.fillPercent < 1)
             {
                 arrayToAdd.Add("RSID_Cover".Translate(buildableThing.fillPercent.ToStringPercent()));
@@ -334,7 +334,7 @@ public class RelevantStatsInDescription
         }
         else
         {
-            if (RelevantStatsInDescriptionMod.instance.RelevantStatsInDescriptionSettings.ShowHPForAll &&
+            if (RelevantStatsInDescriptionMod.Instance.RelevantStatsInDescriptionSettings.ShowHPForAll &&
                 buildableThing.MadeFromStuff)
             {
                 arrayToAdd.Add("RSID_MaxHP".Translate(thing.MaxHitPoints));
@@ -342,14 +342,14 @@ public class RelevantStatsInDescription
         }
 
         // DPS
-        if (RelevantStatsInDescriptionMod.instance.RelevantStatsInDescriptionSettings.ShowDPS &&
+        if (RelevantStatsInDescriptionMod.Instance.RelevantStatsInDescriptionSettings.ShowDPS &&
             turretDps.TryGetValue(buildableThing, out var dps))
         {
             arrayToAdd.Add("RSID_DPS".Translate(dps));
         }
 
         // Comfort
-        if (RelevantStatsInDescriptionMod.instance.RelevantStatsInDescriptionSettings.ShowComfort)
+        if (RelevantStatsInDescriptionMod.Instance.RelevantStatsInDescriptionSettings.ShowComfort)
         {
             var comfort = thing.GetStatValue(StatDefOf.Comfort);
 
@@ -363,7 +363,7 @@ public class RelevantStatsInDescription
         // Bed
         if (buildableThing.IsBed)
         {
-            if (RelevantStatsInDescriptionMod.instance.RelevantStatsInDescriptionSettings.ShowBedRest &&
+            if (RelevantStatsInDescriptionMod.Instance.RelevantStatsInDescriptionSettings.ShowBedRest &&
                 buildableThing.StatBaseDefined(StatDefOf.BedRestEffectiveness))
             {
                 arrayToAdd.Add(
@@ -373,21 +373,21 @@ public class RelevantStatsInDescription
 
             if (buildableThing.building.bed_defaultMedical || !buildableThing.building.bed_humanlike)
             {
-                if (RelevantStatsInDescriptionMod.instance.RelevantStatsInDescriptionSettings.ShowMedicalTendQuality &&
+                if (RelevantStatsInDescriptionMod.Instance.RelevantStatsInDescriptionSettings.ShowMedicalTendQuality &&
                     buildableThing.StatBaseDefined(StatDefOf.MedicalTendQualityOffset))
                 {
                     arrayToAdd.Add("RSID_MedicalTendQuality".Translate(
                         thing.GetStatValue(StatDefOf.MedicalTendQualityOffset).ToStringPercent()));
                 }
 
-                if (RelevantStatsInDescriptionMod.instance.RelevantStatsInDescriptionSettings.ShowImmunityGainSpeed &&
+                if (RelevantStatsInDescriptionMod.Instance.RelevantStatsInDescriptionSettings.ShowImmunityGainSpeed &&
                     buildableThing.StatBaseDefined(StatDefOf.ImmunityGainSpeedFactor))
                 {
                     arrayToAdd.Add("RSID_ImmunityGainSpeedFactor".Translate(
                         thing.GetStatValue(StatDefOf.ImmunityGainSpeedFactor).ToStringPercent()));
                 }
 
-                if (RelevantStatsInDescriptionMod.instance.RelevantStatsInDescriptionSettings
+                if (RelevantStatsInDescriptionMod.Instance.RelevantStatsInDescriptionSettings
                         .ShowSurgerySuccessChance &&
                     buildableThing.StatBaseDefined(StatDefOf.SurgerySuccessChanceFactor))
                 {
@@ -404,13 +404,13 @@ public class RelevantStatsInDescription
         {
             var consumption = powerComp.PowerConsumption;
 
-            if (RelevantStatsInDescriptionMod.instance.RelevantStatsInDescriptionSettings.ShowPowerProducer &&
+            if (RelevantStatsInDescriptionMod.Instance.RelevantStatsInDescriptionSettings.ShowPowerProducer &&
                 consumption < 0)
             {
                 arrayToAdd.Add("RSID_PowerProducer".Translate((consumption * -1).ToString()));
             }
 
-            if (RelevantStatsInDescriptionMod.instance.RelevantStatsInDescriptionSettings.ShowPowerConsumer &&
+            if (RelevantStatsInDescriptionMod.Instance.RelevantStatsInDescriptionSettings.ShowPowerConsumer &&
                 consumption > 0)
             {
                 var variedConsumption = getMinMaxPower(buildableThing, thing, -consumption);
@@ -437,7 +437,7 @@ public class RelevantStatsInDescription
                     .GetValue(compProperty);
             }
 
-            if (RelevantStatsInDescriptionMod.instance.RelevantStatsInDescriptionSettings.ShowRimefeller &&
+            if (RelevantStatsInDescriptionMod.Instance.RelevantStatsInDescriptionSettings.ShowRimefeller &&
                 chemfuelConsumption != 0)
             {
                 arrayToAdd.Add("RSID_ChemfuelUser".Translate(chemfuelConsumption.ToString()));
@@ -445,7 +445,7 @@ public class RelevantStatsInDescription
         }
 
         // Gasuse
-        if (VfePowerLoaded && RelevantStatsInDescriptionMod.instance.RelevantStatsInDescriptionSettings.ShowVFEGas)
+        if (VfePowerLoaded && RelevantStatsInDescriptionMod.Instance.RelevantStatsInDescriptionSettings.ShowVFEGas)
         {
             var gasConsumption = 0f;
             foreach (var compProperty in buildableThing.comps)
@@ -463,13 +463,13 @@ public class RelevantStatsInDescription
 
             if (gasConsumption != 0)
             {
-                if (RelevantStatsInDescriptionMod.instance.RelevantStatsInDescriptionSettings.ShowPowerConsumer &&
+                if (RelevantStatsInDescriptionMod.Instance.RelevantStatsInDescriptionSettings.ShowPowerConsumer &&
                     gasConsumption > 0)
                 {
                     arrayToAdd.Add("RSID_GasUser".Translate(gasConsumption.ToString()));
                 }
 
-                if (RelevantStatsInDescriptionMod.instance.RelevantStatsInDescriptionSettings.ShowPowerProducer &&
+                if (RelevantStatsInDescriptionMod.Instance.RelevantStatsInDescriptionSettings.ShowPowerProducer &&
                     gasConsumption < 0)
                 {
                     arrayToAdd.Add("RSID_GasProducer".Translate((gasConsumption * -1).ToString()));
@@ -478,7 +478,7 @@ public class RelevantStatsInDescription
         }
 
         // Beauty
-        if (RelevantStatsInDescriptionMod.instance.RelevantStatsInDescriptionSettings.ShowBeauty)
+        if (RelevantStatsInDescriptionMod.Instance.RelevantStatsInDescriptionSettings.ShowBeauty)
         {
             var beauty = thing.GetStatValue(StatDefOf.Beauty);
             if (beauty != 0)
@@ -488,7 +488,7 @@ public class RelevantStatsInDescription
         }
 
         // Mass
-        if (RelevantStatsInDescriptionMod.instance.RelevantStatsInDescriptionSettings.ShowMass &&
+        if (RelevantStatsInDescriptionMod.Instance.RelevantStatsInDescriptionSettings.ShowMass &&
             buildableThing.Minifiable)
         {
             var mass = buildableThing.comps?.Any(properties => properties.compClass.Name == "CompWaterStorage") == true
@@ -502,13 +502,13 @@ public class RelevantStatsInDescription
         }
 
         // Size
-        if (RelevantStatsInDescriptionMod.instance.RelevantStatsInDescriptionSettings.ShowSize)
+        if (RelevantStatsInDescriptionMod.Instance.RelevantStatsInDescriptionSettings.ShowSize)
         {
             arrayToAdd.Add("RSID_Size".Translate(def.Size.ToStringCross()));
         }
 
         // Wealth
-        if (RelevantStatsInDescriptionMod.instance.RelevantStatsInDescriptionSettings.ShowWealth)
+        if (RelevantStatsInDescriptionMod.Instance.RelevantStatsInDescriptionSettings.ShowWealth)
         {
             var wealth = thing.GetStatValue(StatDefOf.MarketValueIgnoreHp);
             if (wealth != 0)
@@ -518,7 +518,7 @@ public class RelevantStatsInDescription
         }
 
         // Research Speed
-        if (RelevantStatsInDescriptionMod.instance.RelevantStatsInDescriptionSettings.ShowResearchSpeed &&
+        if (RelevantStatsInDescriptionMod.Instance.RelevantStatsInDescriptionSettings.ShowResearchSpeed &&
             buildableThing.thingClass == typeof(Building_ResearchBench) &&
             buildableThing.StatBaseDefined(StatDefOf.ResearchSpeedFactor))
         {
@@ -528,7 +528,7 @@ public class RelevantStatsInDescription
         }
 
         // Cleanliness
-        if (RelevantStatsInDescriptionMod.instance.RelevantStatsInDescriptionSettings.ShowCleanliness)
+        if (RelevantStatsInDescriptionMod.Instance.RelevantStatsInDescriptionSettings.ShowCleanliness)
         {
             var cleanliness = thing.GetStatValue(StatDefOf.Cleanliness);
             if (cleanliness != 0)
@@ -538,7 +538,7 @@ public class RelevantStatsInDescription
         }
 
         // TechLevel
-        if (RelevantStatsInDescriptionMod.instance.RelevantStatsInDescriptionSettings.ShowTechLevel)
+        if (RelevantStatsInDescriptionMod.Instance.RelevantStatsInDescriptionSettings.ShowTechLevel)
         {
             if (buildableThing.researchPrerequisites?.Any() == true)
             {
@@ -561,7 +561,7 @@ public class RelevantStatsInDescription
         // Joy
         if (buildableThing.StatBaseDefined(StatDefOf.JoyGainFactor))
         {
-            if (RelevantStatsInDescriptionMod.instance.RelevantStatsInDescriptionSettings.ShowJoy)
+            if (RelevantStatsInDescriptionMod.Instance.RelevantStatsInDescriptionSettings.ShowJoy)
             {
                 var joy = thing.GetStatValue(StatDefOf.JoyGainFactor);
                 if (joy != 0)
@@ -570,7 +570,7 @@ public class RelevantStatsInDescription
                 }
             }
 
-            if (RelevantStatsInDescriptionMod.instance.RelevantStatsInDescriptionSettings.ShowJoyKind)
+            if (RelevantStatsInDescriptionMod.Instance.RelevantStatsInDescriptionSettings.ShowJoyKind)
             {
                 var joyKind = buildableThing.building?.joyKind;
                 if (joyKind != null)
@@ -581,7 +581,7 @@ public class RelevantStatsInDescription
         }
 
         // Storage
-        if (RelevantStatsInDescriptionMod.instance.RelevantStatsInDescriptionSettings.ShowStorageSpace)
+        if (RelevantStatsInDescriptionMod.Instance.RelevantStatsInDescriptionSettings.ShowStorageSpace)
         {
             if (buildableThing.building.fixedStorageSettings != null ||
                 buildableThing.building.defaultStorageSettings != null)
@@ -593,7 +593,7 @@ public class RelevantStatsInDescription
         }
 
         // Affordance requirement
-        if (RelevantStatsInDescriptionMod.instance.RelevantStatsInDescriptionSettings.ShowAffordanceRequirement)
+        if (RelevantStatsInDescriptionMod.Instance.RelevantStatsInDescriptionSettings.ShowAffordanceRequirement)
         {
             var affordanceNeeded = buildableThing.GetTerrainAffordanceNeed(stuff);
             if (affordanceNeeded != null &&
@@ -604,7 +604,7 @@ public class RelevantStatsInDescription
         }
 
         // Door Open Speed
-        if (RelevantStatsInDescriptionMod.instance.RelevantStatsInDescriptionSettings.ShowDoorOpenSpeed &&
+        if (RelevantStatsInDescriptionMod.Instance.RelevantStatsInDescriptionSettings.ShowDoorOpenSpeed &&
             buildableThing.IsDoor)
         {
             var doorOpenSpeed = thing.GetStatValue(StatDefOf.DoorOpenSpeed);
@@ -615,7 +615,7 @@ public class RelevantStatsInDescription
         }
 
         // Dominant style
-        if (RelevantStatsInDescriptionMod.instance.RelevantStatsInDescriptionSettings.ShowDominantStyle &&
+        if (RelevantStatsInDescriptionMod.Instance.RelevantStatsInDescriptionSettings.ShowDominantStyle &&
             ModsConfig.IdeologyActive)
         {
             var styleCategory = buildableThing.dominantStyleCategory;
@@ -631,12 +631,12 @@ public class RelevantStatsInDescription
         }
 
         // Work to build
-        if (RelevantStatsInDescriptionMod.instance.RelevantStatsInDescriptionSettings.ShowWorkToBuild)
+        if (RelevantStatsInDescriptionMod.Instance.RelevantStatsInDescriptionSettings.ShowWorkToBuild)
         {
             var workToBuild = buildableThing.GetStatValueAbstract(StatDefOf.WorkToBuild, stuff);
             if (workToBuild != 0)
             {
-                if (RelevantStatsInDescriptionMod.instance.RelevantStatsInDescriptionSettings.RelativeWork)
+                if (RelevantStatsInDescriptionMod.Instance.RelevantStatsInDescriptionSettings.RelativeWork)
                 {
                     switch (workToBuild)
                     {
@@ -660,13 +660,13 @@ public class RelevantStatsInDescription
         }
 
         // UI Order
-        if (RelevantStatsInDescriptionMod.instance.RelevantStatsInDescriptionSettings.ShowUIOrder)
+        if (RelevantStatsInDescriptionMod.Instance.RelevantStatsInDescriptionSettings.ShowUIOrder)
         {
             arrayToAdd.Add("RSID_UIOrder".Translate(buildableThing.uiOrder));
         }
 
         // Defname
-        if (RelevantStatsInDescriptionMod.instance.RelevantStatsInDescriptionSettings.ShowDefName)
+        if (RelevantStatsInDescriptionMod.Instance.RelevantStatsInDescriptionSettings.ShowDefName)
         {
             arrayToAdd.Add("RSID_DefName".Translate(buildableThing.defName));
         }

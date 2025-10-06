@@ -108,8 +108,10 @@
   <RSID_ShowWorkToBuild.Tooltip>Will show the amount of work required for completing the building</RSID_ShowWorkToBuild.Tooltip>
   <RSID_RelativeWork.Label>    Show relative work-amount</RSID_RelativeWork.Label>
   <RSID_RelativeWork.Tooltip>Will show the workamount as small/medium/large to get more of a general idea of the amount of work</RSID_RelativeWork.Tooltip>
-  <RSID_RemoveRotateWidget.Label>Remove the rotate-info window</RSID_RemoveRotateWidget.Label>
-  <RSID_RemoveRotateWidget.Tooltip>Will remove the rotate-info window above the architect menu, if you think that you have it memorized by now.</RSID_RemoveRotateWidget.Tooltip>
+  <RSID_RemoveRotateWidget.Label>Remove the rotate/designator-info window</RSID_RemoveRotateWidget.Label>
+  <RSID_RemoveRotateWidget.Tooltip>Will remove the rotate-info window above the architect menu</RSID_RemoveRotateWidget.Tooltip>
+  <RSID_ShowWidgetForShapes.Label>    Still show widget for designator shapes</RSID_ShowWidgetForShapes.Label>
+  <RSID_ShowWidgetForShapes.Tooltip>Will still show the widget when showing designator shapes for the items that support it</RSID_ShowWidgetForShapes.Tooltip>
   <RSID_UseToolip.Label>Use tooltip-window instead</RSID_UseToolip.Label>
   <RSID_UseToolip.Tooltip>Will show the extra info in a tooltip window instead of adding it to the original description</RSID_UseToolip.Tooltip>
   <RSID_CurrentVersion.Label>Installed mod-version: {0}</RSID_CurrentVersion.Label>
