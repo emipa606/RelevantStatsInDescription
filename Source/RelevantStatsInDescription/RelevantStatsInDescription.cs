@@ -739,4 +739,31 @@ public class RelevantStatsInDescription
 
         return new Tuple<float, float>(lowValue * -1, highValue * -1);
     }
+
+
+    public static void ShowTooltip(Rect rect, string toolTip)
+    {
+        Text.Font = GameFont.Small;
+
+        var height = Text.CalcHeight(toolTip, rect.width - 20f) + 24f;
+        height = (float)Math.Ceiling(height / 50f) * 50f;
+
+        var tooltipRect = new Rect(rect.x + rect.width + 5, rect.y, rect.width, height);
+
+        while (Mouse.IsOver(tooltipRect.ExpandedBy(10f)))
+        {
+            tooltipRect.x = Event.current.mousePosition.x + 20f;
+        }
+
+        Find.WindowStack.ImmediateWindow(1266324534, tooltipRect, WindowLayer.Super, delegate
+        {
+            Text.Font = GameFont.Small;
+            var atZero = tooltipRect.AtZero();
+            Widgets.DrawWindowBackground(atZero);
+            var rect2 = atZero.ContractedBy(10f);
+            Widgets.BeginGroup(rect2);
+            Widgets.Label(new Rect(0f, 0f, rect2.width, rect2.height), toolTip);
+            Widgets.EndGroup();
+        }, false);
+    }
 }

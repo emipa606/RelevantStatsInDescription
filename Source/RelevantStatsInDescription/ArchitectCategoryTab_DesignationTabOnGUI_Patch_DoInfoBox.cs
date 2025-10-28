@@ -2,13 +2,12 @@
 using System.Reflection;
 using HarmonyLib;
 using RimWorld;
-using UnityEngine;
 using Verse;
 
 namespace RelevantStatsInDescription;
 
-[HarmonyPatch(typeof(ArchitectCategoryTab), "DoInfoBox")]
-public static class ArchitectCategoryTab_DoInfoBox
+[HarmonyPatch]
+public static class ArchitectCategoryTab_DesignationTabOnGUI_Patch_DoInfoBox
 {
     private static readonly FieldInfo activeDesignatorSetFieldInfo =
         AccessTools.Field(typeof(Designator_Dropdown), "activeDesignatorSet");
@@ -19,25 +18,19 @@ public static class ArchitectCategoryTab_DoInfoBox
     private static readonly FieldInfo entDefFieldInfo =
         AccessTools.Field(typeof(Designator_Build), "entDef");
 
-
-    public static void Prefix(ref Rect infoRect)
+    public static bool Prepare()
     {
-        if (RelevantStatsInDescriptionMod.Instance.RelevantStatsInDescriptionSettings.UseTooltip)
-        {
-            return;
-        }
-
-        var extraHeight = RelevantStatsInDescription.GetExtraHeight();
-        if (extraHeight == 0)
-        {
-            return;
-        }
-
-        infoRect.height += extraHeight;
-        infoRect.y -= extraHeight;
+        return ModLister.GetActiveModWithIdentifier("ferny.BetterArchitect", true) != null;
     }
 
-    public static void Postfix(Rect infoRect, Designator designator)
+    public static MethodBase TargetMethod()
+    {
+        var architectCategoryTabType =
+            AccessTools.TypeByName("BetterArchitect.ArchitectCategoryTab_DesignationTabOnGUI_Patch");
+        return AccessTools.Method(architectCategoryTabType, "DoInfoBox");
+    }
+
+    public static void Postfix(Designator designator)
     {
         if (!RelevantStatsInDescriptionMod.Instance.RelevantStatsInDescriptionSettings.UseTooltip)
         {
@@ -71,6 +64,6 @@ public static class ArchitectCategoryTab_DoInfoBox
             return;
         }
 
-        RelevantStatsInDescription.ShowTooltip(infoRect, toolTip);
+        RelevantStatsInDescription.ShowTooltip(ArchitectCategoryTab.InfoRect, toolTip);
     }
 }

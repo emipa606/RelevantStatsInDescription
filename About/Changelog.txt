@@ -1,5 +1,8 @@
 # Changelog for RelevantStatsInDescription
 
+1.6.2 - Added support for Better Architect Menu
+
+
 1.6.1 - Added option to still show the infowidget for designator shapes when the rotation widget is turned off
 Used DeepL to update translations for ChineseSimplified, French, German, Russian, Spanish
 
