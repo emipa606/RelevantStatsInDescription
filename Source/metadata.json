@@ -11,12 +11,12 @@
     "tooltip",
     "info"
   ],
-  "LastXmlCleaning": "2025-10-28T23:01:56.4649768+01:00",
+  "LastXmlCleaning": "2025-11-21T16:53:50.1516853+01:00",
   "Patches": false,
   "Defs": false,
   "Assemblies": true,
-  "LinesOfCode": 55198,
+  "LinesOfCode": 55199,
   "LinesOfXML": 0,
-  "CodeBaseSize": 74,
+  "CodeBaseSize": 75,
   "RimWorldBaseId": 22842
 }

@@ -80,7 +80,7 @@ public class RelevantStatsInDescription
 
         if (RepowerOnOffLoaded)
         {
-            repowerOnOffPowerLevels = AccessTools.Field("TurnOnOffRePowered.TurnItOnandOff:powerLevels");
+            repowerOnOffPowerLevels = AccessTools.Field("TurnOnOffRePowered.TurnItOnUtility:powerLevels");
         }
 
         if (!LightsOutLoaded)

@@ -1,5 +1,8 @@
 # Changelog for RelevantStatsInDescription
 
+1.6.3 - Should now work with Turn it On and Off Repowered again
+
+
 1.6.2 - Added support for Better Architect Menu
 
 

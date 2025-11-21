@@ -1,6 +1,6 @@
 # [Relevant Stats In Description](https://steamcommunity.com/sharedfiles/filedetails/?id=2692669482)
 
-![Image](https://i.postimg.cc/PJc4kLbg/Self-Info.png)
+![Image](https://img.litet.net/logos/Self-Info.png)
 
 Depending on the type of building, selected stats are shown in the description-window in the architect-menu.
 This can make it easier to select the best wall for your defence or the right power-generator for your current need.
@@ -23,13 +23,13 @@ If you have suggestion of stats that would be usable to show for certain buildin
 
 Idea by: Legion
 	
-![Image](https://i.postimg.cc/nr5ktsY8/Self-Support-And-Donations.png)
+![Image](https://img.litet.net/logos/Self-SupportAndDonations.png)
 
 Since modding is just a hobby for me I expect no donations to keep modding. If you still want to show your support you can gift me anything from my [Wishlist](https://store.steampowered.com/wishlist/id/Mlie) or buy me a cup of tea.
 
-[![Image](https://i.postimg.cc/4yn5MvtR/Kofi-Small.png)](https://ko-fi.com/G2G55DDYD)
+[![Image](https://img.litet.net/logos/Kofi-Small.png)](https://ko-fi.com/G2G55DDYD)
 
-![Image](https://i.postimg.cc/cC6mj7Y4/Self-Reporting-Issues.png)
+![Image](https://img.litet.net/logos/Self-ReportingIssues.png)
 
 
 
