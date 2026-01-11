@@ -1,5 +1,8 @@
 # Changelog for RelevantStatsInDescription
 
+1.6.4 - Updated chinese translation by MADxingjin
+
+
 1.6.3 - Should now work with Turn it On and Off Repowered again
 
 

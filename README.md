@@ -43,4 +43,4 @@ Since modding is just a hobby for me I expect no donations to keep modding. If y
 
  
 
-[![Image](https://img.shields.io/github/v/release/emipa606/RelevantStatsInDescription?label=latest%20version&style=plastic&labelColor=0070cd&color=white)](https://steamcommunity.com/sharedfiles/filedetails/changelog/2692669482) | tags: stats, qol, tooltip, info
+[![Image](https://img.shields.io/github/v/release/emipa606/RelevantStatsInDescription?label=latest%20version&style=plastic&labelColor=0070cd&color=white)](https://steamcommunity.com/sharedfiles/filedetails/changelog/2692669482) | tags: qol, tooltip, stats, info
