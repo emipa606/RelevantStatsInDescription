@@ -19,7 +19,7 @@ public class RelevantStatsInDescription
     public static readonly bool RepowerOnOffLoaded;
     public static readonly bool LightsOutLoaded;
     private static readonly Dictionary<ThingDef, float> turretDps;
-    private static readonly FieldInfo repowerOnOffPowerLevels;
+    private static readonly MethodInfo repowerOnOffPowerLevels;
     private static readonly MethodInfo lightsOutPostfix;
     private static readonly PropertyInfo lightsOutActiveResourceDrawRate;
     private static readonly FieldInfo verbsFieldInfo = AccessTools.Field(typeof(ThingDef), "verbs");
@@ -80,7 +80,7 @@ public class RelevantStatsInDescription
 
         if (RepowerOnOffLoaded)
         {
-            repowerOnOffPowerLevels = AccessTools.Field("TurnOnOffRePowered.TurnItOnUtility:powerLevels");
+            repowerOnOffPowerLevels = AccessTools.PropertyGetter("TurnOnOffRePowered.TurnItOnUtility:PowerLevels");
         }
 
         if (!LightsOutLoaded)
@@ -128,22 +128,20 @@ public class RelevantStatsInDescription
         if (def is TerrainDef floorDef)
         {
             // Affordances
-            if (RelevantStatsInDescriptionMod.Instance.RelevantStatsInDescriptionSettings.ShowAffordance)
+            if (RelevantStatsInDescriptionMod.Instance.RelevantStatsInDescriptionSettings.ShowAffordance &&
+                floorDef.affordances?.Any() == true && !floorDef.affordances.Contains(TerrainAffordanceDefOf.Heavy))
             {
-                if (floorDef.affordances?.Any() == true && !floorDef.affordances.Contains(TerrainAffordanceDefOf.Heavy))
+                if (floorDef.affordances.Contains(TerrainAffordanceDefOf.Medium))
                 {
-                    if (floorDef.affordances.Contains(TerrainAffordanceDefOf.Medium))
-                    {
-                        arrayToAdd.Add("RSID_MaxAffordance".Translate(TerrainAffordanceDefOf.Medium.LabelCap));
-                    }
-                    else if (floorDef.affordances.Contains(TerrainAffordanceDefOf.Light))
-                    {
-                        arrayToAdd.Add("RSID_MaxAffordance".Translate(TerrainAffordanceDefOf.Light.LabelCap));
-                    }
-                    else
-                    {
-                        arrayToAdd.Add("RSID_MaxAffordance".Translate("RSID_Undefined".Translate()));
-                    }
+                    arrayToAdd.Add("RSID_MaxAffordance".Translate(TerrainAffordanceDefOf.Medium.LabelCap));
+                }
+                else if (floorDef.affordances.Contains(TerrainAffordanceDefOf.Light))
+                {
+                    arrayToAdd.Add("RSID_MaxAffordance".Translate(TerrainAffordanceDefOf.Light.LabelCap));
+                }
+                else
+                {
+                    arrayToAdd.Add("RSID_MaxAffordance".Translate("RSID_Undefined".Translate()));
                 }
             }
 
@@ -202,23 +200,21 @@ public class RelevantStatsInDescription
             }
 
             // TechLevel
-            if (RelevantStatsInDescriptionMod.Instance.RelevantStatsInDescriptionSettings.ShowTechLevel)
+            if (RelevantStatsInDescriptionMod.Instance.RelevantStatsInDescriptionSettings.ShowTechLevel &&
+                floorDef.researchPrerequisites?.Any() == true)
             {
-                if (floorDef.researchPrerequisites?.Any() == true)
+                var techLevel = (int)TechLevel.Undefined;
+                foreach (var level in floorDef.researchPrerequisites.Select(project => project.techLevel))
                 {
-                    var techLevel = (int)TechLevel.Undefined;
-                    foreach (var researchProjectDef in floorDef.researchPrerequisites)
+                    if ((int)level > techLevel)
                     {
-                        if ((int)researchProjectDef.techLevel > techLevel)
-                        {
-                            techLevel = (int)researchProjectDef.techLevel;
-                        }
+                        techLevel = (int)level;
                     }
+                }
 
-                    if (techLevel > 0)
-                    {
-                        arrayToAdd.Add("RSID_TechLevel".Translate(((TechLevel)techLevel).ToString()));
-                    }
+                if (techLevel > 0)
+                {
+                    arrayToAdd.Add("RSID_TechLevel".Translate(((TechLevel)techLevel).ToString()));
                 }
             }
 
@@ -303,14 +299,11 @@ public class RelevantStatsInDescription
             thing.SetStuffDirect(stuff);
         }
 
-        if (buildableThing.comps.Any())
+        if (buildableThing.comps.Any() && buildableThing.thingClass.Name != "Building_Window")
         {
-            if (buildableThing.thingClass.Name != "Building_Window")
-            {
-                thing.InitializeComps();
-                thing.PostMake();
-                thing.PostPostMake();
-            }
+            thing.InitializeComps();
+            thing.PostMake();
+            thing.PostPostMake();
         }
 
         // Structural building
@@ -538,23 +531,21 @@ public class RelevantStatsInDescription
         }
 
         // TechLevel
-        if (RelevantStatsInDescriptionMod.Instance.RelevantStatsInDescriptionSettings.ShowTechLevel)
+        if (RelevantStatsInDescriptionMod.Instance.RelevantStatsInDescriptionSettings.ShowTechLevel &&
+            buildableThing.researchPrerequisites?.Any() == true)
         {
-            if (buildableThing.researchPrerequisites?.Any() == true)
+            var techLevel = (int)TechLevel.Undefined;
+            foreach (var level in buildableThing.researchPrerequisites.Select(project => project.techLevel))
             {
-                var techLevel = (int)TechLevel.Undefined;
-                foreach (var researchProjectDef in buildableThing.researchPrerequisites)
+                if ((int)level > techLevel)
                 {
-                    if ((int)researchProjectDef.techLevel > techLevel)
-                    {
-                        techLevel = (int)researchProjectDef.techLevel;
-                    }
+                    techLevel = (int)level;
                 }
+            }
 
-                if (techLevel > 0)
-                {
-                    arrayToAdd.Add("RSID_TechLevel".Translate(((TechLevel)techLevel).ToString()));
-                }
+            if (techLevel > 0)
+            {
+                arrayToAdd.Add("RSID_TechLevel".Translate(((TechLevel)techLevel).ToString()));
             }
         }
 
@@ -581,15 +572,13 @@ public class RelevantStatsInDescription
         }
 
         // Storage
-        if (RelevantStatsInDescriptionMod.Instance.RelevantStatsInDescriptionSettings.ShowStorageSpace)
+        if (RelevantStatsInDescriptionMod.Instance.RelevantStatsInDescriptionSettings.ShowStorageSpace &&
+            (buildableThing.building?.fixedStorageSettings != null ||
+             buildableThing.building?.defaultStorageSettings != null))
         {
-            if (buildableThing.building.fixedStorageSettings != null ||
-                buildableThing.building.defaultStorageSettings != null)
-            {
-                var maxItems = buildableThing.building.maxItemsInCell;
-                var cells = buildableThing.size.x * buildableThing.size.z;
-                arrayToAdd.Add("RSID_StorageSpace".Translate(maxItems * cells));
-            }
+            var maxItems = buildableThing.building.maxItemsInCell;
+            var cells = buildableThing.size.x * buildableThing.size.z;
+            arrayToAdd.Add("RSID_StorageSpace".Translate(maxItems * cells));
         }
 
         // Affordance requirement
@@ -697,7 +686,7 @@ public class RelevantStatsInDescription
     {
         if (RepowerOnOffLoaded)
         {
-            var powerValues = (Dictionary<string, Vector2>)repowerOnOffPowerLevels.GetValue(null);
+            var powerValues = (Dictionary<string, Vector2>)repowerOnOffPowerLevels.Invoke(null, null);
             if (powerValues == null || !powerValues.Any())
             {
                 return null;

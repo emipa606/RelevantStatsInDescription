@@ -1,5 +1,8 @@
 # Changelog for RelevantStatsInDescription
 
+1.6.5 - Fixed issue with the turnoffon mod
+
+
 1.6.4 - Updated chinese translation by MADxingjin
 
 

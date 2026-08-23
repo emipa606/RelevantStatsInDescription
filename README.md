@@ -8,7 +8,7 @@ This can make it easier to select the best wall for your defence or the right po
 Each stat can be turned off in the settings if they are not needed.
 There is also a setting to show the extra info in a separate tooltip-window instead.
 
-Supported mods
+Additional stats supported
 
 
 - [Vanilla Furniture Expanded - Power](https://steamcommunity.com/workshop/filedetails/?id=2062943477): Shows Helixien Gas use/production
@@ -43,4 +43,4 @@ Since modding is just a hobby for me I expect no donations to keep modding. If y
 
  
 
-[![Image](https://img.shields.io/github/v/release/emipa606/RelevantStatsInDescription?label=latest%20version&style=plastic&labelColor=0070cd&color=white)](https://steamcommunity.com/sharedfiles/filedetails/changelog/2692669482) | tags: qol, tooltip, stats, info
+[![Image](https://img.shields.io/github/v/release/emipa606/RelevantStatsInDescription?label=latest%20version&style=plastic&labelColor=0070cd&color=white)](https://steamcommunity.com/sharedfiles/filedetails/changelog/2692669482) | qol, tooltip, stats, info
