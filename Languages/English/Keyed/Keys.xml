@@ -13,7 +13,8 @@
   <RSID_Size>Size: {0}</RSID_Size>
   <RSID_Wealth>Wealth: {0}</RSID_Wealth>
   <RSID_Cleanliness>Cleanliness: {0}</RSID_Cleanliness>
-  <RSID_Joy>Joy gainfactor: {0}</RSID_Joy>
+  <RSID_FilthMultiplier>Filth generation: {0}</RSID_FilthMultiplier>
+  <RSID_Joy>Joy-gain factor: {0}</RSID_Joy>
   <RSID_JoyKind>Joy kind: {0}</RSID_JoyKind>
   <RSID_Comfort>Comfort: {0}</RSID_Comfort>
   <RSID_UIOrder>UI order: {0}</RSID_UIOrder>
@@ -64,6 +65,8 @@
   <RSID_ShowWealth.Tooltip>Shows the colony wealth given by any building</RSID_ShowWealth.Tooltip>
   <RSID_ShowCleanliness.Label>Show cleanliness given</RSID_ShowCleanliness.Label>
   <RSID_ShowCleanliness.Tooltip>Shows the cleanliness given if defined</RSID_ShowCleanliness.Tooltip>
+  <RSID_ShowFilthMultiplier.Label>Show filth generation multiplier</RSID_ShowFilthMultiplier.Label>
+  <RSID_ShowFilthMultiplier.Tooltip>Shows the terrain filth generation multiplier if it differs from 100%</RSID_ShowFilthMultiplier.Tooltip>
   <RSID_ShowResearchSpeed.Label>Show research speed</RSID_ShowResearchSpeed.Label>
   <RSID_ShowResearchSpeed.Tooltip>Shows the relative research speed of research-benches</RSID_ShowResearchSpeed.Tooltip>
   <RSID_ShowTechLevel.Label>Show tech level</RSID_ShowTechLevel.Label>
@@ -76,8 +79,8 @@
   <RSID_ShowComfort.Tooltip>Shows any comfort given by a building</RSID_ShowComfort.Tooltip>
   <RSID_ShowUIOrder.Label>Show UI order</RSID_ShowUIOrder.Label>
   <RSID_ShowUIOrder.Tooltip>Shows the UI order of a building. The UI order is the order in which buildings in the architect menu are displayed in.</RSID_ShowUIOrder.Tooltip>
-  <RSID_ShowBedRest.Label>Show bedrest effectivness</RSID_ShowBedRest.Label>
-  <RSID_ShowBedRest.Tooltip>Shows the bedrest effectivness for any bed</RSID_ShowBedRest.Tooltip>
+  <RSID_ShowBedRest.Label>Show bedrest effectiveness</RSID_ShowBedRest.Label>
+  <RSID_ShowBedRest.Tooltip>Shows the bedrest effectiveness for any bed</RSID_ShowBedRest.Tooltip>
   <RSID_ShowStorageSpace.Label>Show max storage space</RSID_ShowStorageSpace.Label>
   <RSID_ShowStorageSpace.Tooltip>Shows the amount of possible stacks to store</RSID_ShowStorageSpace.Tooltip>
   <RSID_ShowImmunityGainSpeed.Label>Show immunity gain speed</RSID_ShowImmunityGainSpeed.Label>

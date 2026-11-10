@@ -10,7 +10,7 @@ using Verse;
 namespace RelevantStatsInDescription;
 
 [StaticConstructorOnStartup]
-public class RelevantStatsInDescription
+public static class RelevantStatsInDescription
 {
     private static Dictionary<string, string> cachedDescriptions;
 
@@ -69,7 +69,7 @@ public class RelevantStatsInDescription
                 cooldown = turret.building.turretGunDef.GetStatValueAbstract(StatDefOf.RangedWeapon_Cooldown);
             }
 
-            var damageAmountBase = (int)damageAmountBaseFieldInfo.GetValue(bullet.projectile);
+            var damageAmountBase = (int)(damageAmountBaseFieldInfo.GetValue(bullet.projectile) ?? 1);
             float burstDamage = damageAmountBase * attackVerb.burstShotCount;
             var warmupTicks = (cooldown + attackVerb.warmupTime) * 60;
             float burstTicks = (attackVerb.burstShotCount - 1) * attackVerb.ticksBetweenBurstShots;
@@ -107,7 +107,9 @@ public class RelevantStatsInDescription
         }
 
         return (typeof(RelevantStatsInDescriptionSettings).GetFields().Count(info =>
-            (bool)info.GetValue(RelevantStatsInDescriptionMod.Instance.RelevantStatsInDescriptionSettings)) * 5f) + 10f;
+                    (bool)(info.GetValue(RelevantStatsInDescriptionMod.Instance.RelevantStatsInDescriptionSettings) ??
+                           false)) *
+                5f) + 10f;
     }
 
     public static string GetUpdatedDescription(BuildableDef def, ThingDef stuff, bool onlyAddition = false)
@@ -196,6 +198,16 @@ public class RelevantStatsInDescription
                 if (cleanliness != 0)
                 {
                     arrayToAdd.Add("RSID_Cleanliness".Translate(cleanliness.ToString("N1")));
+                }
+            }
+
+            // Filth multiplier
+            if (RelevantStatsInDescriptionMod.Instance.RelevantStatsInDescriptionSettings.ShowFilthMultiplier)
+            {
+                var filthMultiplier = floorDef.GetStatValueAbstract(StatDefOf.FilthMultiplier);
+                if (!Mathf.Approximately(filthMultiplier, 1f))
+                {
+                    arrayToAdd.Add("RSID_FilthMultiplier".Translate(filthMultiplier.ToStringPercent()));
                 }
             }
 
@@ -425,9 +437,9 @@ public class RelevantStatsInDescription
                     continue;
                 }
 
-                chemfuelConsumption = (float)AccessTools.Field(AccessTools.TypeByName(compProperty.GetType().FullName),
+                chemfuelConsumption = (float)(AccessTools.Field(AccessTools.TypeByName(compProperty.GetType().FullName),
                         "FuelRate")
-                    .GetValue(compProperty);
+                    .GetValue(compProperty) ?? 1);
             }
 
             if (RelevantStatsInDescriptionMod.Instance.RelevantStatsInDescriptionSettings.ShowRimefeller &&
@@ -449,9 +461,9 @@ public class RelevantStatsInDescription
                     continue;
                 }
 
-                gasConsumption = (float)AccessTools.Field(AccessTools.TypeByName(compProperty.GetType().FullName),
+                gasConsumption = (float)(AccessTools.Field(AccessTools.TypeByName(compProperty.GetType().FullName),
                         "gasConsumption")
-                    .GetValue(compProperty);
+                    .GetValue(compProperty) ?? 1);
             }
 
             if (gasConsumption != 0)
@@ -718,7 +730,7 @@ public class RelevantStatsInDescription
         var lowValue = (float)arguments[1];
 
 
-        var highPowerFactor = (float)lightsOutActiveResourceDrawRate.GetValue(null);
+        var highPowerFactor = (float)(lightsOutActiveResourceDrawRate.GetValue(null) ?? 1f);
 
         var highValue = originalConsumption;
         if (buildableThing.hasInteractionCell)

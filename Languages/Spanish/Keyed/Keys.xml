@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <LanguageData>
   <!-- Información -->
   <RSID_Undefined>Indefinido</RSID_Undefined>
@@ -118,4 +118,7 @@
   <!-- Settings -->
   <RSID_ShowWidgetForShapes.Label>Sigue mostrando el widget para las formas designadoras</RSID_ShowWidgetForShapes.Label>
   <RSID_ShowWidgetForShapes.Tooltip>Seguirá mostrando el widget cuando se muestren formas de designador para los elementos que lo soporten</RSID_ShowWidgetForShapes.Tooltip>
+  <RSID_FilthMultiplier>Generación de suciedad: {0}</RSID_FilthMultiplier>
+  <RSID_ShowFilthMultiplier.Label>Mostrar el multiplicador de generación de suciedad</RSID_ShowFilthMultiplier.Label>
+  <RSID_ShowFilthMultiplier.Tooltip>Muestra el multiplicador de generación de suciedad del terreno si difiere del 100 %.</RSID_ShowFilthMultiplier.Tooltip>
 </LanguageData>

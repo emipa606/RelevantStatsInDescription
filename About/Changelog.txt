@@ -1,5 +1,9 @@
 # Changelog for RelevantStatsInDescription
 
+1.7.0 - Mod updated for 1.7 and passed autotests
+Used DeepL to update translations for ChineseSimplified, French, German, Russian, Spanish
+
+
 1.6.5 - Fixed issue with the turnoffon mod
 
 

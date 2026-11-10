@@ -1,64 +1,47 @@
-# GitHub Copilot Instructions for "Relevant Stats In Description" Mod
+# GitHub Copilot Instructions for Relevant Stats In Description Mod
 
 ## Mod Overview and Purpose
-
-**Mod Name:** Relevant Stats In Description  
-**Author:** Mlie  
-**PackageId:** Mlie.RelevantStatsInDescription  
-
-The "Relevant Stats In Description" mod aims to enhance the building selection process in RimWorld by displaying pertinent stats in the description window within the architect menu. By providing stats specific to certain types of buildings, it streamlines decision-making, such as choosing the best defensive wall or the appropriate power generator. Settings allow for customization of which stats appear and whether they display in a separate tooltip window.
+The Relevant Stats In Description mod enhances the gameplay experience by displaying additional relevant stats in the description window of the architect menu. This makes it easier for players to make informed decisions when selecting buildings, such as choosing the best wall for defense or the right power generator for their needs. The mod includes settings to turn off individual stats and to display additional info in a separate tooltip window. It also supports additional stats from popular RimWorld mods like Vanilla Furniture Expanded and Rimefeller.
 
 ## Key Features and Systems
-
-- **Stat Display:** Depending on the building, this mod shows selected stats in the architect menu description window.
-- **Customization:** Individual stats can be toggled on or off via settings. Users can also choose to view additional information in a separate tooltip.
-- **Mod Support:** Supports display of Helixien Gas use/production for "Vanilla Furniture Expanded - Power" and Chemfuel use for "Rimefeller".
-- **Multilingual Support:** Includes translations for German and Spanish, contributed by community members.
+The mod consists of several key features and systems, including:
+- **Settings Management**: Allows users to customize which stats are displayed and how they are displayed, including separate toggle options for each new displayed stat.
+- **Description Enhancements**: Modifies the architect menu description window to include additional relevant stats for each building.
+- **Tooltip Enhancements**: Adds a separate tooltip window for additional information if the user chooses this option in settings.
+- **Compatibility**: Supports additional stats from popular RimWorld mods, such as Vanilla Furniture Expanded and Rimefeller.
 
 ## Coding Patterns and Conventions
-
-- **C# Naming Conventions:** Classes and methods follow PascalCase.
-- **Commenting:** Code is liberally commented to describe the functionality of methods and important logic components.
-- **Namespaces:** Proper namespace usage to organize classes and facilitate modularity.
+The Relevant Stats In Description mod follows established coding patterns and conventions for RimWorld modding, including:
+- **Modding Framework**: Uses the RimWorld modding framework and follows its conventions for modding.
+- **Harmony Patching**: Uses Harmony patching to modify vanilla RimWorld behavior without altering the original game code.
+- **XML Integration**: Uses XML files to define mod settings and other configuration options.
+- **Localization**: Supports multiple languages, including German and Spanish.
 
 ## XML Integration
-
-- **XML Usage:** Utilizes XML files primarily for settings management and localization. No XML defs are present, indicating no additional content such as new buildings or items are directly added through XML.
-- **Localization:** XML files are used for handling translations and multi-language support.
+The Relevant Stats In Description mod includes an XML file that defines mod settings and other configuration options. The file is located at `Source\.cr\personal\FavoritesList\List.xml` and is used to store and retrieve user preferences for the mod.
 
 ## Harmony Patching
-
-The mod uses Harmony to modify existing game methods and interfaces without altering the original game files, ensuring compatibility and easy updates:
-
-- **Methods Patched:** 
-  - `ArchitectCategoryTab_InfoRect`: Handles postfix operations to insert new content.
-  - `Designator_Build_Desc`, `Designator_Place_DoExtraGuiControls`: Implements postfix and prefix patches to append or precede existing logic with additional stat display.
-  - `ArchitectCategoryTab_DesignationTabOnGUI_Patch_DoInfoBox`: A combination of postfixes and prefixes, often setting up conditions or changes before and after the core logic runs.
+The Relevant Stats In Description mod uses Harmony patching to modify vanilla RimWorld behavior without altering the original game code. Specifically, it uses Harmony to patch methods in the game engine that control the architect menu description window and the tooltip window.
 
 ## Suggestions for Copilot
-
-- **Code Suggestions:** Assist with writing additional postfix or prefix methods to handle other potential stats as per user feedback and requests.
-- **Settings Management:** Generate helper methods for managing the enabling/disabling of stats displays in the mod settings.
-- **Localization:** Suggest or create XML entries for additional languages or updated translations.
-- **Error Handling:** Propose try-catch blocks or validation checks surrounding potential areas of failure, particularly in user input parsing.
-- **Documentation:** Guide in creating comprehensive method and class documentation using XML comments, which can further aid compatibility and future development.
-
-## Contribution and Feedback
-
-- If you have suggestions for other building stats that could be displayed, please leave feedback through the GitHub issues page or join the discussion on our Discord server.
-
-This concludes the AI-powered assistance for enhancing and maintaining the "Relevant Stats In Description" mod.
+To make the most of GitHub Copilot in the Relevant Stats In Description mod, consider the following suggestions:
+- **Code Snippets**: Use code snippets to quickly insert common coding patterns and conventions, such as Harmony patches and XML definitions.
+- **Settings Management**: Use Copilot to help manage mod settings and user preferences, including generating code for exposing data and saving settings.
+- **Description Enhancements**: Use Copilot to help modify the architect menu description window to include additional relevant stats for each building.
+- **Tooltip Enhancements**: Use Copilot to help add a separate tooltip window for additional information if the user chooses this option in settings.
+- **Localization**: Use Copilot to help manage localization files for multiple languages, including German and Spanish.
 
 ## Project Solution Guidelines
-- Relevant mod XML files are included as Solution Items under the solution folder named XML, these can be read and modified from within the solution.
+- Relevant mod XML files are included as Solution Items under the solution folder named XML; these can be read and modified from within the solution.
 - Use these in-solution XML files as the primary files for reference and modification.
 - The `.github/copilot-instructions.md` file is included in the solution under the `.github` solution folder, so it should be read/modified from within the solution instead of using paths outside the solution. Update this file once only, as it and the parent-path solution reference point to the same file in this workspace.
 - When making functional changes in this mod, ensure the documented features stay in sync with implementation; use the in-solution `.github` copy as the primary file.
 - In the solution is also a project called Assembly-CSharp, containing a read-only version of the decompiled game source, for reference and debugging purposes.
 - For any new documentation, update this copilot-instructions.md file rather than creating separate documentation files.
 
-
 ## Hard rules (must follow)
 - Do NOT run commands that modify the repo (no git commit, git apply, dotnet format) unless explicitly asked.
 - Prefer minimal reads: read only the smallest code region needed (around the suspicious lines).
+- When mentioning SonarQube issues, automatically use the SonarQube MCP service to fetch and address issues instead of making inferred fixes without querying SonarQube first.
+- When mentioning the RimWorld log, automatically use the RimWorld MCP service to fetch the log.
 

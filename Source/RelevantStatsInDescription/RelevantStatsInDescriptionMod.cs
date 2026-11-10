@@ -14,8 +14,6 @@ internal class RelevantStatsInDescriptionMod : Mod
 
     private static string currentVersion;
 
-    //private Vector2 scrollPosition;
-
     /// <summary>
     ///     Constructor
     /// </summary>
@@ -45,18 +43,12 @@ internal class RelevantStatsInDescriptionMod : Mod
     ///     The relevantStatsInDescriptionSettings-window
     ///     For more info: https://rimworldwiki.com/wiki/Modding_Tutorials/ModSettings
     /// </summary>
-    /// <param name="rect"></param>
-    public override void DoSettingsWindowContents(Rect rect)
+    /// <param name="inRect"></param>
+    public override void DoSettingsWindowContents(Rect inRect)
     {
-        //var viewRect = new Rect(rect)
-        //{
-        //    width = rect.width * 0.97f,
-        //    height = (typeof(RelevantStatsInDescriptionSettings).GetFields().Length * 25f) + 10f
-        //};
-        //Widgets.BeginScrollView(rect, ref scrollPosition, viewRect);
         var listingStandard = new Listing_Standard();
-        listingStandard.Begin(rect);
-        listingStandard.ColumnWidth = (rect.width / 2) - 10f;
+        listingStandard.Begin(inRect);
+        listingStandard.ColumnWidth = (inRect.width / 2) - 10f;
         listingStandard.CheckboxLabeled("RSID_ShowHP.Label".Translate(), ref RelevantStatsInDescriptionSettings.ShowHP,
             "RSID_ShowHP.Tooltip".Translate());
         if (RelevantStatsInDescriptionSettings.ShowHP)
@@ -103,6 +95,9 @@ internal class RelevantStatsInDescriptionMod : Mod
         listingStandard.CheckboxLabeled("RSID_ShowCleanliness.Label".Translate(),
             ref RelevantStatsInDescriptionSettings.ShowCleanliness,
             "RSID_ShowCleanliness.Tooltip".Translate());
+        listingStandard.CheckboxLabeled("RSID_ShowFilthMultiplier.Label".Translate(),
+            ref RelevantStatsInDescriptionSettings.ShowFilthMultiplier,
+            "RSID_ShowFilthMultiplier.Tooltip".Translate());
         listingStandard.CheckboxLabeled("RSID_ShowTechLevel.Label".Translate(),
             ref RelevantStatsInDescriptionSettings.ShowTechLevel,
             "RSID_ShowTechLevel.Tooltip".Translate());
@@ -216,7 +211,6 @@ internal class RelevantStatsInDescriptionMod : Mod
         }
 
         listingStandard.End();
-        //Widgets.EndScrollView();
     }
 
     public override void WriteSettings()

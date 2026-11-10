@@ -15,11 +15,12 @@ internal class RelevantStatsInDescriptionSettings : ModSettings
     public bool ShowBedRest = true;
     public bool ShowCleanliness = true;
     public bool ShowComfort = true;
+    public bool ShowFilthMultiplier = true;
     public bool ShowCover = true;
+    public bool ShowDPS;
     public bool ShowDefName;
     public bool ShowDominantStyle = true;
     public bool ShowDoorOpenSpeed = true;
-    public bool ShowDPS;
     public bool ShowFloorQuality = true;
     public bool ShowHP = true;
     public bool ShowHPForAll;
@@ -59,6 +60,7 @@ internal class RelevantStatsInDescriptionSettings : ModSettings
         Scribe_Values.Look(ref ShowSize, "ShowSize", true);
         Scribe_Values.Look(ref ShowWealth, "ShowWealth", true);
         Scribe_Values.Look(ref ShowCleanliness, "ShowCleanliness", true);
+        Scribe_Values.Look(ref ShowFilthMultiplier, "ShowFilthMultiplier", true);
         Scribe_Values.Look(ref ShowJoy, "ShowJoy", true);
         Scribe_Values.Look(ref ShowJoyKind, "ShowJoyKind", true);
         Scribe_Values.Look(ref ShowComfort, "ShowComfort", true);

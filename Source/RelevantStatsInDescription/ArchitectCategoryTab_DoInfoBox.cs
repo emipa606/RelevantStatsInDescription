@@ -1,5 +1,4 @@
-﻿using System.Linq;
-using System.Reflection;
+﻿using System.Reflection;
 using HarmonyLib;
 using RimWorld;
 using UnityEngine;
@@ -46,14 +45,14 @@ public static class ArchitectCategoryTab_DoInfoBox
 
         if (designator is Designator_Dropdown designatorDropdown)
         {
-            var activeDesignatorSet = (bool)activeDesignatorSetFieldInfo.GetValue(designatorDropdown);
+            var activeDesignatorSet = (bool)(activeDesignatorSetFieldInfo.GetValue(designatorDropdown) ?? false);
             if (activeDesignatorSet)
             {
                 designator = (Designator)activeDesignatorFieldInfo.GetValue(designatorDropdown);
             }
             else
             {
-                designator = designatorDropdown.Elements.First();
+                designator = designatorDropdown.Elements[0];
             }
         }
 
